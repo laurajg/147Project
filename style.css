@@ -1,3 +1,18 @@
+#header2 {
+	margin: auto;
+	clear:both;	
+	vertical-align: middle;
+	background-color: #14CCCB;
+	font-family: Tahoma, Geneva, sans-serif;
+	text-align:center;
+	font-size: 80px;
+	width: 75%;
+	height:200px;
+	border: 1p solid #999;
+	color: #303030;
+	padding-top: 40px;
+}
+
 body{
 	width: 95%;
 	background-color: #f0f0f0;
