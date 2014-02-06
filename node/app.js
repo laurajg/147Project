@@ -15,6 +15,11 @@ var share = require('./routes/share');
 var welcome = require('./routes/welcome');
 var welcome_upload = require('./routes/welcome_upload');
 var welcome_share = require('./routes/welcome_share');
+var login = require('./routes/login');
+var landing = require('./routes/landing');
+var register = require('./routes/register');
+var terms = require('./routes/terms');
+var password = require('./routes/password');
 // Example route
 // var user = require('./routes/user');
 
@@ -48,6 +53,11 @@ app.get('/share', share.view);
 app.get('/welcome', welcome.view);
 app.get('/welcome_upload', welcome_upload.view);
 app.get('/welcome_share', welcome_share.view);
+app.get('/login', login.view);
+app.get('/landing', landing.view);
+app.get('/register', register.view);
+app.get('/terms', terms.view);
+app.get('/password', password.view);
 // app.get('/gallery', gallery.addFriend);
 
 
