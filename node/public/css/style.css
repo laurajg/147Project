@@ -6,7 +6,7 @@
 	font-family: Tahoma, Geneva, sans-serif;
 	text-align:center;
 	font-size: 80px;
-	width: 75%;
+	width: 700px;
 	height:200px;
 	border: 1p solid #999;
 	color: #303030;
@@ -36,6 +36,7 @@
 #photoViewer {
 	text-align:center;
 	padding-bottom: 50px;
+	width: 700px;
 }
 
 .arrow {

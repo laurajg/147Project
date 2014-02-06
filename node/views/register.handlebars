@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8" />
+<title> Create an Account </title>
+ <link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+</script>
+</head>
+<body>
+<body>
+
+{{> header}}
+
+<div id="main">
+
+	<div id="createAccount">
+		<div class="titleRow"> Create an Account: </div>
+			<div class="inputForm">
+			<form action="/">
+				
+				<table>
+				<tr> <td> <input type="text" required name="username"  placeholder="Username"/> </td></tr>
+				<tr> <td> <input type="text" required name="email" placeholder="Email"/> </td></tr>
+				<tr> <td> <input type="password" required name="password" placeholder="Password"/> </td></tr>
+				<tr> <td> <input type="password" required name="conpassword" placeholder="Confirm Password"/> </td></tr>
+				</table>
+				<input class= "submitButton newSubmit" name="register" type="submit" value="Submit">
+			</form>
+			
+			<form action="/landing">
+  		 		 <input  class = "submitButton newSubmit" type="submit" value="Back">
+			</form>
+			
+			</div> <!-- end input form div -->
+	</div> <!-- end create account div --> 
+	
+		<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="js/jquery-1.11.0.js"> </script>
+	<script src="js/bootstrap.js"> </script>
+	<script src="js/hci-friends.js"> </script>
+</div> <!-- end main div -->
+</body>
+</html>

@@ -10,6 +10,10 @@ var handlebars = require('express3-handlebars')
 
 var index = require('./routes/index');
 var upload = require('./routes/upload');
+var login = require('./routes/login');
+var landing = require('./routes/landing');
+var register = require('./routes/register');
+var terms = require('./routes/terms');
 // Example route
 // var user = require('./routes/user');
 
@@ -37,7 +41,11 @@ if ('development' == app.get('env')) {
 
 // Add routes here
 app.get('/', index.view);
-app.get('/upload', upload.view)
+app.get('/upload', upload.view);
+app.get('/login', login.view);
+app.get('/landing', landing.view);
+app.get('/register', register.view);
+app.get('/terms', terms.view);
 // app.get('/gallery', gallery.addFriend);
 
 http.createServer(app).listen(app.get('port'), function(){
