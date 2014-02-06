@@ -4,10 +4,13 @@
     <title>Gallery</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">    
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">   
+    <link href="css/style.css" rel="stylesheet" media="screen">    
     <link href="css/bootstrap-theme.min.css" rel="stylesheet" media="screen">    
   </head>
-  <body>    
+  <body>   
+
+  {{> header}} 
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <style>
@@ -137,7 +140,7 @@
     </style>
 
 	
- 	<div class="dropdown" style="width: 100%">
+ 	<div class="dropdown" style="width: 75%; left: 13%">
  		<span id="gallery-header">My Goal Gallery</span>
 	 	<button class="btn dropdown-toggle" type="button" id="filter-button" data-toggle="dropdown">
 	    	Filter: <span id="filter-text">All</span>
@@ -270,5 +273,6 @@
 		<span class="imgoverlay-helper"></span>
 		<img id="overlay-image" src="" onclick="javascript:event.stopPropagation()">
 	</div>
+	{{> footer}}
   </body>
 </html>
