@@ -1,41 +1,97 @@
-#header2 {
+.header2 {
 	margin: auto;
 	clear:both;	
 	vertical-align: middle;
-	background-color: #00FFA3;
 	font-family: Tahoma, Geneva, sans-serif;
 	text-align:center;
 	font-size: 80px;
 	width: 100%;
 	margin: 0;
+	/*
 	height:175px;
-
 	border: 1p solid #999;
 	color: #303030;
+	background-color: #00FFA3;
+	*/
+	height: 140px;
 	padding-top: 40px;
 	clear: both;
+
 }
 
-
-
-
-
-#settings {
-	position:absolute;
-	right: 20%;
-	color: #303030;
-	text-decoration: none;
-}
-
-.headerText{
-	float: left;
+.navbar-title{
 	margin: auto;
-	padding-left: 300px;
+	color: white;
+	font-family: Titillium Web;
+	font-weight: 200;
+	padding-left: 17%;
+	margin: 0px 10px 0px 10px;
+	vertical-align: middle;
 }
+
+#header{
+	padding-top: 50px;
+
+}
+
+.headerIcon{
+	color: white;
+	position:absolute;
+	margin-top: -10px;
+}
+
+#main{
+	margin: auto;
+	clear:both;	
+	vertical-align: middle;
+	margin-top: 30px;
+
+}
+
+#main,  #headerContents, .container{
+	width: 80%;
+	min-width: 785px;
+}
+
 
 #headerContents{
-	min-width: 675px;
+	margin: auto;
 }
+
+body{
+	background-color: #f0f0f0;
+	font-family: Titillium Web;
+	/*
+	font-size: 60px;
+	font-weight: 200;
+	color: #303030; */
+}
+
+#menu, #settings{
+	position: relative;
+	/*
+	margin: auto;
+	*/
+}
+#menu {
+	/*left:15%; */
+	color: #303030;
+	text-decoration: none;
+	float: left;
+}
+
+#settings {
+	/*position:absolute;
+	right: 15%;
+
+	 */
+	 margin-left: 10%;
+	color: #303030;
+	text-decoration: none;
+	float: left;
+}
+
+
 
 #image {
 	overflow: hidden;
@@ -45,33 +101,25 @@
 	margin-bottom: 50px;
 }
 
-#menu {
-	position:absolute;
-	left:15%;
-	color: #303030;
-	text-decoration: none;
-}
 
-#photoViewer {
-	text-align:center;
-	padding-bottom: 50px;
-	margin-bottom: 50px;
-	clear: both;
-}
+
 
 .arrow {
 	font-size:100px;
 	text-decoration: none;
 	color: #303030;
-	padding-top: 200px;
+	padding-top: 30%;
+
 }
 
 #arrowone {
 	float: left;
+	margin-right: 2%;
 }
 
 #arrowtwo{
-	float: right;
+	float: left;
+	margin-left: 2%;
 }
 
 .text {
@@ -87,15 +135,6 @@ select {
 	width: 100%;
 }
 
-body{
-	width: 95%;
-	background-color: #f0f0f0;
-	font-family: Titillium Web;
-	/*
-	font-size: 60px;
-	font-weight: 200;
-	color: #303030; */
-}
 
 td{
 	font-size: 48px;
@@ -121,9 +160,7 @@ td{
 }
 
 
-#headerContents{
-	margin: auto;
-}
+
 
 img{
 	margin: 0;
@@ -180,10 +217,7 @@ textarea:focus, input:focus {
 	border: 1px solid #303030;
 }
 
-#header{
-	padding-top: 50px;
 
-}
 
 .homeText{
 	margin-top: 75px;
@@ -195,19 +229,6 @@ font-size: 60px;
 	font-weight: 200;
 	color: #303030;
 }
-
-#header, #main{
-	margin: auto;
-	width: 75%;
-	clear:both;	
-	vertical-align: middle;
-}
-
-#main, #header2{
-	margin-top: 30px;
-	min-width: 675px;
-}
-
 
 
 .titleRow{
@@ -229,9 +250,11 @@ font-size: 60px;
 	float: left;
 }
 
+
 .footer{
 	margin: 237px 237px 10px 250px;
 	font-size: 24px;
 	
 }
+
 
