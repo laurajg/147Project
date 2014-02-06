@@ -20,6 +20,8 @@ var landing = require('./routes/landing');
 var register = require('./routes/register');
 var terms = require('./routes/terms');
 var password = require('./routes/password');
+var gallery = require('./routes/gallery');
+var update_friends = require('./routes/update_friends');
 // Example route
 // var user = require('./routes/user');
 
@@ -58,6 +60,8 @@ app.get('/landing', landing.view);
 app.get('/register', register.view);
 app.get('/terms', terms.view);
 app.get('/password', password.view);
+app.get('/gallery', gallery.view);
+app.get('/update_friends', update_friends.view);
 // app.get('/gallery', gallery.addFriend);
 
 
