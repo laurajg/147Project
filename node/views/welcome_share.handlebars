@@ -15,19 +15,21 @@
 {{> header}}
 <div id="main">
 	<div class="text">
-	Upload photo: <input type="text" name="user">
-	<input id="upload" class = "submitButton" type="submit" value="Upload" onclick="changeText()">
-	<script>
-		function changeText() {
-			$("#upload").attr("value", "Upload another");
-		}
-	</script>
-
+	Share your goal with friends and family
+	<h3>They'll be able to send you inspiring messages!</h3>
+	<select multiple>
+	  <option>Mom</option>
+	  <option>Grandma Jane</option>
+	  <option>William Carter</option>
+	</select>
+	<h3>Add an (optional) personalized message:</h3>
+	<textarea id="message"></textarea>
+	<hr>
+	<a href="welcome_upload"><input class = "submitButton" type="submit" value="< Back to upload"></a>
+	<a href="gallery"><input class = "submitButton" type="submit" value="Send invitations and take me to my gallery!"></a>
 	</div>
-	(This should eventually allow you to upload a photo from your phone's photos using the library Kingston posted about. There should also be a way to cancel or undo)
 	<div class="footer">
 		<a href="terms.html"> Terms and Conditions </a>
-		
 	</div>
 </div> <!-- end main div -->
 </body>

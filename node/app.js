@@ -10,6 +10,11 @@ var handlebars = require('express3-handlebars')
 
 var index = require('./routes/index');
 var upload = require('./routes/upload');
+var preferences = require('./routes/preferences');
+var share = require('./routes/share');
+var welcome = require('./routes/welcome');
+var welcome_upload = require('./routes/welcome_upload');
+var welcome_share = require('./routes/welcome_share');
 // Example route
 // var user = require('./routes/user');
 
@@ -37,8 +42,14 @@ if ('development' == app.get('env')) {
 
 // Add routes here
 app.get('/', index.view);
-app.get('/upload', upload.view)
+app.get('/upload', upload.view);
+app.get('/preferences', preferences.view);
+app.get('/share', share.view);
+app.get('/welcome', welcome.view);
+app.get('/welcome_upload', welcome_upload.view);
+app.get('/welcome_share', welcome_share.view);
 // app.get('/gallery', gallery.addFriend);
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

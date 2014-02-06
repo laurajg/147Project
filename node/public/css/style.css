@@ -42,7 +42,19 @@
 	font-size:100px;
 	text-decoration: none;
 	color: #303030;
+}
 
+.text {
+	font-size:50px;
+	font-family: Tahoma, Geneva, sans-serif;
+}
+
+textarea {
+	width:100%;
+}
+
+select {
+	width: 100%;
 }
 
 body{
