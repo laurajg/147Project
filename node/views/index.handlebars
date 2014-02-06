@@ -1,25 +1,26 @@
-g<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
 <head>
 <meta charset="UTF-8" />
 <title> Goal Glance </title>
-<link href="css/style.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
 
 </script>
 </head>
 <body>
+	{{> header}}
 
-{{> header}}
 <div id="main">
+
 	<div id="photoViewer">
-		<a class="arrow"><span class="glyphicon glyphicon-chevron-left" onclick="changePic()"></span></a>
+		<a class="arrow" id="arrowone"><span class="glyphicon glyphicon-chevron-left" onclick="changePic()"></span></a>
 		<span id = "image">
 			<img id="img" class="img-rounded  img-responsive" src="http://lorempixel.com/800/800" />
 		</span>
-		<a class="arrow"><span class="glyphicon glyphicon-chevron-right" onclick="changePic()"></span></a>
+		<a class="arrow" id="arrowtwo"><span class="glyphicon glyphicon-chevron-right" onclick="changePic()"></span></a>
 	</div>
 
 	<div  class = "submitButton" type="submit" value="Blarg" onclick="changePic()">

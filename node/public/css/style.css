@@ -6,12 +6,18 @@
 	font-family: Tahoma, Geneva, sans-serif;
 	text-align:center;
 	font-size: 80px;
-	width: 700px;
-	height:200px;
+	width: 100%;
+	margin: 0;
+	height:175px;
 	border: 1p solid #999;
 	color: #303030;
 	padding-top: 40px;
+	clear: both;
 }
+
+
+
+
 
 #settings {
 	position:absolute;
@@ -20,10 +26,22 @@
 	text-decoration: none;
 }
 
+.headerText{
+	float: left;
+	margin: auto;
+	padding-left: 300px;
+}
+
+#headerContents{
+	min-width: 675px;
+}
+
 #image {
-	width:75%;
 	overflow: hidden;
 	margin: auto;
+	float: left;
+	width: 70%;
+	margin-bottom: 50px;
 }
 
 #menu {
@@ -36,13 +54,23 @@
 #photoViewer {
 	text-align:center;
 	padding-bottom: 50px;
-	width: 700px;
+	margin-bottom: 50px;
+	clear: both;
 }
 
 .arrow {
 	font-size:100px;
 	text-decoration: none;
 	color: #303030;
+	padding-top: 200px;
+}
+
+#arrowone {
+	float: left;
+}
+
+#arrowtwo{
+	float: right;
 }
 
 .text {
@@ -174,8 +202,9 @@ font-size: 60px;
 	vertical-align: middle;
 }
 
-#main{
-	padding-top: 30px;
+#main, #header2{
+	margin-top: 30px;
+	min-width: 675px;
 }
 
 
