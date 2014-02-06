@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8" />
+<title> Goal Glance </title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+
+</script>
+</head>
+<body>
+
+{{> header}}
+<div id="main">
+	<div>
+	Upload Photos
+	</div>
+
+	<div  class = "submitButton" type="submit" value="Blarg" onclick="changePic()">
+	<script>
+	function changePic() {
+		$("#img").attr('src', "http://lorempixel.com/800/800");
+	}
+	</script>
+
+		<form>
+  		  <input class = "submitButton" type="submit" value="View Random Inspiration">
+		</form>
+
+
+
+	<div class="footer">
+		<a href="terms.html"> Terms and Conditions </a>
+		
+	</div>
+</div> <!-- end main div -->
+</body>
+</html>
