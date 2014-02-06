@@ -14,6 +14,7 @@ var login = require('./routes/login');
 var landing = require('./routes/landing');
 var register = require('./routes/register');
 var terms = require('./routes/terms');
+var password = require('./routes/password');
 // Example route
 // var user = require('./routes/user');
 
@@ -46,6 +47,7 @@ app.get('/login', login.view);
 app.get('/landing', landing.view);
 app.get('/register', register.view);
 app.get('/terms', terms.view);
+app.get('/password', password.view);
 // app.get('/gallery', gallery.addFriend);
 
 http.createServer(app).listen(app.get('port'), function(){
