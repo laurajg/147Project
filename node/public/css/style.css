@@ -81,21 +81,22 @@ body{
 
 
 
+    output {
+      display: inline-block;
+      text-align: center;
+      margin-top: 2em;
+      width: 100%;
+    }
 
 
-#image {
-	overflow: hidden;
-	margin: auto;
-	float: left;
-	width: 70%;
-	margin-bottom: 50px;
+.navbar-nav{
+	font-size: 3.5vw;
 }
-
 
 .arrow {
 	color: #303030;
 	padding-top: 30%;
-	font-size: 10vw;
+	font-size: 8vw;
 }
 
 #arrowone {
@@ -212,6 +213,64 @@ textarea:focus, input:focus {
 }
 
 
+
+/* UPLOAD PHOTOS SPECIFIC STYLING*/
+
+#image {
+	overflow: hidden;
+	margin: auto;
+	float: left;
+	width: 70%;
+	margin-bottom: 50px;
+}
+
+img {
+      max-width: 300px;
+      border: 1px solid #999;
+ }
+
+.remove{
+	float: right;
+}
+
+figure img{
+	margin: auto;
+	float: left;
+	width: 70%;
+	margin-bottom: 20px;
+}
+#cameraInput{
+	font-size: 12px;
+	vertical-align: middle;
+}
+
+.uploadText{
+	font-size: 3vw;
+}
+
+.imageName{
+	float: left;
+}
+
+
+figure {
+      text-align: center;
+      display: inline-block;
+      vertical-align: top;
+      margin: 0;
+    }
+   
+    
+   #fileList{
+   		font-size: 4.5vw;	
+
+   }
+    #filelist .remove {
+      font-size: 2.5vw;
+    }
+
+
+/* END UPLOAD PHOTOS PAGE SPECIFIC STYLING */
 
 
 /* LANDING PAGE SPECIFIC STYLING */

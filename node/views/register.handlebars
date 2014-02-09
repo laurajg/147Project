@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title> Create an Account </title>
  <link href="css/bootstrap.css" rel="stylesheet">
@@ -22,7 +22,7 @@
 	<div id="createAccount">
 		<div class="titleRow"> Create an Account: </div>
 			<div class="inputForm">
-			<form action="/welcome">
+			<form action="/welcome" name="register">
 				
 				<table>
 				<tr> <td> <input type="text" required name="username"  placeholder="Username"/> </td></tr>
@@ -30,7 +30,7 @@
 				<tr> <td> <input type="password" required name="password" placeholder="Password"/> </td></tr>
 				<tr> <td> <input type="password" required name="conpassword" placeholder="Confirm Password"/> </td></tr>
 				</table>
-				<input class= "submitButton newSubmit" name="register" type="submit" value="Submit">
+				<input class= "submitButton newSubmit" type="button"  onClick="verifyRegister();" value="Submit">
 			</form>
 			
 			<form action="/landing">
@@ -43,8 +43,12 @@
 		<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="js/jquery-1.11.0.js"> </script>
 	<script src="js/bootstrap.js"> </script>
+			<script src="js/147-project.js"> </script>
+
 </div> <!-- end main div -->
 		{{> footer}}
+
+	
 
 </body>
 </html>
