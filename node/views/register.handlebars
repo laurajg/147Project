@@ -3,6 +3,8 @@
 <html>
 <head>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width">
+
 <title> Create an Account </title>
  <link href="css/bootstrap.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet" type="text/css">
@@ -10,8 +12,10 @@
 </head>
 <body>
 <body>
+		{{>navigation}}
 
-{{> header}}
+
+<!--{{>header}} -->
 
 <div id="main">
 
@@ -30,17 +34,17 @@
 			</form>
 			
 			<form action="/landing">
-  		 		 <input  class = "submitButton newSubmit" type="submit" value="Back">
+  		 		 <input  class = "submitButton" type="submit" value="Back">
 			</form>
 			
 			</div> <!-- end input form div -->
 	</div> <!-- end create account div --> 
-		{{> footer}}
 
 		<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="js/jquery-1.11.0.js"> </script>
 	<script src="js/bootstrap.js"> </script>
-	<script src="js/hci-friends.js"> </script>
 </div> <!-- end main div -->
+		{{> footer}}
+
 </body>
 </html>

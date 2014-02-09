@@ -1,94 +1,85 @@
 .header2 {
 	margin: auto;
-	clear:both;	
 	vertical-align: middle;
 	font-family: Tahoma, Geneva, sans-serif;
 	text-align:center;
-	font-size: 80px;
+	font-size: 70px;
 	width: 100%;
 	margin: 0;
-	/*
-	height:175px;
-	border: 1p solid #999;
-	color: #303030;
-	background-color: #00FFA3;
-	*/
-	height: 140px;
-	padding-top: 40px;
+	height: 120px;
+	padding-top: 30px;
 	clear: both;
 	background:#939DA3
-
-
 }
-
+/*
 .navbar-title{
-	margin: auto;
 	margin-top: -20px;
 	color: white;
 	font-family: Titillium Web;
 	font-weight: 200;
-	padding-left: 28%;
 	vertical-align: middle;
+	float: left;
+	min-width: 200px;
+	margin-right: 3%;
 }
 
-
+*/
 .headerIcon{
 	color: white;
-	position:absolute;
+	display: inline;
+}
+
+#menu, #settings{
+	/*position: absolute; */
 	margin-top: -10px;
+	width: 75px;
+}
+#menu{
+	margin-left: 8%;
+	margin-right: 3%;
+	float: left;
 }
 
-#main{
-	margin: auto;
-	clear:both;	
-	vertical-align: middle;
-	margin-top: 30px;
-	width: 80%;
-	min-width: 785px;
-
+#settings{
+	float: left;
 }
+
+
 
 
 .container{
-	min-width: 785px;
 	clear: both;
 }
 
 
-#headerContents{
+
+#main{
 	margin: auto;
-	min-width: 785px;
+	clear:both;	
+	/*margin-top: 10px;
+	width: 80%; */
+	height: 98%;
+	width: 90%;
 }
+
+/*
+#main, .container, #headercontents, .header2{
+	min-width: 460px; 
+}
+*/
+
 
 body{
 	background-color: #f0f0f0;
 	font-family: Titillium Web;
-	/*
-	font-size: 60px;
+	/*font-size: 40px;*/
+	font-size: 5.5vw;	
+
 	font-weight: 200;
-	color: #303030; */
+	color: #303030; 
 }
 
-#menu, #settings{
-	position: relative;
-	/*
-	margin: auto;
-	*/
-}
-#menu {
-	/*left:15%; */
-	color: #303030;
-	text-decoration: none;
-	float: left;
-	padding-right: 5%;
-}
 
-#settings {
-	color: #303030;
-	text-decoration: none;
-	float: right;
-	padding-right: 8%;
-}
 
 
 
@@ -101,14 +92,10 @@ body{
 }
 
 
-
-
 .arrow {
-	font-size:100px;
-	text-decoration: none;
 	color: #303030;
 	padding-top: 30%;
-
+	font-size: 10vw;
 }
 
 #arrowone {
@@ -135,11 +122,6 @@ select {
 }
 
 
-td{
-	font-size: 48px;
-	font-weight: 200;
-	color: #303030;
-}
 
 .error, .welcome{
 	margin: 75px 0px 20px 100px;
@@ -158,6 +140,9 @@ td{
 	font-size: 48px;
 }
 
+.navbar-brand{
+	font-size: 4.0vw;
+}
 
 
 
@@ -167,44 +152,38 @@ img{
 }
 
 input  {
-	width:110%;
+	width:100%;
 	display:block;
 	border: 1px solid #999;
-	font-size: 40px;
-	height: 80px;
-	margin: 0px 0px 5px 0px;
+	font-size: 4.5vw;
+	margin: 0px 0px 10px 0px;
 	-webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
 	-moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
 	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-	margin-bottom: 10px;
-	padding: 10px 10px;
+	padding: 7px 20px;
 }
 
 input.newSubmit, .inputForm {
-	margin-top: 50px;
+	margin-top: 25px;
 }
 
-.homeButtons{
-	margin-top: 200px;
-}
 
-.forgot_password a{
-	padding-top: 25px;
-	color:#303030;
-}
 
 input.submitButton {
 	margin-left: 0;
 	width: 100%;
-	height:125px;
+	height: 20%;
 	background:#303030;
 	color:#fff;
 	font-family: Tahoma, Geneva, sans-serif;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
-	border-radius: 5px;
+	border-radius: 10px;
 	border: 1p solid #999;
-	font-size: 40px;
+	/*font-size: 32px; */
+	font-size: 4.5vw;
+	letter-spacing: 1px;
+	padding: 10px 5px;
 }
 
 input.submitButton:hover {
@@ -217,17 +196,57 @@ textarea:focus, input:focus {
 }
 
 
-
-.homeText{
-	margin-top: 75px;
-	margin-left: 25px;
+.forgot_password{
+	margin-top: 3%;
 }
 
-.homeText, .titleRow{
-font-size: 60px;
-	font-weight: 200;
-	color: #303030;
+.forgot_password a{
+	color:#303030;
 }
+
+.footer{
+	margin-left: 30%;
+	margin-bottom: 10px;
+	margin-top: 50px;
+	font-size: 4.5vw;	
+}
+
+
+
+
+/* LANDING PAGE SPECIFIC STYLING */
+
+#landingNav{
+	margin-left: 5%;
+	/*line-height: 1.25; */
+}
+
+.jumbotron {
+	position: relative;
+	background: none;
+
+}
+
+.jumbotron:after {
+     content:"";
+     background: url("../images/everest.jpg");
+     background-repeat: no-repeat;
+     background-size: cover;
+     max-height: 500px;
+     opacity: 0.4;
+     top: 0;
+     left: 0;
+     bottom: 0;
+     right: 0;
+     position: absolute;
+     z-index: -1;	
+}
+
+.jumbotron p {
+     color: #6e6e6e;
+    /* font-size: 36px; */
+}
+
 
 
 .titleRow{
@@ -235,27 +254,143 @@ font-size: 60px;
 	margin: auto;
 	border-top: solid #303030 1px;
 	border-bottom: solid #303030 1px;
-	padding: 10px 0px;
+	padding: 3px 0px;
 
 }
 
-.createAccount{
-	margin: auto;
-	clear: both;
-}
 
-#logo{
-	margin-left: 35px;
-	float: left;
-}
+/* END LANDING PAGE STYLING */
 
 
-.footer{
-	margin-left: 40%;
-	margin-bottom: 2%;
-	font-size: 24px;
-	margin-top: 50px;
-	
-}
 
 
+
+
+
+/* GALLERY PAGE SPECIFIC STYLING */
+
+	    .img-gallery {
+	    	width: auto;
+	    	height: 100px;
+	    	box-shadow: 4px 4px 3px #888888;
+	    	margin: 15px;
+	    }
+	    
+	    .gallery {
+	    	margin-top: 15px;
+	    	margin-bottom: 15px;
+	    	overflow-y:auto;
+	    	width: 100%;
+	    	height: 80%;
+	    	white-space: normal;
+	    	text-align: center;
+	    	min-width: 675px;
+	    }
+	    
+	    #filter-button {
+	    	float: right;
+	    }
+	    
+	    #gallery-header {
+	    	font-size: 20px;
+	    	font-weight: bold;		
+	    	margin: 4px;
+	    }
+
+	    #photo-modal-dialog {
+	    	max-width: 60%;	 
+	    }
+
+	    #modal-img-container div, #modal-img-container div, #modal-img img {
+	    	width: 100%;
+	    	height: 100%;	    	
+	    }	
+
+	    #modal-img img {
+	    	object-fit: contain;
+	    }
+
+	    #modal-table {
+	    	padding: 0px; 
+	    	margin: 0px; 
+	    	border: 0px;
+	    	table-layout: fixed;
+	    	width: 100%;
+	    }
+	    /*.arrow {
+	    	width: 30px;	    
+	    	padding:0px;	
+	    	margin: 3px;
+	    	text-align: center;
+	    }*/
+	    #my-modal-container {
+	    	max-height: 80%;
+	    }
+
+	    #overlay {
+	    	background-color:black;
+	    	display:none;
+	    	position:fixed;
+	    	width:100%;
+	    	height:100%;
+	    	top:0;
+	    	left:0;
+	    	opacity:0.6;
+	    	z-index: 1000;
+	    }
+	    .myarrow {
+	    	display:none;
+	    	position:fixed;
+	    	width:30px;
+	    	top:50%;
+	    	opacity:1.0;
+	    	margin-top:-15px;
+	    	z-index: 2000;
+	    	font-size: 30px;
+	    	color: white;
+	    	padding: 0px;
+	    	margin: 0px;
+	    	text-align: center;
+	    }
+
+	    .myarrow :active {
+	    	color: black;
+	    }
+
+	    .myarrow-left {
+	    	left:2%;		
+	    }
+
+	    .myarrow-right {
+	    	right: 2%;
+	    }
+
+	    .imgoverlay-frame {
+	    	display:none;
+	    	position:fixed;
+	    	top:0;
+	    	left:0;
+	    	max-width:100%;
+	    	max-height:100%;
+	    	z-index: 1500;
+	    	padding: 0px;
+	    	margin: 0px;
+
+	    	height: 100%;      /* equals max image height */
+	    	width: 100%;       
+	    	text-align: center; 
+	    }
+
+	    .imgoverlay-helper {
+	    	display: inline-block;
+	    	height: 100%;
+	    	vertical-align: middle;
+	    }
+
+	    .imgoverlay-frame img {
+	    	vertical-align: middle;
+	    	max-height: 80%;
+	    	max-width: 80%;
+	    }
+
+/* END GALLERY PAGE SPECIFIC STYLING */

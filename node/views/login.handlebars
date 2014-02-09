@@ -3,14 +3,16 @@
 <html>
 <head>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width">
 <title> Login</title>
  <link href="css/bootstrap.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
-{{> header}}
+{{>navigation}}
 
+<!--{{>header}} -->
 <div id="main">
 
 	<div id="createAccount">
@@ -28,15 +30,15 @@
 			
 
 			<form action="/landing">
-  		 		 <input  class = "submitButton newSubmit" type="submit" value="Back">
+  		 		 <input  class = "submitButton " type="submit" value="Back">
 			</form>
 			
 			</div> <!-- end input form div -->
 	</div> <!-- end create account div --> 
-		{{> footer}}
 
 </div> <!-- end main div -->
 
+		{{> footer}}
 
 
 	<script src="https://code.jquery.com/jquery.js"></script>
