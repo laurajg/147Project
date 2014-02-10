@@ -1,172 +1,82 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  	<meta charset="UTF-8" />
+<head>
+	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery</title>
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">   
-    <link href="css/bootstrap-theme.min.css" rel="stylesheet" media="screen">  
-      <link href="css/bootstrap-responsive.css" rel="stylesheet">
+	<title>Gallery</title>
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">   
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet" media="screen">  
+	<link href="css/bootstrap-responsive.css" rel="stylesheet">
 
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-  <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-  </head>
-  <body>   
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</head>
+<body>   
 	{{>navigation}}
+	<!--{{> header}} -->
 
-<!--{{> header}} -->
-    
-    
-  
-    <div id="main">
-	
- 	<div class="dropdown" style="width: 75%; left: 13%">
+	<div id="main">
 
- 		<span id="gallery-header">My Goal Gallery</span>
-	 	<button class="btn dropdown-toggle" type="button" id="filter-button" data-toggle="dropdown">
-	    	Filter: <span id="filter-text">All</span>
-	  		<span class="caret"></span>
-	  	</button>
-	  <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="filter-button">
-	    <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:selectNewFilter(0,'My photos')">My photos</a></li>
-	    <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:selectNewFilter(1,'Friends\' photos')">Friends' photos</a></li>
-	    <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:selectNewFilter(2,'All')">All</a></li>
-	  </ul>
-	</div> 
-	
-	<div id="my-modal-container">
-	<div class="modal fade" id="photo-modal">
-		<div class="modal-dialog" id="photo-modal-dialog">
-			<div class="modal-content">
-				<div class="modal-body">
-				<table id="modal-table" > 
-					<tr><td class="arrow"><span class="glyphicon glyphicon-chevron-left" onclick="javascript:previousImage()"></span></td>
-						<td class="centered"><div id="modal-img-container"><div id="modal-img"></div></div></td>
-						<td class="arrow"><span class="glyphicon glyphicon-chevron-right" onclick="javascript:nextImage()"></span></td>
-					</tr>
-				</table>
-				</div>				
-			</div><!-- /.modal-content -->
-		</div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
-	</div>
+		<div class="dropdown" style="width: 90%; ">
+			<div class="titleRow "style="float: left;"> My Goal Gallery </div>
 
-	<div class="gallery" id="gallery-content"></div>
-	<script>
-		Number.prototype.mod = function(n) {
-			return ((this%n)+n)%n;
-		}
-		// img_list = list of {image url, image type} tuples. image type: 0 = my image, 1 = social image
-		//	This list will be populated server side.
-		var img_list = [
-			["https://scontent-a-sjc.xx.fbcdn.net/hphotos-ash3/t1/1897827_10200537008706458_1515740617_n.jpg", 0],
-			["http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/10/4/1380899355591/breaking-bad-010.jpg", 1],
-			["http://upload.wikimedia.org/wikipedia/commons/3/36/Hopetoun_falls.jpg",0],
-			["http://2.bp.blogspot.com/-qkiBFQco1Xw/T8srlweUvoI/AAAAAAAAEQM/WBveO1dVlD8/s1600/nature-wallpaper-27.jpg",1],
-			["http://upload.wikimedia.org/wikipedia/commons/1/1a/Bachalpseeflowers.jpg",0]
-		];
+			<button class="btn dropdown-toggle" type="button" id="filter-button" data-toggle="dropdown">
+				Filter: <span id="filter-text">All</span>
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="filter-button">
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:selectNewFilter(0,'My photos')">My photos</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:selectNewFilter(1,'Friends\' photos')">Friends' photos</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:selectNewFilter(2,'All')">All</a></li>
+			</ul>
+		</div> 
+
+		<div id="my-modal-container">
+			<div class="modal fade" id="photo-modal">
+				<div class="modal-dialog" id="photo-modal-dialog">
+					<div class="modal-content">
+						<div class="modal-body">
+							<table id="modal-table" > 
+								<tr><td class="arrow"><span class="glyphicon glyphicon-chevron-left" onclick="javascript:previousImage()"></span></td>
+									<td class="centered"><div id="modal-img-container"><div id="modal-img"></div></div></td>
+									<td class="arrow"><span class="glyphicon glyphicon-chevron-right" onclick="javascript:nextImage()"></span></td>
+								</tr>
+							</table>
+						</div>				
+					</div><!-- /.modal-content -->
+				</div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+		</div>
+
+		<div class="gallery" id="gallery-content"></div>
 		
-		var current_img_urls = [];
-		var currently_selected_img = 0;
+		<div style="float:right">
+			<a href="/" class="random arrow"><span class="glyphicon glyphicon-asterisk"></span></a>
+			<a href="upload" class="add arrow"><span class="glyphicon glyphicon-plus"></span></a>
+			<a href="share" class="share arrow"><span class="glyphicon glyphicon-share"></span></a>
+		</div>
 
-		function selectNewFilter(filter, text) {
-			$("#filter-text").text(text);
-			updateGallery(filter);
-			return false;
-		};
-
-		function nextImage() {
-			/*$('.imgoverlay-frame').animate({left: "-100%"},150, function() {
-				updateAndShowOverlay((currently_selected_img+1).mod(current_img_urls.length), false);
-				$('.imgoverlay-frame').css("left", "100%");
-				$('.imgoverlay-frame').animate({left: "0%"},150);
-			});*/
-			updateAndShowOverlay((currently_selected_img+1).mod(current_img_urls.length), false);
-		};
-
-		function previousImage() {
-			updateAndShowOverlay((currently_selected_img-1).mod(current_img_urls.length), false);
-		}
-
-		function updateAndShowOverlay(index,show) {
-			$('#overlay-image').attr("src",current_img_urls[index]);
-			currently_selected_img = index;
-			if (show) showOverlay();
-		}
-
-		function showOverlay() {
-			$('#overlay').show();
-			$('.myarrow').show();
-			$('.imgoverlay-frame').show();
-		}
-
-		function hideOverlay() {
-			$('#overlay').hide();
-			$('.myarrow').hide();
-			$('.imgoverlay-frame').hide();
-		}
-		
-		function createGallery() {
-			div_html = "";
-			current_img_urls = [];
-			cur_idx = 0;
-			for (i = 0; i < img_list.length; i++) {
-					div_html += "<img class='img-gallery' src=\"" + img_list[i][0] + "\" id='gal_img_"+i+"' onclick=\"javascript:updateAndShowOverlay("
-						+cur_idx+",true)\"/>";					
-					current_img_urls.push(img_list[i][0]);
-					cur_idx++;				
-			}
-			$("#gallery-content").html(div_html);			
-		}
-
-		// Updates gallery div with currently selected photos. filter_type: 0 = my images only, 1 = social images only, 2 = all images (default)
-		function updateGallery(filter_type) {
-			filter_type = typeof filter_type !== 'undefined' ? filter_type : 2;			
-			current_img_urls = [];			
-			cur_idx = 0;
-			for (i = 0; i < img_list.length; i++) {
-				if (img_list[i][1] == filter_type || filter_type == 2) {					
-					$("#gal_img_"+i).click((function(idx) {
-						return function() {
-							updateAndShowOverlay(idx,true);
-						};
-					})(cur_idx));
-					$("#gal_img_"+i).show();
-					current_img_urls.push(img_list[i][0]);
-					cur_idx++;				
-				}
-				else {
-					$("#gal_img_"+i).hide();
-				}
-			}
-		};
-
-		createGallery();
-	</script>
-	<div style="float:right">
-		<a href="/" class="random arrow"><span class="glyphicon glyphicon-asterisk"></span></a>
-		<a href="upload" class="add arrow"><span class="glyphicon glyphicon-plus"></span></a>
-		<a href="share" class="share arrow"><span class="glyphicon glyphicon-share"></span></a>
+		<div id="overlay" style="" onclick="javascript:hideOverlay()"></div>
+		<div class="myarrow myarrow-right" onclick="">
+			<span class="glyphicon glyphicon-chevron-right" onclick="javascript:nextImage()"></span>
+		</div>
+		<div class="myarrow myarrow-left" onclick="">
+			<span class="glyphicon glyphicon-chevron-left" onclick="javascript:previousImage()"></span>
+		</div>
+		<div class="imgoverlay-frame" onclick="javascript:hideOverlay()">
+			<span class="imgoverlay-helper"></span>
+			<img id="overlay-image" src="" onclick="javascript:event.stopPropagation()">
+		</div>
 	</div>
-
-	<div id="overlay" style="" onclick="javascript:hideOverlay()"></div>
-	<div class="myarrow myarrow-right" onclick="">
-		<span class="glyphicon glyphicon-chevron-right" onclick="javascript:nextImage()"></span>
-	</div>
-	<div class="myarrow myarrow-left" onclick="">
-		<span class="glyphicon glyphicon-chevron-left" onclick="javascript:previousImage()"></span>
-	</div>
-	<div class="imgoverlay-frame" onclick="javascript:hideOverlay()">
-		<span class="imgoverlay-helper"></span>
-		<img id="overlay-image" src="" onclick="javascript:event.stopPropagation()">
-	</div>
-</div>
 	{{> footer}}
+
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="js/jquery-1.11.0.js"> </script>
 	<script src="js/bootstrap.js"> </script>
-  </body>
+	<script src="js/gallery.js"> </script>
+
+</body>
 </html>
