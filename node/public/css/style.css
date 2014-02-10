@@ -51,8 +51,14 @@
 	clear: both;
 }
 
+.navbar-nav li{
+	font-size: 3.0vh;
+}
 
-
+.navbar-brand{
+	font-size: 4.0vw;
+	margin-left: 15px;
+}
 #main{
 	margin: auto;
 	clear:both;	
@@ -68,6 +74,7 @@
 }
 */
 
+@media (max-width: 990px) {...}
 
 body{
 	background-color: #f0f0f0;
@@ -139,10 +146,6 @@ select {
 .welcome{
 	color: #303030;
 	font-size: 48px;
-}
-
-.navbar-brand{
-	font-size: 4.0vw;
 }
 
 
