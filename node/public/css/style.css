@@ -45,8 +45,6 @@
 }
 
 
-
-
 .container{
 	clear: both;
 }
@@ -59,6 +57,7 @@
 	font-size: 4.0vw;
 	margin-left: 15px;
 }
+
 #main{
 	margin: auto;
 	clear:both;	
@@ -78,11 +77,12 @@
 
 body{
 	background-color: #f0f0f0;
-	font-family: Titillium Web;
+	font-family: Tahoma, Geneva, sans-serif;
 	/*font-size: 40px;*/
 	font-size: 5.5vw;	
 
 	font-weight: 200;
+	letter-spacing: 1px;
 	color: #303030; 
 }
 
@@ -219,12 +219,16 @@ textarea:focus, input:focus {
 
 /* UPLOAD PHOTOS SPECIFIC STYLING*/
 
-#image {
+#Randomimage {
 	overflow: hidden;
 	margin: auto;
-	float: left;
-	width: 70%;
-	margin-bottom: 50px;
+	float: center;
+	width: 90%;
+}
+
+#photoViewer{
+		margin-bottom: 50px;
+		margin-top: 50px;
 }
 
 img {
@@ -286,6 +290,7 @@ figure {
 .jumbotron {
 	position: relative;
 	background: none;
+	width: 100%;
 
 }
 
@@ -294,7 +299,7 @@ figure {
      background: url("../images/everest.jpg");
      background-repeat: no-repeat;
      background-size: cover;
-     max-height: 500px;
+     max-height: 600px;
      opacity: 0.4;
      top: 0;
      left: 0;

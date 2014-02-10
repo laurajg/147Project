@@ -812,6 +812,8 @@
   }
   .container-fluid {
     padding: 0;
+      margin-right: -20px;
+    margin-left: -20px;
   }
   .dl-horizontal dt {
     float: none;
