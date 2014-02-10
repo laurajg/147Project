@@ -29,6 +29,12 @@ window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFile
         }
     }
 
+  
+
+    $(".changePic").click(function(e) {
+            e.preventDefault();
+           $("#img").attr('src', "http://lorempixel.com/800/800");
+        })
 
     function errorCallback(e) {
         console.log('Error: ', e);

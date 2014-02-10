@@ -184,8 +184,6 @@ input.submitButton {
 	-moz-border-radius: 5px;
 	border-radius: 10px;
 	border: 1p solid #999;
-	/*font-size: 32px; */
-	font-size: 4.5vw;
 	letter-spacing: 1px;
 	padding: 10px 5px;
 }
@@ -209,7 +207,8 @@ textarea:focus, input:focus {
 }
 
 .footer{
-	margin-left: 30%;
+	position: absolute;
+	margin-left: 20%;
 	margin-bottom: 10px;
 	margin-top: 50px;
 	font-size: 4.5vw;	
