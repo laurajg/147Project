@@ -22,6 +22,7 @@ var terms = require('./routes/terms');
 var password = require('./routes/password');
 var gallery = require('./routes/gallery');
 var update_friends = require('./routes/update_friends');
+var logout = require('./routes/logout');
 // Example route
 // var user = require('./routes/user');
 
@@ -62,6 +63,7 @@ app.get('/terms', terms.view);
 app.get('/password', password.view);
 app.get('/gallery', gallery.view);
 app.get('/update_friends', update_friends.view);
+app.get('/logout', logout.view)
 // app.get('/gallery', gallery.addFriend);
 
 var dbUtils = require('dbUtils');
