@@ -1,3 +1,7 @@
 exports.view = function(req, res){
-	res.render('gallery');
+	if(!req.session.user) {
+		res.redirect('landing');
+	} else {
+		res.render('gallery', {'user': req.session.user});
+	}
 };

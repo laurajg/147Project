@@ -1,3 +1,8 @@
 exports.view = function(req, res){
-	res.render('welcome_share');
+
+	if(!req.session.user) {
+		res.redirect('landing');
+	} else {
+		res.render('share', {'user': req.session.user, 'welcome': true});
+	}
 };

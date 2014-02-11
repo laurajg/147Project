@@ -1,3 +1,7 @@
 exports.view = function(req, res){
-	res.render('landing');
+	if(req.session.user) {
+		res.redirect('/');
+	} else {
+		res.render('landing');
+	}
 };
