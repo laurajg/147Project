@@ -63,6 +63,11 @@ function createGallery(photos) {
 	current_img_urls.push(img_list[i]['url']);
 	cur_idx++;				
 	}
+
+	if (!img_list.length) {
+		div_html += "<div>No photos added yet! <a href=\"/upload\">Add some here!</a></div>"
+	}
+
 	$("#gallery-content").html(div_html);			
 }
 

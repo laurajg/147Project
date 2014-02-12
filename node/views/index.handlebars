@@ -26,6 +26,12 @@
 		<!--
 		<a class="arrow" id="arrowone"><span class="glyphicon glyphicon-chevron-left " onclick="changePic()"></span></a>
 	-->
+
+		{{#unless photos.length}}
+		<div>No photos added yet! <a href="/upload">Add some here!</a></div>
+		{{/unless}}
+
+
 		<span id = "Randomimage">
 			<img id="randomImg" class="img-rounded  img-responsive" src=""/>
 		</span>

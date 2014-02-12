@@ -2,6 +2,9 @@ exports.view = function(req, res){
 	if(!req.session.user) {
 		res.redirect('landing');
 	} else {
-		res.render('update_friends', {'user': req.session.user});
+		var dbUtils = require('dbUtils');
+		dbUtils.getGoal(req.session.user, function(goal) {
+			res.render('update_friends', {'user': req.session.user, 'goal': goal});
+		});
 	}
 };
