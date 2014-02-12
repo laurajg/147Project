@@ -7,7 +7,6 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars');
-
 var index = require('./routes/index');
 var upload = require('./routes/upload');
 var preferences = require('./routes/preferences');
@@ -28,10 +27,20 @@ var logout = require('./routes/logout');
 
 var app = express();
 
+// add handlebars helper for passing json around
+hbs = handlebars.create({
+    // Specify helpers which are only registered on this instance.
+    helpers: {
+       json: function(context) {
+       	 return JSON.stringify(context);
+       }
+    }
+});
+
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
-app.engine('handlebars', handlebars());
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(express.favicon());
 app.use(express.logger('dev'));
@@ -64,7 +73,7 @@ app.get('/password', password.view);
 app.get('/gallery', gallery.view);
 app.get('/update_friends', update_friends.view);
 app.get('/logout', logout.view)
-// app.get('/gallery', gallery.addFriend);
+
 
 var dbUtils = require('dbUtils');
 dbUtils.initialize(function(err) {
