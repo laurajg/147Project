@@ -3,9 +3,12 @@ exports.view = function(req, res){
 		res.redirect('landing');
 	} else {
 		var dbUtils = require('dbUtils');
-		dbUtils.getPhotos(req.session.user, function(photos) {
-			res.render('gallery', {'user': req.session.user, 'photos': photos});
+		dbUtils.getGoal(req.session.user, function(goal) {
+			dbUtils.getPhotos(req.session.user, function(photos) {
+				res.render('gallery', {'user': req.session.user, 'goal': goal, 'photos': photos});
+			});
 		});
+
 		
 	}
 };

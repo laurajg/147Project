@@ -19,7 +19,6 @@ window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFile
     function verifyRegister(){
             if(verifyEmail())    {
                  window.location="/welcome";
-
             } 
     }
 
