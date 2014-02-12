@@ -25,8 +25,10 @@
 
 	<h6>Examples: lose weight, quit smoking, meditate daily</h6>
 	<br/>
-	<input class="goal" type="text"></input>
-	<a href="welcome_upload"><input class = "submitButton" type="submit" value="Pick a motivational photo >"></a>
+	<form method="get" role="form" action="/welcome_upload" name="register">
+		<input class="goal" name="goal" type="text"></input>
+		<input class = "submitButton" type="submit" value="Pick a motivational photo >">
+	</form>
 	
 </div> <!-- end main div -->
 {{> footer}}
