@@ -11,7 +11,7 @@ exports.view = function(req, res){
 							var dbUtils = require('dbUtils');
 							dbUtils.getPhotos(req.session.user, function(photos) {
 								res.render('index', {'user': req.session.user, 'photos': photos});
-							});
+							});	
 					},
 					failure = function() {
 						res.redirect('landing');
