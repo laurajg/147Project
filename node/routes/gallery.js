@@ -5,7 +5,7 @@ exports.view = function(req, res){
 		var dbUtils = require('dbUtils');
 		dbUtils.getPhotos(req.session.user, function(photos) {
 			res.render('gallery', {'user': req.session.user, 'photos': photos});
-		})
+		});
 		
 	}
 };

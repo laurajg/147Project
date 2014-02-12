@@ -8,7 +8,10 @@ exports.view = function(req, res){
 			var userExists = dbUtils.checkUser(req.query.username, req.query.password, 
 					success = function() { 
 						req.session.user = req.query.username;
-						res.render('index', {'user' : req.query.username});
+							var dbUtils = require('dbUtils');
+							dbUtils.getPhotos(req.session.user, function(photos) {
+								res.render('index', {'user': req.session.user, 'photos': photos});
+							});
 					},
 					failure = function() {
 						res.redirect('landing');
@@ -16,6 +19,9 @@ exports.view = function(req, res){
 				);
 		}
 	} else {
-		res.render('index', {'user': req.session.user});
+		var dbUtils = require('dbUtils');
+		dbUtils.getPhotos(req.session.user, function(photos) {
+			res.render('index', {'user': req.session.user, 'photos': photos});
+		});
 	}
 }

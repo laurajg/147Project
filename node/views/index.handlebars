@@ -15,7 +15,7 @@
 
 
 </head>
-<body>
+<body onload="setRandomPhoto({{json photos}});">
 {{>navigation}}
 
 <!--{{>header}} -->
@@ -27,8 +27,9 @@
 		<a class="arrow" id="arrowone"><span class="glyphicon glyphicon-chevron-left " onclick="changePic()"></span></a>
 	-->
 		<span id = "Randomimage">
-			<img id="img" class="img-rounded  img-responsive" src="http://lorempixel.com/800/800" />
+			<img id="randomImg" class="img-rounded  img-responsive" src=""/>
 		</span>
+
 		<!--
 		<a class="arrow" id="arrowtwo"><span class="glyphicon glyphicon-chevron-right" onclick="changePic()"></span></a>
 	-->
@@ -53,5 +54,6 @@
 	<script src="js/jquery-1.11.0.js"> </script>
 	<script src="js/bootstrap.js"> </script>
 	<script src="js/147-project.js"> </script>
+	<script src="js/index.js"> </script>
 </body>
 </html>
