@@ -71,7 +71,11 @@
           
 
           //HERE IS WHAT ISN'T FINISHED. I DONT KNOW HOW TO PASS THIS THROUGH
-          dbUtils.addPhoto(req.session.user,  e.target.result);        
+          // dbUtils.addPhoto(req.session.user,  e.target.result);
+
+          $.post('/addPhoto', {'data': e.target.result});
+
+
         }
                    
       })(f);
@@ -97,6 +101,6 @@
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="js/jquery-1.11.0.js"> </script>
 	<script src="js/bootstrap.js"> </script>
-	<script src="js/uploadPhoto.js"> </script>
+	<!-- <script src="js/uploadPhoto.js"> </script> -->
 </body>
 </html>

@@ -6,7 +6,7 @@ function setRandomPhoto(photos) {
 	$("#randomImg").attr('src', photo['url']);
 }
 
-$(".changePic").click(function(e) {
+$(".submittButton .changePic").click(function(e) {
    e.preventDefault();
    setRandomPhoto(img_list);
 })
