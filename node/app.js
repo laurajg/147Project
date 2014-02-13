@@ -23,6 +23,7 @@ var gallery = require('./routes/gallery');
 var change = require('./routes/change');
 var update_friends = require('./routes/update_friends');
 var logout = require('./routes/logout');
+var contact = require('./routes/contact');
 var addPhoto = require('./routes/addPhoto');
 // Example route
 // var user = require('./routes/user');
@@ -76,6 +77,7 @@ app.get('/gallery', gallery.view);
 app.get('/change', change.view);
 app.get('/update_friends', update_friends.view);
 app.get('/logout', logout.view);
+app.get('/contact', contact.view);
 app.post('/addPhoto', addPhoto.add);
 
 var dbUtils = require('dbUtils');
