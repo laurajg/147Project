@@ -1,0 +1,129 @@
+
+
+/* GALLERY PAGE SPECIFIC STYLING */
+
+	    .img-gallery {
+	    	width: auto;
+	    	height: 100px;
+	    	box-shadow: 4px 4px 3px #888888;
+	    	margin: 10px 10px 0px 0px;
+	    	/*margin: 15px; */
+	    }
+	    
+	    .gallery {
+	    	margin-top: 15px;
+	    	margin-bottom: 15px;
+	    	overflow-y:auto;
+	    	width: 100%;
+	    	height: 80%;
+	    	white-space: normal;
+	    	/*text-align: center;	 */    	
+	    }
+	    
+	    #filter-button {
+	    	float: right;
+	    }
+	    
+	    #gallery-header {
+	    	font-size: 20px;
+	    	font-weight: bold;		
+	    	margin: 4px;
+	    }
+
+	    #photo-modal-dialog {
+	    	max-width: 60%;	 
+	    }
+
+	    #modal-img-container div, #modal-img-container div, #modal-img img {
+	    	width: 100%;
+	    	height: 100%;	    	
+	    }	
+
+	    #modal-img img {
+	    	object-fit: contain;
+	    }
+
+	    #modal-table {
+	    	padding: 0px; 
+	    	margin: 0px; 
+	    	border: 0px;
+	    	table-layout: fixed;
+	    	width: 100%;
+	    }
+	    /*.arrow {
+	    	width: 30px;	    
+	    	padding:0px;	
+	    	margin: 3px;
+	    	text-align: center;
+	    }*/
+	    #my-modal-container {
+	    	max-height: 80%;
+	    }
+
+	    #overlay {
+	    	background-color:black;
+	    	display:none;
+	    	position:fixed;
+	    	width:100%;
+	    	height:100%;
+	    	top:0;
+	    	left:0;
+	    	opacity:0.6;
+	    	z-index: 1000;
+	    }
+	    .myarrow {
+	    	display:none;
+	    	position:fixed;
+	    	width:30px;
+	    	top:50%;
+	    	opacity:1.0;
+	    	margin-top:-15px;
+	    	z-index: 2000;
+	    	font-size: 30px;
+	    	color: white;
+	    	padding: 0px;
+	    	margin: 0px;
+	    	text-align: center;
+	    }
+
+	    .myarrow :active {
+	    	color: black;
+	    }
+
+	    .myarrow-left {
+	    	left:2%;		
+	    }
+
+	    .myarrow-right {
+	    	right: 2%;
+	    }
+
+	    .imgoverlay-frame {
+	    	display:none;
+	    	position:fixed;
+	    	top:0;
+	    	left:0;
+	    	max-width:100%;
+	    	max-height:100%;
+	    	z-index: 1500;
+	    	padding: 0px;
+	    	margin: 0px;
+
+	    	height: 100%;      /* equals max image height */
+	    	width: 100%;       
+	    	text-align: center; 
+	    }
+
+	    .imgoverlay-helper {
+	    	display: inline-block;
+	    	height: 100%;
+	    	vertical-align: middle;
+	    }
+
+	    .imgoverlay-frame img {
+	    	vertical-align: middle;
+	    	max-height: 80%;
+	    	max-width: 80%;
+	    }
+
+/* END GALLERY PAGE SPECIFIC STYLING */

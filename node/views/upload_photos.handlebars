@@ -24,128 +24,54 @@
 	<hr/>
 	<div class="text">
 
-
+<!--
 <div>
   <input type="file" id="files" multiple class="button" accept="image/*">
   <div id="filelist"><em>Loading files...</em></div>
 </div>
 
 <output></output>
+-->
+<input type="file" id="files" name="files[]" multiple />
+
+<output id="list"> </output>
 
 <script>
-var FS_ = null;
-window.URL = window.URL || window.webkitURL;
-window.resolveLocalFileSystemURL = window.resolveLocalFileSystemURL || window.webkitResolveLocalFileSystemURL || window.resolveLocalFileSystemURI;
-window.BlobBuilder = window.WebKitBlobBuilder || window.MozBlobBuilder || window.BlobBuilder;
-window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
 
-function errorCallback(e) {
-  console.log('Error: ', e);
-}
+  function handleFileSelect(evt) {
+    var files = evt.target.files; // FileList object
+    // Loop through the FileList and render image files as thumbnails.
+    for (var i = 0, f; f = files[i]; i++) {
 
-function changeText() {
-	$("#upload").text("Upload another");
-}
-
-function onFileSelect(filename) {
-
-  var output = document.getElementsByTagName('output')[0];
-  output.innerHTML = '';
-
-  FS_.root.getFile(filename, {create: false}, function(fileEntry) {
-
-    var src = null;
-
-    // Get the File for this FileEntry.
-    fileEntry.file(function(file) {
-
-      if (!file.type || !file.type.match(/image.*/)) {
-        alert('This is not an image!');
-        return;
+      // Only process image files.
+      if (!f.type.match('image.*')) {
+        continue;
       }
 
-      // Method 2: use the FileReader API to read the contents into a dataURL.
       var reader = new FileReader();
+      var img_list = []
 
       // Closure to capture the file information.
-      reader.onload = function(e) {
-        src = e.target.result;
-        output.appendChild(buildFigure(src));
-        changeText();
-      };
+      reader.onload = (function(theFile) {
+        return function(e) {
+          // Render thumbnail.
+                console.log(e.target.result);
 
-      reader.readAsDataURL(file);
-    });
+          var div = document.createElement('div');
+          div.innerHTML = ['<div class="imageBlock"><img class="thumb" src="', e.target.result,
+                            '" title="', escape(theFile.name), '"/> <br/> Title </div>'].join('');
+          document.getElementById('list').insertBefore(div, null);
+        };
+      })(f);
 
-  }, errorCallback);
-}
-
-function deleteFile(filesystemPath) {
-  window.resolveLocalFileSystemURL(filesystemPath, function(fileEntry) {
-    fileEntry.remove(function() {
-      readDirectories();
-    }, errorCallback);
-  }, errorCallback);
-}
-
-function readDirectories() {
-
-  var dirReader = FS_.root.createReader();
-  var fragment = document.createDocumentFragment();
-  var filelist = document.getElementById('filelist');
-  filelist.innerHTML = '';  // Clear list of files on new read.
-
-  // Need to recursively read directories until there are no more results.
-  var readEntries = function() {
-
-    dirReader.readEntries(function(entries) {
-      if (entries.length) {
-        for (var i = 0, entry; entry = entries[i]; ++i) {
-          if (entry.isFile) {
-            var div = document.createElement('div');
-            div.innerHTML =
-                ['<a href="javascript:onFileSelect(\'', entry.name, '\');" class="uploadText imageName">', entry.name,
-                 '</a><a href="javascript:deleteFile(\'', entry.toURL ? entry.toURL() : entry.toURI(),
-                 '\');" class="remove uploadText"> Delete</a><br/>'].join('');
-            fragment.appendChild(div);
-          }
-        }
-        readEntries();
-      } else {
-        filelist.appendChild(fragment);
-        if (!filelist.childElementCount) {
-          filelist.textContent = "No image files in the app's filesystem. Import some above.";
-        }
-      }
-    }, errorCallback);
-
-  };
-
-  readEntries();
-}
-
-document.getElementById('files').addEventListener('change', function(e) {
-
-  for (var i = 0, file; file = this.files[i]; ++i) {
-    // Capture current iteration's file in local scope for the getFile() callback.
-    (function(f) {
-      var filename = file.name.replace(/\s/g, '_');
-      FS_.root.getFile(filename, {create: true, exclusive: true}, function(fileEntry) {
-        fileEntry.createWriter(function(fileWriter) {
-          fileWriter.write(f);
-        }, errorCallback);
-      }, errorCallback);
-    })(file);
+      // Read in the image file as a data URL.
+      reader.readAsDataURL(f);
+    }
   }
 
-  readDirectories();
-}, false);
-
-window.requestFileSystem(TEMPORARY, 1024 * 1024,  function(fs) {
-  FS_ = fs;
-  readDirectories();
-}, errorCallback);
+  document.getElementById('files').addEventListener('change', handleFileSelect, false);
 </script>
+
 
 	{{#if welcome}}
 	<a href="welcome"><input  class = "submitButton" type="submit" value="< Back to Set Goal"></a>
@@ -159,6 +85,6 @@ window.requestFileSystem(TEMPORARY, 1024 * 1024,  function(fs) {
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="js/jquery-1.11.0.js"> </script>
 	<script src="js/bootstrap.js"> </script>
-	<script src="js/147-project.js"> </script>
+	<script src="js/uploadPhoto.js"> </script>
 </body>
 </html>
