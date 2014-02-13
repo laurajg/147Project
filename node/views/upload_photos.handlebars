@@ -19,7 +19,12 @@
 	{{>navigation}}
 
 <!--{{>header}} -->
+
 <div id="main">
+{{#if welcome}}
+  <h3> Your new goal is {{goal}}! Now upload some photos that will remind you why it's important to you.</h3>
+  {{/if}}
+
 	<div class="titleRow" id="upload"> Upload Photo: </div>
 	<hr/>
 	<div class="text">

@@ -25,9 +25,14 @@
 
 */
 
+.warning {
+	color: red;
+}
+
 .filelist{
 	font-size: 4.0vw;
 }
+
 .headerIcon{
 	color: white;
 	display: inline;
