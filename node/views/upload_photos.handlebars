@@ -21,13 +21,15 @@
 <!--{{>header}} -->
 
 <div id="main">
-{{#if welcome}}
-  <h3> Your new goal is {{goal}}! Now upload some photos that will remind you why it's important to you.</h3>
-  {{/if}}
+
 
 	<div class="titleRow" id="upload"> Upload Photo: </div>
-	<hr/>
-	<div class="text">
+
+  {{#if welcome}}
+  <h4> Your new goal is "{{goal}}!" Now upload some photos that will remind you why it's important to you.</h4>
+  <br/>
+  {{/if}}
+
 
 <!--
 <div>
@@ -99,7 +101,6 @@
            <input  class = "submitButton " type="submit" value="Go to Gallery">
       </form>
   {{/unless}}
-	</div>
 	      <div id="push"></div>
 
 </div> <!-- end main div -->

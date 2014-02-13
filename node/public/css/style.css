@@ -40,8 +40,8 @@ body{
 
 #footerLogo{
 	float: left;
-	margin-right: 7%;
-	margin-left: -5px;
+	margin-right: 6%;
+	margin-left: -8px;
 }
 
 #footerLogoImg{
@@ -184,6 +184,7 @@ body{
 
 textarea {
 	width:100%;
+	margin-bottom: 20px;
 }
 
 select {
