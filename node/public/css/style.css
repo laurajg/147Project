@@ -1,29 +1,83 @@
-.header2 {
-	margin: auto;
-	vertical-align: middle;
+html, body{
+	height: 100%;
+} 
+
+body{
+	background-color: #f0f0f0;
 	font-family: Tahoma, Geneva, sans-serif;
-	text-align:center;
-	font-size: 70px;
-	width: 100%;
-	margin: 0;
-	height: 120px;
-	padding-top: 30px;
-	clear: both;
-	background:#939DA3
-}
-/*
-.navbar-title{
-	margin-top: -20px;
-	color: white;
-	font-family: Titillium Web;
+	font-size: 5.5vw;	
 	font-weight: 200;
-	vertical-align: middle;
-	float: left;
-	min-width: 200px;
-	margin-right: 3%;
+	letter-spacing: 1px;
+	color: #303030; 
+	 height: 100%;
 }
 
-*/
+#main{
+	/*margin-top: 10px;
+	width: 80%; */
+	width: 90%;
+	min-height: 87%;
+    height: auto !important;
+    height: 87%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto -50px;
+}
+
+
+#push,
+#footer {
+    height: 50px;
+
+
+}
+.footerInfo{
+	padding-top: 12px;
+}
+
+.footerInfo a{
+	color: grey;
+}
+
+#footerLogo{
+	float: left;
+	margin-right: 7%;
+	margin-left: -5px;
+}
+
+#footerLogoImg{
+	height: 20px;
+}
+#footer {
+     border-color: #080808;
+    background-color: #222222;
+   font-size: 4.0vw;	
+}
+
+#footerTerms{
+	float: left;
+	margin-right: 7%;
+}
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 900px) {
+    #footer {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+
+.footer {
+  position: relative;
+  margin-top: -30px; /* negative value of footer height */
+  clear:both;
+  padding-top:20px;
+  background-color: #222222;
+
+	width: 100%;
+} 
+
 
 .warning {
 	color: red;
@@ -67,14 +121,7 @@
 	margin-left: 15px;
 }
 
-#main{
-	margin: auto;
-	clear:both;	
-	/*margin-top: 10px;
-	width: 80%; */
-	height: 98%;
-	width: 90%;
-}
+
 
 .imageBlock{
 	float: left;
@@ -95,16 +142,7 @@
 
 @media (max-width: 990px) {...}
 
-body{
-	background-color: #f0f0f0;
-	font-family: Tahoma, Geneva, sans-serif;
-	/*font-size: 40px;*/
-	font-size: 5.5vw;	
 
-	font-weight: 200;
-	letter-spacing: 1px;
-	color: #303030; 
-}
 
 
 
@@ -350,6 +388,33 @@ figure {
 /* END LANDING PAGE STYLING */
 
 
+/* OLD CSS GOES HERE FOR TEMP STORAGE UNTIL WE ARE SURE WE DONT WANT IT ANYMORE! */
 
+/*.header2 {
+	margin: auto;
+	vertical-align: middle;
+	font-family: Tahoma, Geneva, sans-serif;
+	text-align:center;
+	font-size: 70px;
+	width: 100%;
+	margin: 0;
+	height: 120px;
+	padding-top: 30px;
+	clear: both;
+	background:#939DA3
+}
+
+.navbar-title{
+	margin-top: -20px;
+	color: white;
+	font-family: Titillium Web;
+	font-weight: 200;
+	vertical-align: middle;
+	float: left;
+	min-width: 200px;
+	margin-right: 3%;
+}
+
+*/
 
 
