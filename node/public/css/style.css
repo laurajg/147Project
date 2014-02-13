@@ -81,6 +81,8 @@ body{
 
 .warning {
 	color: red;
+	font-size: 4.5vw;
+	line-height: 1px;
 }
 
 .filelist{
@@ -177,6 +179,7 @@ body{
 .text {
 	font-size:3.5vw;
 	font-family: Tahoma, Geneva, sans-serif;
+	padding-bottom: 10px;
 }
 
 textarea {
@@ -270,6 +273,7 @@ textarea:focus, input:focus {
 	border-top: solid #303030 1px;
 	border-bottom: solid #303030 1px;
 	padding: 3px 0px;
+	margin-bottom: 10px;
 
 }
 
@@ -371,7 +375,13 @@ figure {
 }
 
 
-
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto -30px;
+}
 
 
 /* END LANDING PAGE STYLING */
