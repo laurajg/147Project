@@ -175,7 +175,7 @@ body{
 }
 
 .text {
-	font-size:50px;
+	font-size:3.5vw;
 	font-family: Tahoma, Geneva, sans-serif;
 }
 
@@ -201,10 +201,6 @@ select {
 	font-size: 32px;
 }
 
-.welcome{
-	color: #303030;
-	font-size: 48px;
-}
 
 
 
@@ -266,15 +262,16 @@ textarea:focus, input:focus {
 	color:#303030;
 }
 
-.footer{
-	position: absolute;
-	margin-left: 20%;
-	margin-bottom: 10px;
-	margin-top: 50px;
-	font-size: 4.5vw;	
+
+
+.titleRow{
+	clear: both;
+	margin: auto;
+	border-top: solid #303030 1px;
+	border-bottom: solid #303030 1px;
+	padding: 3px 0px;
+
 }
-
-
 
 /* UPLOAD PHOTOS SPECIFIC STYLING*/
 
@@ -375,14 +372,6 @@ figure {
 
 
 
-.titleRow{
-	clear: both;
-	margin: auto;
-	border-top: solid #303030 1px;
-	border-bottom: solid #303030 1px;
-	padding: 3px 0px;
-
-}
 
 
 /* END LANDING PAGE STYLING */

@@ -12,86 +12,83 @@
 	<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 	<link href="css/bootstrap-responsive.css" rel="stylesheet">
 
+	
+	<link rel="stylesheet" type="text/css" media="screen"
+	href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
 	<link href="css/style.css" rel="stylesheet" type="text/css">
-	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen"
-     href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
-</head>
 
+</head>
 
 <body>
 	{{>navigation}}
 
-<!--{{>header}} -->
-<div id="main">
-	<div class="text">
-	Set reminder preferences
-	<h3>When do you want to be reminded that you want to {{goal}}?</h3>
-	</div>
+	<!--{{>header}} -->
+	<div id="main">
+		<div class="titleRow " > Set Reminder Preferences </div>
+		<br/>
+		<p class="text">When do you want to be reminded that you want to {{goal}}?</p>
+		<br/>
+		<form name="reminders" action="/preferences" method="POST">
+			<div align="center">Current reminders:</div>
 
-	<form name="reminders" action="/preferences" method="POST">
-		<div align="center"><br>
 			<!-- <input type="radio" name="days" value="Milk">I want to be reminded on these days of the week:<br>
 			<hr>
 			<input type="radio" name="group2" value="Water"> Water<br> -->
-			Current reminders:
 			<ul class="list-group">
 				{{#each reminders}}
-			  <li class="list-group-item">{{hour}}:{{minute}} {{ampm}} on {{days}}</li>
+				<li class="list-group-item">{{hour}}:{{minute}} {{ampm}} on {{days}}</li>
 				{{/each}}
 			</ul>
 
 			<div id="addReminder" style="display:none">
-				 
-				    <script type="text/javascript"
-				     src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js">
-				    </script> 
-				  
-				    <script type="text/javascript"
-				     src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
-				    </script>
-				    <script type="text/javascript"
-				     src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
-				    </script>
-				 
 
-				    <div class="well">
-				    At what time?
-					  <div id="datetimepicker3" class="input-append">
-					    <input data-format="hh:mm" type="text"></input>
-					    <span class="add-on">
-					      <i data-time-icon="icon-time" data-date-icon="icon-calendar">
-					      </i>
-					    </span>
-					  </div>
+				<script type="text/javascript"
+				src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+				</script> 
+
+				<script type="text/javascript"
+				src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
+				</script>
+				<script type="text/javascript"
+				src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
+				</script>
+
+
+				<div class="well">
+					At what time?
+					<div id="datetimepicker3" class="input-append">
+						<input data-format="hh:mm" type="text"/>
+						<span class="add-on">
+							<i data-time-icon="icon-time" data-date-icon="icon-calendar">
+							</i>
+						</span>
 					</div>
-					<script type="text/javascript">
-					  $(function() {
-					    $('#datetimepicker3').datetimepicker({
-					      pickDate: false
-					    });
-					  });
-					</script>
-				On what days of the week?<br>
+				</div>
+				<script type="text/javascript">
+				$(function() {
+					$('#datetimepicker3').datetimepicker({
+						pickDate: false
+					});
+				});
+				</script>
+				On what days of the week?<br/>
 				<ul class="pagination">
 
-				  <li><a>Sunday</a></li>
-				  <li><a>Monday</a></li>
-				  <li><a>Tuesday</a></li>
-				  <li><a>Wednesday</a></li>
-				  <li><a>Thursday</a></li>
-				  <li><a>Friday</a></li>
-				  <li><a>Saturday</a></li>
+					<li><a>Sunday</a></li>
+					<li><a>Monday</a></li>
+					<li><a>Tuesday</a></li>
+					<li><a>Wednesday</a></li>
+					<li><a>Thursday</a></li>
+					<li><a>Friday</a></li>
+					<li><a>Saturday</a></li>
 				</ul>
-				</div>
-			</div>
+			</div> <!-- end add reminder div -->
 
 			<ul class="list-group">
-			<a id="doneButton" class="list-group-item active" style="text-align:center" onclick="addReminder();" >Add another</a>
+				<a id="doneButton" class="list-group-item active" style="text-align:center" onclick="addReminder();" >Add another</a>
 			</ul>
-		</div>
-	</form>
-	      <div id="push"></div>
+		</form>
+<div id="push"></div>
 
 </div> <!-- end main div -->
 {{> footer}}
