@@ -38,6 +38,8 @@
 
 <script>
 
+
+
   function handleFileSelect(evt) {
     var files = evt.target.files; // FileList object
     // Loop through the FileList and render image files as thumbnails.
@@ -55,13 +57,18 @@
       reader.onload = (function(theFile) {
         return function(e) {
           // Render thumbnail.
-                console.log(e.target.result);
 
           var div = document.createElement('div');
-          div.innerHTML = ['<div class="imageBlock"><img class="thumb" src="', e.target.result,
-                            '" title="', escape(theFile.name), '"/> <br/> Title </div>'].join('');
+          div.innerHTML = [' <div class="imageBlock"><a href="" action=deleteImage()> <img class="thumb" src="', e.target.result,
+                            '" title="', escape(theFile.name), '"/> </a> </div>'].join('');
+
           document.getElementById('list').insertBefore(div, null);
-        };
+          
+
+          //HERE IS WHAT ISN'T FINISHED. I DONT KNOW HOW TO PASS THIS THROUGH
+          dbUtils.addPhoto(req.session.user,  e.target.result);        
+        }
+                   
       })(f);
 
       // Read in the image file as a data URL.
