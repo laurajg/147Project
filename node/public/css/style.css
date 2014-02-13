@@ -24,6 +24,11 @@
 }
 
 */
+
+.warning {
+	color: red;
+}
+
 .headerIcon{
 	color: white;
 	display: inline;

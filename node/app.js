@@ -20,6 +20,7 @@ var register = require('./routes/register');
 var terms = require('./routes/terms');
 var password = require('./routes/password');
 var gallery = require('./routes/gallery');
+var change = require('./routes/change');
 var update_friends = require('./routes/update_friends');
 var logout = require('./routes/logout');
 // Example route
@@ -71,9 +72,9 @@ app.get('/register', register.view);
 app.get('/terms', terms.view);
 app.get('/password', password.view);
 app.get('/gallery', gallery.view);
+app.get('/change', change.view);
 app.get('/update_friends', update_friends.view);
-app.get('/logout', logout.view)
-
+app.get('/logout', logout.view);
 
 var dbUtils = require('dbUtils');
 dbUtils.initialize(function(err) {
@@ -83,6 +84,7 @@ dbUtils.initialize(function(err) {
 
 	  // load dummy data
 	  var setup = require('devSetup');
+	  console.log('Loading dummy data');
 	  setup.loadDatabase();
 
 	});
