@@ -25,6 +25,7 @@ var update_friends = require('./routes/update_friends');
 var logout = require('./routes/logout');
 var contact = require('./routes/contact');
 var addPhoto = require('./routes/addPhoto');
+var sendUpdate = require('./routes/sendUpdate');
 // Example route
 // var user = require('./routes/user');
 
@@ -79,6 +80,7 @@ app.get('/update_friends', update_friends.view);
 app.get('/logout', logout.view);
 app.get('/contact', contact.view);
 app.post('/addPhoto', addPhoto.add);
+app.get('/sendUpdate',sendUpdate.sendUpdate);
 
 var dbUtils = require('dbUtils');
 dbUtils.initialize(function(err) {
@@ -93,3 +95,7 @@ dbUtils.initialize(function(err) {
 
 	});
 });
+
+var mailUtils = require('mailUtils');
+mailUtils.initialize();
+//mailUtils.sendMail('asifkhan89@gmail.com','test','Hello world');

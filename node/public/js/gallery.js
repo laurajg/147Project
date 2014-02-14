@@ -34,7 +34,6 @@ function previousImage() {
 }
 
 function updateAndShowOverlay(index,show) {
-
 	$('#overlay-image').attr("src",current_img_urls[index]);
 	currently_selected_img = index;
 	if (show) showOverlay();
@@ -58,8 +57,14 @@ function createGallery(photos) {
 	current_img_urls = [];
 	cur_idx = 0;
 	for (i = 0; i < img_list.length; i++) {
-		div_html += "<img class='img-gallery' src=\"" + img_list[i]['url'] + "\" id='gal_img_"+i+"' onclick=\"javascript:updateAndShowOverlay("
-			+cur_idx+",true)\"/>";					
+		if (img_list[i]['url'].indexOf('text://') == 0) {
+			var textmsg = img_list[i]['url'].substring(7);
+			div_html += "<div class='text-gallery jtextfill' id='gal_img_"+i+"' onclick=\"javascript:updateAndShowOverlay("
+				+cur_idx+",true)\"><span>"+textmsg+"</span></div>"
+		} else {
+			div_html += "<img class='img-gallery' src=\"" + img_list[i]['url'] + "\" id='gal_img_"+i+"' onclick=\"javascript:updateAndShowOverlay("
+				+cur_idx+",true)\"/>";					
+		}
 	current_img_urls.push(img_list[i]['url']);
 	cur_idx++;				
 	}
@@ -92,3 +97,25 @@ function updateGallery(filter_type) {
 		}
 	}
 };
+
+;(function($) {
+    $.fn.textfill = function(options) {
+        var fontSize = options.maxFontPixels;
+        var ourText = $('span:visible:first', this);
+        var maxHeight = $(this).height();
+        var maxWidth = $(this).width();
+        var textHeight;
+        var textWidth;
+        do {
+            ourText.css('font-size', fontSize);
+            textHeight = ourText.height();
+            textWidth = ourText.width();
+            fontSize = fontSize - 1;
+        } while ((textHeight > maxHeight || textWidth > maxWidth) && fontSize > 3);
+        return this;
+    }
+})(jQuery);
+
+$(document).ready(function() {
+    $('.jtextfill').textfill({ maxFontPixels: 36 });
+});
