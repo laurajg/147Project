@@ -4,7 +4,7 @@ exports.sendUpdate = function(req, res){
 	mailUtils.initialize();	
 	var subject_text = 'GoalGlance: New update from ' + req.session.user + '!';
 	var message = '<p>'+ req.session.user + ' has a new update about their goal!</p><p><b>'+req.query.message+'</b></p>'
-	message += '<p>Click <a href="http://goalglance.herokuapp.com/">here</a> to send ' + req.sesssion.user + ' some encouragement![TODO]</p>';
+	message += '<p>Click <a href="http://goalglance.herokuapp.com/">here</a> to send ' + req.session.user + ' some encouragement![TODO]</p>';
 	mailUtils.sendMail('asifkhan89@gmail.com',subject_text,message);
 	console.log(req.query);
 	res.redirect('/gallery');
