@@ -97,5 +97,5 @@ dbUtils.initialize(function(err) {
 });
 
 var mailUtils = require('mailUtils');
-mailUtils.initialize();
+//mailUtils.initialize();
 //mailUtils.sendMail('asifkhan89@gmail.com','test','Hello world');
