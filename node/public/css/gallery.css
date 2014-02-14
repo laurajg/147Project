@@ -4,7 +4,7 @@
 
 	    .img-gallery {
 	    	width: auto;
-	    	height: 100px;
+	    	height: 80px;
 	    	box-shadow: 4px 4px 3px #888888;
 	    	margin: 10px 10px 0px 0px;
 	    	float: left;
@@ -12,8 +12,8 @@
 	    }
 	    
 	    .text-gallery {	    	
-         	width: 130px;
-	    	height: 100px;
+         	width: 120px;
+	    	height: 80px;
 	    	box-shadow: 4px 4px 3px #888888;
 	    	margin: 10px 10px 0px 0px;
             padding: 2px;
@@ -23,6 +23,18 @@
             display: inline-block;   
             float: left;
             overflow: hidden;
+	    }
+
+	    .text-gallery-zoom {	    	
+         	width: 120px;
+	    	height: 80px;
+	    	margin: 10px 10px 0px 0px;
+            padding: 2px;
+            color: white;
+            background-color: black;
+            font-size: 20px;                  
+            display: inline-block;   
+            overflow: hidden;            
 	    }
 
 	    .gallery {
