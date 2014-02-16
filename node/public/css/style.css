@@ -78,6 +78,16 @@ body{
 	width: 100%;
 } 
 
+.text-randomInspiration{
+	width: 100%;
+	height: 140px;
+	background-color: white;
+	border: 2px #303030 solid;
+	padding: 3% 3%;
+	margin: 10px 10px 0px 0px;
+	font-size: 4.0vh;   
+	border-radius: 6px;  
+}
 
 .warning {
 	color: red;

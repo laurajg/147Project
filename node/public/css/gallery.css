@@ -11,30 +11,32 @@
 	    	/*margin: 15px; */
 	    }
 	    
-	    .text-gallery {	    	
-         	width: 120px;
-	    	height: 80px;
-	    	box-shadow: 4px 4px 3px #888888;
-	    	margin: 10px 10px 0px 0px;
-            padding: 2px;
+	    .text-gallery, .text-gallery-zoom {	    	
             color: white;
             background-color: black;
-            font-size: 20px;                  
+            text-align: center;             
             display: inline-block;   
-            float: left;
             overflow: hidden;
 	    }
 
-	    .text-gallery-zoom {	    	
-         	width: 120px;
+	    .text-gallery-zoom{
+         	vertical-align: middle;
+	    	max-height: 200%;
+	    	height: 120px;
+	    	max-width: 80%;
+         	font-size: 5.0hw;   
+         	padding: 5% 5%;  
+
+	    }
+
+	    .text-gallery{
+	    	box-shadow: 4px 4px 3px #888888;
+	    	float: left;
 	    	height: 80px;
+	    	width: 120px;
+	    	padding-top: 3%;
 	    	margin: 10px 10px 0px 0px;
-            padding: 2px;
-            color: white;
-            background-color: black;
-            font-size: 20px;                  
-            display: inline-block;   
-            overflow: hidden;            
+	    	font-size: 4.0vw;     
 	    }
 
 	    .gallery {
@@ -44,7 +46,6 @@
 	    	width: 100%;
 	    	height: 80%;
 	    	white-space: normal;
-	    	padding: 10px;
 	    	/*text-align: center;	 */    	
 	    }
 	    
@@ -103,7 +104,7 @@
 	    	display:none;
 	    	position:fixed;
 	    	width:30px;
-	    	top:50%;
+	    	top:48%;
 	    	opacity:1.0;
 	    	margin-top:-15px;
 	    	z-index: 2000;
@@ -136,7 +137,6 @@
 	    	z-index: 1500;
 	    	padding: 0px;
 	    	margin: 0px;
-
 	    	height: 100%;      /* equals max image height */
 	    	width: 100%;       
 	    	text-align: center; 

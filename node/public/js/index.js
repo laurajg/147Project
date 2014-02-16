@@ -6,8 +6,7 @@ function setRandomPhoto(photos) {
 	var html = "";
 	if (photo['url'].indexOf('text://') == 0) {
 		var text = photo['url'].substring(7);
-		html = '<h3 style="text-align:center">'+text+'</h3>';
-
+		html = '<div class="text-randomInspiration" style="text-align:center"><span>'+text+'</span></div>';
 	} else {
 		html = '<img id="randomImg" class="img-rounded  img-responsive" src="'+photo['url']+'"/>';			
 	}
