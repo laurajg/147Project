@@ -4,22 +4,31 @@ window.resolveLocalFileSystemURL = window.resolveLocalFileSystemURL || window.we
 window.BlobBuilder = window.WebKitBlobBuilder || window.MozBlobBuilder || window.BlobBuilder;
 window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
 
-    function verifyEmail(){
-			var status = false;     
-			var emailRegEx = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
-    		 if (document.register.email.value.search(emailRegEx) == -1) {
-        	 	 alert("Please enter a valid email address.");
-    	 	}
-     		else {
-             status = true;
-     		}
-            return status;
-	}
+   function verifyEmail(){
+        var emailRegEx = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+         if (document.register.email.value.search(emailRegEx) == -1) {
+             alert("Please enter a valid email address.");
+             return false;
+        }
+        else return true;
+    }
+
+    function verifyPasswordMatch() {
+        if(document.register.password.value != document.register.conpassword.value) {
+            alert("Your password and confirmation password do not match");
+            return false;
+        } else  return true;
+    }
 
     function verifyRegister(){
-            if(verifyEmail())    {
-                 window.location="/welcome";
-            } 
+        if(verifyEmail() && verifyPasswordMatch())    {
+            alert("Login Successful");
+            window.location="/welcome";
+            return true;
+        } else {
+            window.location="/register";
+            return false;
+        }
     }
 
     function sendPassword(){
