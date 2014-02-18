@@ -2,156 +2,195 @@
 
 /* GALLERY PAGE SPECIFIC STYLING */
 
-	    .img-gallery {
-	    	width: auto;
-	    	height: 80px;
-	    	box-shadow: 4px 4px 3px #888888;
-	    	margin: 10px 10px 0px 0px;
-	    	float: left;
-	    	/*margin: 15px; */
-	    }
-	    
-	    .text-gallery, .text-gallery-zoom {	    	
-            color: white;
-            background-color: black;
-            text-align: center;             
-            display: inline-block;   
-            overflow: hidden;
-	    }
+.img-gallery {
+	width: auto;
+	height: 80px;
+	box-shadow: 4px 4px 3px #888888;
+	float: left;
+	/*margin: 15px; */
+}
 
-	    .text-gallery-zoom{
-         	vertical-align: middle;
-	    	max-height: 200%;
-	    	height: 120px;
-	    	max-width: 80%;
-         	font-size: 5.0hw;   
-         	padding: 5% 5%;  
+.closeIconImg {
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 18px;
+	color: #000000;
+	/*color: white; */
+	text-shadow: 0 1px 0 #ffffff;
+	opacity: 0.2;
+	filter: alpha(opacity=20);
+	text-decoration: none;
+	position: relative;
+	margin-left: -20px;
+}
+.closeIconImg:hover {
+	color: #000000;
+	text-decoration: none;
+	opacity: 0.4;
+	filter: alpha(opacity=40);
+	cursor: pointer;
+}
 
-	    }
+.closeIconText{
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 18px;
+	color: white; 
+	text-shadow: 0 1px 0 #ffffff;
+	filter: alpha(opacity=20); 
+	opacity: 0.2;
+	text-decoration: none;
+	position: relative;
+	margin-right: -5px;
+	margin-top: -8px;
+	float: right;
+}
 
-	    .text-gallery{
-	    	box-shadow: 4px 4px 3px #888888;
-	    	float: left;
-	    	height: 80px;
-	    	width: 120px;
-	    	padding-top: 3%;
-	    	margin: 10px 10px 0px 0px;
-	    	font-size: 4.0vw;     
-	    }
+.oneGalleryImg{
+	float: left;
+	margin: 10px 10px 0px 0px;
+}
+.text-gallery, .text-gallery-zoom {	    	
+	color: white;
+	background-color: black;
+	text-align: center;             
+	display: inline-block;   
+	overflow: hidden;
+}
 
-	    .gallery {
-	    	margin-top: 15px;
-	    	margin-bottom: 15px;
-	    	overflow-y:auto;
-	    	width: 100%;
-	    	height: 80%;
-	    	white-space: normal;
-	    	/*text-align: center;	 */    	
-	    }
-	    
-	    #filter-button {
-	    	float: right;
-	    }
-	    
-	    #gallery-header {
-	    	font-size: 20px;
-	    	font-weight: bold;		
-	    	margin: 4px;
-	    }
+.text-gallery-zoom{
+	vertical-align: middle;
+	max-height: 200%;
+	height: 120px;
+	max-width: 80%;
+	font-size: 5.0hw;   
+	padding: 5% 5%;  
 
-	    #photo-modal-dialog {
-	    	max-width: 60%;	 
-	    }
+}
 
-	    #modal-img-container div, #modal-img-container div, #modal-img img {
-	    	width: 100%;
-	    	height: 100%;	    	
-	    }	
+.text-gallery{
+	box-shadow: 4px 4px 3px #888888;
+	float: left;
+	height: 80px;
+	width: 120px;
+	padding: 3% 3%;
+	margin: 10px 10px 0px 0px;
+	font-size: 4.0vw;     
+}
 
-	    #modal-img img {
-	    	object-fit: contain;
-	    }
+.gallery {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	overflow-y:auto;
+	width: 100%;
+	height: 80%;
+	white-space: normal;
+	/*text-align: center;	 */    	
+}
 
-	    #modal-table {
-	    	padding: 0px; 
-	    	margin: 0px; 
-	    	border: 0px;
-	    	table-layout: fixed;
-	    	width: 100%;
-	    }
+#filter-button {
+	float: right;
+}
+
+#gallery-header {
+	font-size: 20px;
+	font-weight: bold;		
+	margin: 4px;
+}
+
+#photo-modal-dialog {
+	max-width: 60%;	 
+}
+
+#modal-img-container div, #modal-img-container div, #modal-img img {
+	width: 100%;
+	height: 100%;	    	
+}	
+
+#modal-img img {
+	object-fit: contain;
+}
+
+#modal-table {
+	padding: 0px; 
+	margin: 0px; 
+	border: 0px;
+	table-layout: fixed;
+	width: 100%;
+}
 	    /*.arrow {
 	    	width: 30px;	    
 	    	padding:0px;	
 	    	margin: 3px;
 	    	text-align: center;
-	    }*/
-	    #my-modal-container {
-	    	max-height: 80%;
-	    }
+	    	}*/
+	    	#my-modal-container {
+	    		max-height: 80%;
+	    	}
 
-	    #overlay {
-	    	background-color:black;
-	    	display:none;
-	    	position:fixed;
-	    	width:100%;
-	    	height:100%;
-	    	top:0;
-	    	left:0;
-	    	opacity:0.6;
-	    	z-index: 1000;
-	    }
-	    .myarrow {
-	    	display:none;
-	    	position:fixed;
-	    	width:30px;
-	    	top:48%;
-	    	opacity:1.0;
-	    	margin-top:-15px;
-	    	z-index: 2000;
-	    	font-size: 30px;
-	    	color: white;
-	    	padding: 0px;
-	    	margin: 0px;
-	    	text-align: center;
-	    }
+	    	#overlay {
+	    		background-color:black;
+	    		display:none;
+	    		position:fixed;
+	    		width:100%;
+	    		height:100%;
+	    		top:0;
+	    		left:0;
+	    		opacity:0.6;
+	    		z-index: 1000;
+	    	}
+	    	.myarrow {
+	    		display:none;
+	    		position:fixed;
+	    		width:30px;
+	    		top:48%;
+	    		opacity:1.0;
+	    		margin-top:-15px;
+	    		z-index: 2000;
+	    		font-size: 30px;
+	    		color: white;
+	    		padding: 0px;
+	    		margin: 0px;
+	    		text-align: center;
+	    	}
 
-	    .myarrow :active {
-	    	color: black;
-	    }
+	    	.myarrow :active {
+	    		color: black;
+	    	}
 
-	    .myarrow-left {
-	    	left:2%;		
-	    }
+	    	.myarrow-left {
+	    		left:2%;		
+	    	}
 
-	    .myarrow-right {
-	    	right: 2%;
-	    }
+	    	.myarrow-right {
+	    		right: 2%;
+	    	}
 
-	    .imgoverlay-frame {
-	    	display:none;
-	    	position:fixed;
-	    	top:0;
-	    	left:0;
-	    	max-width:100%;
-	    	max-height:100%;
-	    	z-index: 1500;
-	    	padding: 0px;
-	    	margin: 0px;
-	    	height: 100%;      /* equals max image height */
-	    	width: 100%;       
-	    	text-align: center; 
-	    }
+	    	.imgoverlay-frame {
+	    		display:none;
+	    		position:fixed;
+	    		top:0;
+	    		left:0;
+	    		max-width:100%;
+	    		max-height:100%;
+	    		z-index: 1500;
+	    		padding: 0px;
+	    		margin: 0px;
+	    		height: 100%;      /* equals max image height */
+	    		width: 100%;       
+	    		text-align: center; 
+	    	}
 
-	    .imgoverlay-helper {
-	    	display: inline-block;
-	    	height: 100%;
-	    	vertical-align: middle;
-	    }
+	    	.imgoverlay-helper {
+	    		display: inline-block;
+	    		height: 100%;
+	    		vertical-align: middle;
+	    	}
 
-	    .imgoverlay-frame img {
-	    	vertical-align: middle;
-	    	max-height: 80%;
-	    	max-width: 80%;
-	    }
+	    	.imgoverlay-frame img {
+	    		vertical-align: middle;
+	    		max-height: 80%;
+	    		max-width: 80%;
+	    	}
 
 /* END GALLERY PAGE SPECIFIC STYLING */

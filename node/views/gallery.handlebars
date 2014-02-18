@@ -17,10 +17,9 @@
 </head>
 <body onload='createGallery({{json photos}});'>   
 	{{>navigation}}
-	<!--{{> header}} -->
 
-	<div id="main">
-
+		<div id="main">
+			<div id="galleryContents">
 		<div class="dropdown" >
 			<div class="titleRow " style="float: left; margin-right: 10px;"> My Goal Gallery </div>
 
@@ -64,8 +63,8 @@
 			<span class="imgoverlay-helper"></span>
 			<img id="overlay-image" src="" onclick="javascript:event.stopPropagation()">
 		</div>
-		      <div id="push"></div>
-
+		<div id="push"></div>
+	</div>
 	</div>
 	{{> footer}}
 	<script src="https://code.jquery.com/jquery.js"></script>

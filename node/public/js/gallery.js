@@ -66,11 +66,11 @@ function createGallery(photos) {
 	for (i = 0; i < img_list.length; i++) {
 		if (img_list[i]['url'].indexOf('text://') == 0) {
 			var textmsg = img_list[i]['url'].substring(7);
-			div_html += "<div class='text-gallery' id='gal_img_"+i+"' onclick=\"javascript:updateAndShowOverlay("
-				+cur_idx+",true)\"><span>"+textmsg+"</span></div>"
+			div_html += "<div class='text-gallery  oneGalleryImg' id='gal_img_"+i+"' onclick=\"javascript:updateAndShowOverlay("
+				+cur_idx+",true)\"><a class=\"closeIconText\">x</a><span>"+textmsg+"</span></div>"
 		} else {
-			div_html += "<img class='img-gallery' src=\"" + img_list[i]['url'] + "\" id='gal_img_"+i+"' onclick=\"javascript:updateAndShowOverlay("
-				+cur_idx+",true)\"/>";					
+			div_html += "<div class=\"oneGalleryImg\"><img class='img-gallery' src=\"" + img_list[i]['url'] + "\" id='gal_img_"+i+"' onclick=\"javascript:updateAndShowOverlay("
+				+cur_idx+",true)\"/><a class=\"closeIconImg\">x</a></div>";					
 		}
 	current_img_urls.push(img_list[i]['url']);
 	cur_idx++;				

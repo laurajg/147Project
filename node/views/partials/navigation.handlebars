@@ -1,4 +1,4 @@
- <div class="navbar navbar-static-top navbar-inverse" role="navigation">  
+<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">  
       <div class="container">  
         <div class="navbar-header">  
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">  
@@ -8,22 +8,25 @@
             <span class="icon-bar"></span>  
           </button>  
           <a class="navbar-brand" href="/landing">Goal Glance</a>  
+          <div class="your_goal_banner"> Your Goal is: ... </div>
         </div>  
         <div class="collapse navbar-collapse">  
           <ul class="nav navbar-nav">  
-            <li class="active"><a href="/"><span class="glyphicon glyphicon-random">Random Inspiration</span></a></li>  
-            <li><a href="/update_friends"><span class="glyphicon glyphicon-share">Add motivational message</span></a></li>
-            <li><a href="/gallery"><span class="glyphicon glyphicon-th ">Gallery</span></a></li>  
-            <li><a href="/upload"><span class="glyphicon glyphicon-plus">Add Photos</span></a></li>            
-            <li><a href="/preferences"><span class="glyphicon glyphicon-time">Add/Update Reminders</span></a></li> 
-            <li><a href="share"><span class="glyphicon glyphicon-cog">Sharing Settings</span></a></li>
-            <li><a href="/change"><span class="glyphicon glyphicon-remove">Change Goal</span></a></li>           
+            <li class="active"><a href="/"><span class="glyphicon glyphicon-random">&nbsp;</span>Random Inspiration</a></li>  
+            <li><a href="/update_friends"><span class="glyphicon glyphicon-share">&nbsp;</span>Add motivational message</a></li>
+            <li><a href="/gallery"><span class="glyphicon glyphicon-th ">&nbsp;</span>Gallery</a></li>  
+            <li><a href="/upload"><span class="glyphicon glyphicon-plus">&nbsp;</span>Add Photos</a></li>            
+            <li><a href="share"><span class="glyphicon glyphicon-cog">&nbsp;</span>Sharing Settings</a></li>
+            <li><a href="/change"><span class="glyphicon glyphicon-remove">&nbsp;</span>Change Goal</a></li>           
 
             {{#if user}}
-            <li><a href="/logout"><span class="glyphicon glyphicon-log-out">Logout</span></a></li>  
+            <li><a href="/logout"><span class="glyphicon glyphicon-log-out">&nbsp;</span>Logout</a></li>  
             {{/if}}
 
           </ul>  
         </div><!-- /.nav-collapse -->  
     </div><!-- /.container -->  
+      <div id="push_nav"></div>
 </div>  
+
+
