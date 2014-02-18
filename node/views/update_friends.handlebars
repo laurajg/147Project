@@ -22,13 +22,19 @@ function sendUpdates() {
     alert('lol');
     return false;
 }
+
 </script>
 <!--{{>header}} -->
 <div id="main">
-    <div class="titleRow " > Add a new motivational message! </div>
-
- 
+    <div id="push_small"></div>
+   <ul class="add_content">  
+        <li class="active"><a href="#" class="addPhotoButton"><span class="glyphicon glyphicon-camera">&nbsp;</span>Add Photo</a></li>  
+        <li><a href="#" class="addMessageButton"><span class="glyphicon glyphicon-font">&nbsp;</span>Add Message</a></li>
     
+     </ul>  
+
+
+<div id="addMessage">
     <h5>Who to share with:</h5>
     <form action='/sendUpdate' method='get'>
     <select required name='share'>
@@ -37,8 +43,44 @@ function sendUpdates() {
     </select>
     <h5>Enter your message:</h5>
     <textarea id="message" name="message"></textarea>    
-    <input class = "submitButton" type="submit" value="Save &amp; Go to Gallery">
+    <input class = "submitButton" type="submit" value="Save Message">
     </form>
+</div>
+
+
+<div id="addPhoto">
+
+  {{#if welcome}}
+  <h4> Your new goal is "{{goal}}!" Now upload some photos that will remind you why it's important to you.</h4>
+  <br/>
+  {{/if}}
+
+
+<!--
+<div>
+  <input type="file" id="files" multiple class="button" accept="image/*">
+  <div id="filelist"><em>Loading files...</em></div>
+</div>
+
+<output></output>
+-->
+<input type="file" id="files" name="files[]" multiple />
+
+<output id="list"> </output>
+
+
+    {{#if welcome}}
+    <a href="welcome"><input  class = "submitButton" type="submit" value="< Back to Set Goal"></a>
+    <a href="welcome_share"><input class = "submitButton" type="submit" value="On to share >"></a>
+    {{/if}}
+
+  {{#unless welcome}}
+      <form action="/">
+           <input  class = "submitButton " type="submit" value="Save Photo(s)">
+      </form>
+  {{/unless}}
+</div>
+
     <br/>
     <div id="push"></div>
 </div> <!-- end main div -->
@@ -47,5 +89,7 @@ function sendUpdates() {
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="js/jquery-1.11.0.js"> </script>
     <script src="js/bootstrap.js"> </script>
+        <script src="js/newContent.js"> </script>
+
 </body>
 </html>

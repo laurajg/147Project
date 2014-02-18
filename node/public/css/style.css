@@ -93,7 +93,7 @@ body{
 	background: url("../images/everest_transparent.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
-	border: 2px #303030 solid;
+	border: 1px #303030 solid;
 	padding: 3% 3%;
 	margin: 10px 10px 0px 0px;
 	font-size: 18px;
@@ -131,30 +131,53 @@ body{
 	float: left;
 }
 
-
-.container{
-	clear: both;
+@media (max-width: 850px) and (min-width: 700px) {
+	.container {
+		width: auto;
+	}
 }
 
-.navbar-nav li{
-	font-size: 12px;
+
+@media (min-width: 300px) and (max-width: 1200px) {
+	.collapse {
+		display: none !important;
+	}
+
+
+	.container{
+		clear: both;
+	}
+
+	.navbar-nav li{
+		font-size: 12px;
+		padding: 0;
+		margin: 0;
+	}
+
+	.navbar-brand{
+		font-size: 14px;
+		margin-left: 10px;
+		float: left;
+	}
+
+	.navbar-fixed-top{
+		position: absolute;
+		padding-left: 25px;
+		padding-right: 20px;
+	}
+
+	.navbar, .container, .navbar-fixed-top, .navbar-inverse, #footer, .navbar-header{
+		background-color: #333;
+	}
+	.nav > li > a {
+		padding: 15px 10px;
+	}
+	.glyphicon{
+		margin: 0px 2px;
+	}
 }
 
-.navbar-brand{
-	font-size: 14px;
-	margin-left: 15px;
-	float: left;
-}
 
-.navbar-fixed-top{
-	position: absolute;
-	padding-left: 25px;
-	padding-right: 20px;
-}
-
-.navbar, .container, .navbar-fixed-top, .navbar-inverse, #footer, .navbar-header{
-	background-color: #333;
-}
 
 .imageBlock{
 	float: left;
@@ -166,6 +189,24 @@ body{
 	height: 100px;
 	margin: 3px;
 }
+
+.add_content{
+	display: block;
+	list-style: none;
+	clear: both;
+	margin: 15px 0px;
+}
+
+ul.add_content li{
+	float: left;
+	height: 40px;
+	margin-bottom: 5px;
+}
+
+#addPhoto, #addMessage{
+	clear: both;
+}
+
 
 /*
 #main, .container, #headercontents, .header2{
@@ -245,7 +286,7 @@ input  {
 	width:100%;
 	display:block;
 	border: 1px solid #999;
-	margin: 0px 0px 10px 0px;
+	margin: 0px 0px 0px 0px;
 	-webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
 	-moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
 	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
@@ -256,11 +297,16 @@ input.newSubmit, .inputForm {
 	margin-top: 25px;
 }
 
+.addButton{
+	margin-top: -10px;
+}
 
-
-input.submitButton {
-	margin-left: 0;
+input.submitButton{
 	width: 100%;
+}
+
+input.submitButton, .addPhotoButton, .addMessageButton {
+	margin-left: 0;
 	height: 20%;
 	background:#303030;
 	color:#fff;
@@ -273,6 +319,21 @@ input.submitButton {
 	/*font-size: 4.5vw; */
 	letter-spacing: 1px;
 	padding: 10px 5px;
+}
+
+.addPhotoButton, .addMessageButton {
+	width: 200px;
+	height: 40px;
+	display:block;
+	border: 1px solid #999;
+	-webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+	padding: 7px 10px;
+	background:#303030;
+
+	/*background-color: rgb(0, 95, 107);
+	*/
 }
 
 input.submitButton:hover {
