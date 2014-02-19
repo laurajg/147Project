@@ -82,9 +82,32 @@ function createGallery(photos) {
 
 	$("#gallery-content").html(div_html);	
 	$(".closeIconImg").click(function() {
+		var del = confirm("Are you sure you want to delete this?");
 		var image = $(this).siblings()[0];
-		$.post('/deletePhoto', {'photoURL': image.src});
-		$(this).parent().remove();
+		if (del) {
+			$.post('/deletePhoto', {'photoURL': image.src});
+			$(this).parent().remove();
+
+			current_img_urls = current_img_urls.filter(function(obj) {
+				return obj != image.src;
+			});
+
+		}
+
+	});
+	$(".closeIconText").click(function(e) {
+		e.stopPropagation();
+		var del = confirm("Are you sure you want to delete this?");
+		var span = $(this).siblings()[0];
+		if (del) {
+			$.post('/deletePhoto', {'photoURL': 'text://' + span.innerHTML});
+			$(this).parent().remove();
+		}
+		
+		current_img_urls = current_img_urls.filter(function(obj) {
+			return obj != 'text://' + span.innerHTML;
+		});
+
 	});
 		
 }
