@@ -8,6 +8,6 @@ exports.sendUpdate = function(req, res){
 		message += '<p>Click <a href="http://goalglance.herokuapp.com/">here</a> to send ' + req.session.user + ' some encouragement![TODO]</p>';
 		mailUtils.sendMail(emailaddr,subject_text,message);
 	});	
-	//console.log(req.query);
+	dbUtils.addPhoto(req.session.user, 'text://' + req.query.message);
 	res.redirect('/gallery');
 };
