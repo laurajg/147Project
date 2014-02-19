@@ -14,15 +14,24 @@ body{
 	height: 100%;
 }
 
-#main, #landingMain{
-	/*margin-top: 10px;
-	width: 80%; */
+#main, #landingMain, #prelogin-main{
 	width: 90%;
+}
+
+#main, #landingMain, #prelogin-main, #wrap{
+
 	min-height: 100%;
 	height: auto !important;
 	height: 100%;
 	/* Negative indent footer by it's height */
 	margin: 0 auto -50px; 
+}
+
+
+
+#prelogin-main{
+	margin-top: 125px;
+	margin-bottom: -50px;
 }
 
 #galleryContents{
@@ -542,18 +551,32 @@ figure {
 
 }
 
-.jumbotron:after {
+.header-prelogin{
+	height: 90px;
+	z-index: 50;
+	background: url("../images/everest_transparent.jpg");
+}
+
+.header-prelogin h3{
+	padding-left: 15px;
+	padding-top: 10px;
+}
+
+.jumbotron:after, .header-prelogin {
 	content:"";
-	background: url("../images/everest.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
-	max-height: 600px;
-	opacity: 0.4;
 	top: 0;
 	left: 0;
 	bottom: 0;
 	right: 0;
 	position: absolute;
+}
+
+.jumbotron:after{
+	max-height: 600px;
+	background: url("../images/everest.jpg");
+	opacity: 0.4;
 	z-index: -1;	
 }
 
@@ -563,13 +586,7 @@ figure {
 }
 
 
-#wrap {
-	min-height: 100%;
-	height: auto !important;
-	height: 100%;
-	/* Negative indent footer by it's height */
-	margin: 0 auto -30px;
-}
+
 
 /* END LANDING PAGE STYLING */
 

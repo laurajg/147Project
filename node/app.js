@@ -28,6 +28,7 @@ var addPhoto = require('./routes/addPhoto');
 var sendUpdate = require('./routes/sendUpdate');
 var add_content = require('./routes/add_content');
 
+
 // Example route
 // var user = require('./routes/user');
 
@@ -84,6 +85,7 @@ app.get('/contact', contact.view);
 app.post('/addPhoto', addPhoto.add);
 app.get('/sendUpdate',sendUpdate.sendUpdate);
 app.get('/add_content',add_content.view);
+
 
 
 var dbUtils = require('dbUtils');
