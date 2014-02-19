@@ -80,7 +80,13 @@ function createGallery(photos) {
 		div_html += "<div>No photos added yet! <a href=\"/upload\">Add some here!</a></div>"
 	}
 
-	$("#gallery-content").html(div_html);			
+	$("#gallery-content").html(div_html);	
+	$(".closeIconImg").click(function() {
+		var image = $(this).siblings()[0];
+		$.post('/deletePhoto', {'photoURL': image.src});
+		$(this).parent().remove();
+	});
+		
 }
 
 // Updates gallery div with currently selected photos. filter_type: 0 = my images only, 1 = social images only, 2 = all images (default)
