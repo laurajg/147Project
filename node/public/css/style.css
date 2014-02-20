@@ -1,6 +1,11 @@
+* {
+margin: 0;
+}
+
 html, body{
 	height: 100%;
 	overflow-x: hidden !important;
+
 } 
 
 body{
@@ -12,11 +17,14 @@ body{
 	letter-spacing: 1px;
 	color: #303030; 
 	height: 100%;
+	width: 100%;
 }
 
 #main, #landingMain, #prelogin-main{
 	width: 90%;
 }
+
+
 
 #main, #landingMain, #prelogin-main, #wrap{
 
@@ -64,46 +72,42 @@ body{
 #footerLogoImg{
 	height: 20px;
 }
-#footer {
-	border-color: #080808;
-	background-color: #222222;
-	font-size: 12px;	
-}
+
 
 #footerTerms{
 	float: left;
 	margin-right: 7%;
 }
+
 #footer {
-		margin-left: -20px;
-		margin-right: -20px;
-		padding-left: 20px;
-		padding-right: 20px;
-		overflow-x: hidden !important;
-
-	}
-
-
-.footer {
-	position: relative;
-	/*margin-top: -40px;  negative value of footer height */
-	clear:both;
-	padding-top:20px;
+	border-color: #080808;
 	background-color: #222222;
-
+	font-size: 12px;	
+	margin-left: -20px;
+	margin-right: -20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	overflow-x: hidden !important;
+	bottom:0;
+	left:0;
+	position: absolute;
 	width: 100%;
-} 
+	margin: 0;
+}
+
+
 
 .text-randomInspiration{
 	width: 100%;
-	height: 140px;
+	height: 200px;
+	max-width: 600px;
 	/*background-color: white; */
 	background: url("../images/everest_transparent.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	border: 1px #303030 solid;
 	padding: 3% 3%;
-	margin: 10px 10px 0px 0px;
+	margin: auto;
 	font-size: 18px;
 	font-weight: 600;   
 	border-radius: 6px;  
@@ -364,10 +368,11 @@ input.newSubmit, .inputForm {
 
 input.submitButton{
 	width: 100%;
+	max-width: 600px;
+	margin: auto;
 }
 
 input.submitButton, .addPhotoButton, .addMessageButton {
-	margin-left: 0;
 	height: 20%;
 	background:#303030;
 	color:#fff;
@@ -456,16 +461,20 @@ textarea:focus, input:focus {
 	-webkit-box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
 	-moz-box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
 	box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
-	margin-left: 12%;
+	
 	margin-top: 42px;
 	margin-right: auto;
+	margin-left: 13%;
 }
 
 
 #randomImg{
 	position: relative;
 	width: 100%;
-	max-height: 40%;
+	max-width: 600px;
+	max-height: 50%;
+	margin: auto;
+	min-height: 200px;
 }
 /* UPLOAD PHOTOS SPECIFIC STYLING*/
 
