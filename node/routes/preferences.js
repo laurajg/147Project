@@ -5,7 +5,7 @@ exports.view = function(req, res){
 		var dbUtils = require('dbUtils');
 		dbUtils.getGoal(req.session.user, function(goal) {
 			dbUtils.getReminders(req.session.user, function(reminders) {
-				res.render('prefs', {'user': req.session.user, 'goal': goal, 'reminders': reminders});
+				res.render('prefs', {'user': req.session.user, 'goal': goal, 'reminders': reminders, 'numNew': req.session.numNew});
 			});
 		});
 	}

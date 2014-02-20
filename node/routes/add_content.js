@@ -4,7 +4,7 @@ exports.view = function(req, res){
 	} else {
 		var dbUtils = require('dbUtils');
 		dbUtils.getGoal(req.session.user, function(goal) {
-			res.render('add_content', {'user': req.session.user, 'goal': goal});
+			res.render('add_content', {'user': req.session.user, 'goal': goal, 'numNew': req.session.numNew});
 		});
 	}
 };
