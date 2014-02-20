@@ -66,10 +66,18 @@ function createGallery(photos) {
 	for (i = 0; i < img_list.length; i++) {
 		if (img_list[i]['url'].indexOf('text://') == 0) {
 			var textmsg = img_list[i]['url'].substring(7);
-			div_html += "<div class='text-gallery  oneGalleryImg' id='gal_img_"+i+"' onclick=\"javascript:updateAndShowOverlay("
+			div_html += "<div class='text-gallery  oneGalleryImg";
+			if (img_list[i]['new']) {
+				div_html += " new-photo";
+			}
+			div_html += "' id='gal_img_"+i+"' onclick=\"javascript:updateAndShowOverlay("
 				+cur_idx+",true)\"><a class=\"closeIconText\">x</a><span>"+textmsg+"</span></div>"
 		} else {
-			div_html += "<div class=\"oneGalleryImg\"><img class='img-gallery' src=\"" + img_list[i]['url'] + "\" id='gal_img_"+i+"' onclick=\"javascript:updateAndShowOverlay("
+			div_html += "<div class=\"oneGalleryImg"
+			if (img_list[i]['new']) {
+				div_html += " new-photo"
+			}
+			div_html += "\"><img class='img-gallery' src=\"" + img_list[i]['url'] + "\" id='gal_img_"+i+"' onclick=\"javascript:updateAndShowOverlay("
 				+cur_idx+",true)\"/><a class=\"closeIconImg\">x</a></div>";					
 		}
 	current_img_urls.push(img_list[i]['url']);
@@ -91,6 +99,7 @@ function createGallery(photos) {
 			current_img_urls = current_img_urls.filter(function(obj) {
 				return obj != image.src;
 			});
+			currently_selected_img=0;
 
 		}
 
@@ -102,14 +111,15 @@ function createGallery(photos) {
 		if (del) {
 			$.post('/deletePhoto', {'photoURL': 'text://' + span.innerHTML});
 			$(this).parent().remove();
+			current_img_urls = current_img_urls.filter(function(obj) {
+				return obj != 'text://' + span.innerHTML;
+			});
 		}
 		
-		current_img_urls = current_img_urls.filter(function(obj) {
-			return obj != 'text://' + span.innerHTML;
-		});
 
 	});
-		
+	$.post('/setPhotosSeen', {'image_urls': current_img_urls});
+
 }
 
 // Updates gallery div with currently selected photos. filter_type: 0 = my images only, 1 = social images only, 2 = all images (default)

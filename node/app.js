@@ -26,6 +26,7 @@ var logout = require('./routes/logout');
 var contact = require('./routes/contact');
 var addPhoto = require('./routes/addPhoto');
 var deletePhoto = require('./routes/deletePhoto');
+var setPhotosSeen = require('./routes/setPhotosSeen');
 var sendUpdate = require('./routes/sendUpdate');
 var add_content = require('./routes/add_content');
 
@@ -85,7 +86,8 @@ app.get('/logout', logout.view);
 app.get('/contact', contact.view);
 app.post('/addPhoto', addPhoto.add);
 app.post('/deletePhoto', deletePhoto.delete);
-app.get('/sendUpdate',sendUpdate.sendUpdate);
+app.post('/setPhotosSeen', setPhotosSeen.setSeen);
+app.get('/sendUpdate', sendUpdate.sendUpdate);
 app.get('/add_content',add_content.view);
 
 
