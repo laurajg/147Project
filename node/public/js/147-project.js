@@ -33,6 +33,8 @@ window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFile
 
     function sendPassword(){
         if(verifyEmail()) {
+            var username = document.register.username.value;
+            
             alert("We have sent you your password!");
         }
     }
