@@ -74,15 +74,14 @@ body{
 	float: left;
 	margin-right: 7%;
 }
-/* Lastly, apply responsive CSS fixes as necessary */
-@media (max-width: 900px) {
-	#footer {
+#footer {
 		margin-left: -20px;
 		margin-right: -20px;
 		padding-left: 20px;
 		padding-right: 20px;
+		overflow-x: hidden !important;
+
 	}
-}
 
 
 .footer {
@@ -205,20 +204,16 @@ body{
     }
 
 
-@media (max-width: 850px) and (min-width: 700px) {
-	.container {
-		width: auto;
-	}
+
+@media (min-width: 768px) and (max-width: 1000px) {
+   .collapse {
+       display: none !important;
+   }
 }
 
 
-@media (min-width: 300px) and (max-width: 1200px) {
-	.collapse {
-		display: none !important;
-	}
 
-
-	.container{
+.container{
 		clear: both;
 	}
 
@@ -249,9 +244,6 @@ body{
 	.glyphicon{
 		margin: 0px 2px;
 	}
-}
-
-
 
 .imageBlock{
 	float: left;
@@ -469,11 +461,17 @@ textarea:focus, input:focus {
 	-webkit-box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
 	-moz-box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
 	box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
-	margin-left: 15%;
+	margin-left: 12%;
 	margin-top: 42px;
 	margin-right: auto;
 }
 
+
+#randomImg{
+	position: relative;
+	width: 100%;
+	max-height: 40%;
+}
 /* UPLOAD PHOTOS SPECIFIC STYLING*/
 
 #Randomimage {
@@ -576,7 +574,9 @@ figure {
 .jumbotron:after{
 	max-height: 600px;
 	background: url("../images/everest.jpg");
-	opacity: 0.4;
+		background-size: cover;
+
+	opacity: 0.5;
 	z-index: -1;	
 }
 
