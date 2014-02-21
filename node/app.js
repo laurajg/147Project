@@ -29,7 +29,8 @@ var deletePhoto = require('./routes/deletePhoto');
 var setPhotosSeen = require('./routes/setPhotosSeen');
 var sendUpdate = require('./routes/sendUpdate');
 var add_content = require('./routes/add_content');
-
+var getcontacts = require('./routes/getcontacts');
+var addSocialMotivation = require('./routes/addSocialMotivation');
 
 // Example route
 // var user = require('./routes/user');
@@ -89,7 +90,11 @@ app.post('/deletePhoto', deletePhoto.delete);
 app.post('/setPhotosSeen', setPhotosSeen.setSeen);
 app.get('/sendUpdate', sendUpdate.sendUpdate);
 app.get('/add_content',add_content.view);
-
+app.get('/getcontacts',getcontacts.view);
+app.get('/addContact',getcontacts.addContact);
+app.get('/removeContact',getcontacts.removeContact);
+app.get('/addSocialMotivation',addSocialMotivation.view);
+app.get('/doAddSocialMotivation',addSocialMotivation.doAdd);
 
 
 var dbUtils = require('dbUtils');

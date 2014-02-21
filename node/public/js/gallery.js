@@ -17,7 +17,7 @@ var currently_selected_img = 0;
 function selectNewFilter(filter, text) {
 	$("#filter-text").text(text);
 	updateGallery(filter);
-	return false;
+	event.preventDefault();
 }
 
 function nextImage() {

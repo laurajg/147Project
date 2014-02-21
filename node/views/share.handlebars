@@ -33,22 +33,15 @@
 	<div class="text">
 	Let friends and family know what you are working towards so they can send you inspiring messages!
 	</div>
-	
-	
-	<h5>Who to share with:</h5>
-	<select multiple>
-	  <option>Mom</option>
-	  <option>Grandma Jane</option>
-	  <option>William Carter</option>
-	</select>
-	<h5>Add an (optional) personalized message to let them know about your goal:</h5>
-	<textarea id="message"></textarea>
 
+	<div id='sharingmessage'></div>
+    <br/>
+    <a href="getcontacts"><input class = "submitButton" type="submit" value="Add more people"></a>
 	{{#if welcome}}
 
 	<a href="welcome_upload"><input class = "submitButton" type="submit" value="< Back to upload"></a>
 	{{/if}}
-	<a href="gallery"><input class = "submitButton" type="submit" value="Send & Go to Gallery"></a>
+	<a href="gallery"><input class = "submitButton" type="submit" value="Finish & Go to Gallery"></a>
 	<br/>
 	 <div id="push"></div>
 
@@ -58,6 +51,18 @@
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="js/jquery-1.11.0.js"> </script>
 	<script src="js/bootstrap.js"> </script>
-
+    <script>
+        var contstr = "{{json contacts}}";
+        contstr = contstr.replace(/&quot;/g,"\"");
+        var contacts = JSON.parse(contstr);
+        var message = "You are not currently sharing your goal with anyone.";
+        if (contacts.length != 0) {
+            message = "You are currently sharing your goal with:<ul>";            
+            for (i = 0; i < contacts.length; i++) {
+                message += "<li>" + contacts[i] + "<a href='/removeContact?email="+escape(contacts[i])+"' style='float:right'>Remove</a></li>";                
+            }            
+        }
+        $('#sharingmessage').html(message);
+    </script>
 </body>
 </html>
