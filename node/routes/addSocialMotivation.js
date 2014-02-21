@@ -1,32 +1,22 @@
-exports.sendUpdate = function(req, res){
-    var dbUtils = require('dbUtils');
-    console.log(req.query);
-
-    if(req.query.share != 'me-only') {
-        dbUtils.getContacts(req.session.user, function(contacts) {
-        contacts = typeof contacts !== 'undefined' ? contacts : [];          
-        for (i = 0; i < contacts.length; i++) {
-            var mailUtils = require('mailUtils');
-            mailUtils.initialize(); 
-            var subject_text = 'GoalGlance: New update from ' + req.session.user + '!';
-            var message = '<p>'+ req.session.user + ' has a new update about their goal!</p><p><b>'+req.query.message+'</b></p>'
-            message += '<p>Click <a href="http://goalglance.herokuapp.com/addSocialMotivation?user='+escape(req.session.user)+'">here</a> to send ' + req.session.user + ' some encouragement!</p>';
-            //mailUtils.sendMail(emailaddr,subject_text,message);
-            console.log(emailddr);
-            console.log(message);
-        }
-    }); 
-    }
-    dbUtils.addPhoto(req.session.user, 'text://' + req.query.message);
-    res.redirect('/gallery');
-};
-
 exports.view = function(req,res) {
-    res.render('addSocialMotivation');
-    dbUtils.addPhoto(req.session.user, 'text://' + req.query.message);
+    var dbUtils = require('dbUtils');
+    dbUtils.getGoal(req.query.user, function(goal) {
+        res.render('addSocialMotivation',{'user': req.query.user, 'sender': req.query.email, 'goal': goal});    
+    });    
 }
 
 exports.doAdd = function(req,res) {
-    res.render('addSocialMotivation');
-    dbUtils.addPhoto(req.session.user, 'text://' + req.query.message);
+    var dbUtils = require('dbUtils');
+    var mailUtils = require('mailUtils');
+    mailUtils.initialize(); 
+    dbUtils.getEmail(req.query.username, function(email) {
+        var subject_text = 'GoalGlance: New message from ' + req.query.sendername + '!';
+        var message = '<p>' + req.query.sendername + ' ('+ req.query.senderemail +') has a new motivational message for you!</p>';
+        message += '<p>Click <a href="http://goalglance.herokuapp.com/gallery">here</a> to go to your gallery and see it!</p>';    
+        var gallery_message = "<p>From: " + req.query.sendername + "</p><p>" + req.query.message + '</p>';
+        dbUtils.addPhoto(req.session.user, 'text://' + gallery_message);
+        mailUtils.sendMail(email,subject_text,message);
+        res.render('addSocialMessageConfirm');
+    });
+    
 }
