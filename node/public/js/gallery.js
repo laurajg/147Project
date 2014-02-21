@@ -73,11 +73,11 @@ function createGallery(photos) {
 			div_html += "' id='gal_img_"+i+"' onclick=\"javascript:updateAndShowOverlay("
 				+cur_idx+",true)\"><a class=\"closeIconText\">x</a><span>"+textmsg+"</span></div>"
 		} else {
-			div_html += "<div class=\"oneGalleryImg"
+			div_html += "<div style='float:left' class=\"oneGalleryImg"
 			if (img_list[i]['new']) {
 				div_html += " new-photo "
 			}
-			div_html += "\"><div id='gal_img_"+i+"'><img class='img-gallery' src=\"" + img_list[i]['url'] + "\" onclick=\"javascript:updateAndShowOverlay("
+			div_html += "\"><div  id='gal_img_"+i+"'><img class='img-gallery' src=\"" + img_list[i]['url'] + "\" onclick=\"javascript:updateAndShowOverlay("
 				+cur_idx+",true)\"/><a class='closeIconImg'>x</a></div></div>";					
 		}
 	current_img_urls.push(img_list[i]['url']);

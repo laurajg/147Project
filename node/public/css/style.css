@@ -57,6 +57,7 @@ body{
 
 .footerInfo{
 	padding-top: 12px;
+	margin: auto;
 }
 
 .footerInfo a{
@@ -82,7 +83,7 @@ body{
 #footer {
 	border-color: #080808;
 	background-color: #222222;
-	font-size: 12px;	
+	font-size: 14px;	
 	margin-left: -20px;
 	margin-right: -20px;
 	padding-left: 20px;
@@ -176,7 +177,7 @@ table{
 
     ol.progtrckr li.progtrckr-done {
         color: black;
-        border-bottom: 4px solid yellowgreen;
+        border-bottom: 4px solid rgb(0, 95, 107);
     }
     ol.progtrckr li.progtrckr-todo {
         color: silver; 
@@ -196,7 +197,7 @@ table{
     ol.progtrckr li.progtrckr-done:before {
         content: "\2713";
         color: white;
-        background-color: yellowgreen;
+        background-color: rgb(0, 95, 107);
         height: 1.2em;
         width: 1.2em;
         line-height: 1.2em;
@@ -261,21 +262,48 @@ table{
 	margin: 3px;
 }
 
-.add_content{
+ul.add_content{
 	display: block;
 	list-style: none;
 	clear: both;
-	margin: 15px 0px;
+	margin: auto;
+	padding: 0;
+	width: 100%;
+
 }
 
 ul.add_content li{
-	float: left;
 	height: 40px;
-	margin-bottom: 5px;
+	margin-bottom: 50px;
+	margin: auto;
+}
+
+
+.addPhotoButton, .addMessageButton {
+	width: 100%;
+	max-width: 600px;
+	height: 40px;
+	display:block;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 10px;
+	color:#fff;
+	border: 1px solid #999;
+	-webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+	padding: 7px 10px;
+	background:#303030;
+	clear: both;
+	margin: auto;
+	margin-bottom: 10px;
+	/*background-color: rgb(0, 95, 107);
+	*/
 }
 
 #addPhoto, #addMessage{
 	clear: both;
+	margin: auto;
 }
 
 
@@ -378,7 +406,7 @@ input.submitButton{
 	margin: auto;
 }
 
-input.submitButton, .addPhotoButton, .addMessageButton {
+input.submitButton {
 	height: 20%;
 	background:#303030;
 	color:#fff;
@@ -386,7 +414,7 @@ input.submitButton, .addPhotoButton, .addMessageButton {
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 10px;
-	border: 1p solid #999;
+	border: 1px solid #999;
 	/*font-size: 32px; */
 	/*font-size: 4.5vw; */
 	letter-spacing: 1px;
@@ -395,20 +423,7 @@ input.submitButton, .addPhotoButton, .addMessageButton {
 	margin-bottom: 5px;
 }
 
-.addPhotoButton, .addMessageButton {
-	width: 200px;
-	height: 40px;
-	display:block;
-	border: 1px solid #999;
-	-webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-	-moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-	padding: 7px 10px;
-	background:#303030;
 
-	/*background-color: rgb(0, 95, 107);
-	*/
-}
 
 input.submitButton:hover {
 	background:#fff;
