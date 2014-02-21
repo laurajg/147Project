@@ -1,6 +1,5 @@
 exports.sendUpdate = function(req, res){
 	var dbUtils = require('dbUtils');
-	console.log(req.query);
 
 	if(req.query.share != 'no-one') {
 		dbUtils.getEmail(req.session.user, function(emailaddr) {
@@ -13,5 +12,7 @@ exports.sendUpdate = function(req, res){
 	});	
 	}
 	dbUtils.addPhoto(req.session.user, 'text://' + req.query.message);
-	res.redirect('/gallery');
+	req.session.numNew++;
+	req.session.save();
+	res.redirect('/');
 };

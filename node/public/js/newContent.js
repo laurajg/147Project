@@ -18,7 +18,7 @@ $(document).ready(function() {
 
 
 
- function handleFileSelect(evt) {
+ function handleFileSelect(evt, numNew) {
     var files = evt.target.files; // FileList object
     // Loop through the FileList and render image files as thumbnails.
     for (var i = 0, f; f = files[i]; i++) {
@@ -41,21 +41,22 @@ $(document).ready(function() {
                             '" title="', escape(theFile.name), '"/> </a> Uploaded!</div>'].join('');
 
           document.getElementById('list').insertBefore(div, null);
-          
-
-          //HERE IS WHAT ISN'T FINISHED. I DONT KNOW HOW TO PASS THIS THROUGH
-          // dbUtils.addPhoto(req.session.user,  e.target.result);
-
           $.post('/addPhoto', {'data': e.target.result});
+          incrementNew(numNew);
 
 
         }
-                   
+ x  
       })(f);
 
       // Read in the image file as a data URL.
       reader.readAsDataURL(f);
     }
+  }
+
+  function incrementNew() {
+    var numNew = $("#numNew")[0].innerHTML;
+    $("#numNew")[0].innerHTML = parseInt(numNew) + 1;
   }
 
   document.getElementById('files').addEventListener('change', handleFileSelect, false);
