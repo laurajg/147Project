@@ -43,7 +43,7 @@
               </select>
               <h5>Enter your message:</h5>
               <textarea id="message" name="message"></textarea>    
-              <input class = "submitButton" type="submit" value="Save Message">
+              <input class = "submitButton" type="submit" value="Save Message" onclick="incrementNew()">
           </form>
       </div>
 
@@ -77,7 +77,7 @@
 
 {{#unless welcome}}
 <form action="/">
-    <input  class = "submitButton addButton" type="submit" value="Back to home">
+    <input  class = "submitButton" type="submit" value="Back to home">
 </form>
 {{/unless}}
 </div>

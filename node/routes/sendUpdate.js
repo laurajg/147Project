@@ -1,6 +1,5 @@
 exports.sendUpdate = function(req, res){
 	var dbUtils = require('dbUtils');
-	console.log(req.query);
 
 	if(req.query.share != 'friends') {
 		dbUtils.getContacts(req.session.user, function(contacts) {
@@ -19,5 +18,7 @@ exports.sendUpdate = function(req, res){
 	});	
 	}
 	dbUtils.addPhoto(req.session.user, 'text://' + req.query.message);
-	res.redirect('/gallery');
+	req.session.numNew++;
+	req.session.save();
+	res.redirect('/');
 };

@@ -34,7 +34,7 @@ exports.view = function(req, res){
 		var dbUtils = require('dbUtils');
 		dbUtils.getGoal(req.session.user, function(goal) {
 			dbUtils.getPhotos(req.session.user, function(photos) {
-				res.render('index', {'user': req.session.user, 'goal': goal, 'photos': photos});
+				res.render('index', {'user': req.session.user, 'goal': goal, 'photos': photos, 'numNew': req.session.numNew});
 			});
 		});
 	}

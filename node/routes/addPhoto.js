@@ -1,5 +1,7 @@
 exports.add = function(req, res){
 	var dbUtils = require('dbUtils');
-	console.log(req['body']['data']);
+	req.session.numNew++;
+	req.session.save();
 	dbUtils.addPhoto(req.session.user, req['body']['data']);
+
 };
