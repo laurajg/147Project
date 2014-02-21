@@ -24,8 +24,8 @@
 }
 
 .new-photo, .new-photo .img-gallery{
-	border:  1px red solid; 
-	box-shadow: 1px 1px 2px red;
+	border:  1px solid rgb(158, 36, 16); 
+	box-shadow: 1px 1px 2px rgb(158, 36, 16);
 /*
 	-moz-box-shadow:    2px 3px 2px 2px red;
   	-webkit-box-shadow: 3px 3px 2px 2px red; 

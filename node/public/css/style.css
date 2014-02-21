@@ -392,7 +392,7 @@ input  {
 	padding: 6px 20px;
 }
 
-input.newSubmit, .inputForm {
+input.tSubmit, .inputForm {
 	margin-top: 15px;
 }
 
@@ -449,14 +449,23 @@ textarea:focus, input:focus {
 .titleRow{
 	clear: both;
 	margin: auto;
-	border-top: solid #303030 1px;
-	border-bottom: solid #303030 1px;
+	color: #113366;
 	padding: 3px 0px;
 	margin-bottom: 5px;
 	font-size: 16px;
 	width: 100%;
 	max-width: 600px;
 
+	border-top: solid #113366 1px;
+	border-bottom: solid #113366 1px;
+
+/*
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	padding-left: 8px;
+	background-color: rgb(84, 129, 209);
+*/
 }
 
 .navbar{
@@ -470,8 +479,9 @@ textarea:focus, input:focus {
 	display: block;
 	width: 70%;
 	height: 28px;
-	/*background-color: #428bca; */
-	background-color: rgb(0, 95, 107);
+	/*background-color: #428bca; 
+	background-color: rgb(0, 95, 107); */
+	background-color: #113366;
 	font-size: 12px;
 	line-height: 28px;
 	text-align: center;
