@@ -75,10 +75,10 @@ function createGallery(photos) {
 		} else {
 			div_html += "<div class=\"oneGalleryImg"
 			if (img_list[i]['new']) {
-				div_html += " new-photo"
+				div_html += " new-photo "
 			}
-			div_html += "\"><img class='img-gallery' src=\"" + img_list[i]['url'] + "\" id='gal_img_"+i+"' onclick=\"javascript:updateAndShowOverlay("
-				+cur_idx+",true)\"/><a class=\"closeIconImg\">x</a></div>";					
+			div_html += "\"><div id='gal_img_"+i+"'><img class='img-gallery' src=\"" + img_list[i]['url'] + "\" onclick=\"javascript:updateAndShowOverlay("
+				+cur_idx+",true)\"/><a class='closeIconImg'>x</a></div></div>";					
 		}
 	current_img_urls.push(img_list[i]['url']);
 	cur_idx++;				
@@ -140,6 +140,7 @@ function updateGallery(filter_type) {
 		}
 		else {
 			$("#gal_img_"+i).hide();
+
 		}
 	}
 };

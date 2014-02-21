@@ -8,13 +8,29 @@
 	box-shadow: 4px 4px 3px #888888;
 	float: left;
 	/*margin: 15px; */
+		display: inline-block;   
+
 }
 
-.new-photo{
-	/*border: 1px red solid; */
-	-moz-box-shadow:    3px 3px 5px 6px red;
-  	-webkit-box-shadow: 3px 3px 5px 6px red;
-  	box-shadow:         3px 3px 5px 6px red;
+.text-gallery{
+	box-shadow: 4px 4px 3px #888888;
+	float: left;
+	height: 80px;
+	width: 120px;
+	padding: 8px 8px 0px 5px;
+	margin: 10px 10px 0px 0px;
+	text-shadow: 0 1px 0 rgb(0, 95, 107);
+	font-size: 2.0vh;     
+}
+
+.new-photo, .new-photo .img-gallery{
+	border:  1px red solid; 
+	box-shadow: 1px 1px 2px red;
+/*
+	-moz-box-shadow:    2px 3px 2px 2px red;
+  	-webkit-box-shadow: 3px 3px 2px 2px red; 
+	*/
+
 }
 
 .closeIconImg {
@@ -24,7 +40,7 @@
 	color: #000000;
 	/*color: white; */
 	text-shadow: 0 1px 0 #ffffff;
-	opacity: 0.2;
+	opacity: 0.3;
 	filter: alpha(opacity=20);
 	text-decoration: none;
 	position: relative;
@@ -39,7 +55,7 @@
 }
 
 .closeIconText{
-	font-size: 20px;
+	font-size: 20px; 
 	font-weight: bold;
 	line-height: 18px;
 	color: white; 
@@ -75,16 +91,7 @@
 
 }
 
-.text-gallery{
-	box-shadow: 4px 4px 3px #888888;
-	float: left;
-	height: 80px;
-	width: 120px;
-	padding: 3% 3%;
-	margin: 10px 10px 0px 0px;
-	text-shadow: 0 2px 0 rgb(0, 95, 107);
-	font-size: 4.0vw;     
-}
+
 
 .gallery {
 	margin-top: 15px;
