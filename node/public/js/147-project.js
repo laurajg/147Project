@@ -22,8 +22,6 @@ window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFile
 
     function verifyRegister(){
         if(verifyEmail() && verifyPasswordMatch())    {
-            alert("Login Successful");
-            window.location="/welcome";
             return true;
         } else {
             window.location="/register";

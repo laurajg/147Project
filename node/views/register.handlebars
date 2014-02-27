@@ -25,7 +25,7 @@
 	<div id="createAccount">
 		<div class="titleRow"> Create an Account: </div>
 			<div class="inputForm">
-			<form method="get" onsubmit="return verifyRegister()" action = "/welcome" name="register">
+			<form method="get" onsubmit="return verifyRegister()" action = "/registerAttempt" name="register">
 				<table>
 				<tr> <td> <input type="text" required name="username"  placeholder="Username"/> </td></tr>
 				<tr> <td> <input type="text" required name="email" placeholder="Email"/> </td></tr>
@@ -49,9 +49,16 @@
       <div id="push"></div>
 
 </div> <!-- end main div -->
+
 		{{> footer}}
 
 	
+	{{#if usernameExist}}
+		<script>  alert("Sorry that username is already taken, please try another") </script>
+	{{/if}}
+	{{#if emailExist}}
+		<script>  alert("We already have an account registered to that email address") </script>
+	{{/if}}
 
 </body>
 </html>

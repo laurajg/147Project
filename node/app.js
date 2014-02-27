@@ -97,6 +97,8 @@ app.get('/doAddSocialMotivation',addSocialMotivation.doAdd);
 app.get('/login', login.view);
 app.get('/password', password.view);
 app.get('/sendPassword', password.getPassword);
+app.get('/registerAttempt', register.checkExistence);
+
 
 var dbUtils = require('dbUtils');
 dbUtils.initialize(function(err) {
