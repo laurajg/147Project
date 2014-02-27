@@ -14,17 +14,32 @@
 </script>
 </head>
 <body>
-	{{>navigation}}
-
-<div id="main">
+	{{#if loggedin}}
+		{{>navigation}}
+ 
+		<div id="main">
+	{{else}}
+	<div class="header-prelogin">
+    <h3>Goal Glance</h3>
+    <hr/>
+	</div>
+	<div id="prelogin-main" >
+	{{/if}}
 	<div class="titleRow"> Contact Us: </div>
 
 	<div class="text">
 		Send us a Message with any Feedback to: noemailaddressyet@goalglance.com
 	</div>
+
+	{{#if loggedin}}
 	<form action="/">
   		 		 <input  class = "submitButton newSubmit" type="submit" value="Back to Inspiration Page">
 	</form>
+	{{else}}
+	<form action="/landing">
+  		 		 <input  class = "submitButton newSubmit" type="submit" value="Back to Landing Page">
+	</form>
+	{{/if}}
 
       <div id="push"></div>
 

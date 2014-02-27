@@ -14,20 +14,33 @@
 </script>
 </head>
 <body>
-	{{>navigation}}
-
-<!--{{>header}} -->
-
-
-<div id="main">
+<{{#if loggedin}}
+		{{>navigation}}
+ 
+		<div id="main">
+	{{else}}
+	<div class="header-prelogin">
+    <h3>Goal Glance</h3>
+    <hr/>
+	</div>
+	<div id="prelogin-main" >
+	{{/if}}
 	<div class="titleRow"> Terms and Conditions: </div>
 
 	<div class="text">
 		The following describes the terms applicable to the use of the Site......
 	</div>
+	
+
+	{{#if loggedin}}
 	<form action="/">
   		 		 <input  class = "submitButton newSubmit" type="submit" value="Back to Inspiration Page">
 	</form>
+	{{else}}
+	<form action="/landing">
+  		 		 <input  class = "submitButton newSubmit" type="submit" value="Back to Landing Page">
+	</form>
+	{{/if}}
 	
 	<script src="https://code.jquery.com/jquery.js"></script>
 

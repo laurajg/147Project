@@ -31,6 +31,7 @@ var sendUpdate = require('./routes/sendUpdate');
 var add_content = require('./routes/add_content');
 var getcontacts = require('./routes/getcontacts');
 var addSocialMotivation = require('./routes/addSocialMotivation');
+//var sendPassword = require('./routes/sendPassword');
 
 // Example route
 // var user = require('./routes/user');
@@ -75,11 +76,9 @@ app.get('/share', share.view);
 app.get('/welcome', welcome.view);
 app.get('/welcome_upload', welcome_upload.view);
 app.get('/welcome_share', welcome_share.view);
-app.get('/login', login.view);
 app.get('/landing', landing.view);
 app.get('/register', register.view);
 app.get('/terms', terms.view);
-app.get('/password', password.view);
 app.get('/gallery', gallery.view);
 app.get('/change', change.view);
 app.get('/update_friends', update_friends.view);
@@ -95,7 +94,9 @@ app.get('/addContact',getcontacts.addContact);
 app.get('/removeContact',getcontacts.removeContact);
 app.get('/addSocialMotivation',addSocialMotivation.view);
 app.get('/doAddSocialMotivation',addSocialMotivation.doAdd);
-
+app.get('/login', login.view);
+app.get('/password', password.view);
+app.get('/sendPassword', password.getPassword);
 
 var dbUtils = require('dbUtils');
 dbUtils.initialize(function(err) {
