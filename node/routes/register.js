@@ -18,6 +18,10 @@ exports.checkExistence = function(req, res){
 				dbUtils.checkUsername(username, 
 					success = function(){
 						dbUtils.createUser(username, emailaddr, req.query.password);
+						if (!req.session.user) {
+							req.session.user = req.query.username;
+						}
+						res.render('welcome', {'user': req.session.user});
 						res.render('welcome');
 					}, 
 					failure = function() {

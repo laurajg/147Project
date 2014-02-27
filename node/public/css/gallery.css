@@ -21,6 +21,16 @@
 	margin: 10px 10px 0px 0px;
 	text-shadow: 0 1px 0 rgb(0, 95, 107);
 	font-size: 2.0vh;     
+	display: inline-block;   
+
+}
+
+
+.text-gallery, .text-gallery-zoom {	    	
+	color: white;
+	background-color: black;
+	text-align: center;             
+	overflow: hidden;
 }
 
 .new-photo, .new-photo .img-gallery{
@@ -73,13 +83,7 @@
 	float: left;
 	margin: 10px 10px 0px 0px;
 }
-.text-gallery, .text-gallery-zoom {	    	
-	color: white;
-	background-color: black;
-	text-align: center;             
-	display: inline-block;   
-	overflow: hidden;
-}
+
 
 .text-gallery-zoom{
 	vertical-align: middle;
