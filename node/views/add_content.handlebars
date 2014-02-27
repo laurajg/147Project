@@ -26,6 +26,12 @@
     </script>
     <!--{{>header}} -->
     <div id="main">
+
+        {{#if welcome}}
+        <h4> Your new goal is "{{goal}}!" Now upload some photos that will remind you why it's important to you.</h4>
+        <br/>
+        {{/if}}
+
         <ul class="add_content">  
             <li class="active"><a href="#" class="addPhotoButton"><span class="glyphicon glyphicon-camera">&nbsp;</span>Add Photo</a></li>  
             <li><a href="#" class="addMessageButton"><span class="glyphicon glyphicon-font">&nbsp;</span>Add Message</a></li>
@@ -69,7 +75,10 @@
 
 <output id="list"> </output>
 
+</div>
 
+<br/>
+<div id="push"></div>
 {{#if welcome}}
 <a href="welcome"><input  class = "submitButton" type="submit" value="< Back to Set Goal"></a>
 <a href="welcome_share"><input class = "submitButton" type="submit" value="On to share >"></a>
@@ -80,11 +89,8 @@
     <input  class = "submitButton" type="submit" value="Back to home">
 </form>
 {{/unless}}
-</div>
-
-<br/>
-<div id="push"></div>
 </div> <!-- end main div -->
+
 {{>footer}}
 <script src="js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery.js"></script>

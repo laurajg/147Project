@@ -12,9 +12,12 @@
 
 	<link href="css/style.css" rel="stylesheet" type="text/css">
 <script>
-var areyousure = confirm("Are you sure you want to change your goal? This can't be undone!");
-if (!areyousure) {
-	window.open("/gallery",'_self')
+function confirmChange() {
+	var areyousure = confirm("Are you sure you want to change your goal? This can't be undone!");
+	if (!areyousure) {
+		return false;
+	}
+	return true;
 }
 </script>
 </head>
@@ -38,7 +41,7 @@ if (!areyousure) {
 		<span class="warning">Entering a new goal will delete all data associated with your current goal!</span> 
 		<form method="get" role="form" action="/welcome_upload" name="register">
 			<input class="goal" name="goal" type="text"></input>
-			<input class = "submitButton" type="submit" value="Pick a motivational photo >">
+			<input class = "submitButton" type="submit" onclick="return confirmChange();" value="Pick a motivational photo >">
 		</form>
 		
 		<div id="push"></div>
