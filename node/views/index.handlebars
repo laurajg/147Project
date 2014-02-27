@@ -31,11 +31,11 @@
 		<div>No photos added yet! <a href="/add_content">Add some here!</a></div>
 		{{/unless}}
 
-
+		{{#if photos.length}}
 		<span id = "Randomimage">
 			<img id="randomImg" class="img-rounded  img-responsive" src=""/>
 		</span>
-
+		{{/if}}
 		<!--
 		<a class="arrow" id="arrowtwo"><span class="glyphicon glyphicon-chevron-right" onclick="changePic()"></span></a>
 	-->
@@ -43,10 +43,11 @@
 
 	<div  class = "submitButton " type="submit" value="Blarg" onclick="changePic()">
 
-
+		{{#if photos.length}}
 		<form>
   		  <input class = "submitButton changePic" type="submit" value="View Random Inspiration">
 		</form>
+		{{/if}}
 		<form action="/gallery">
   		 		 <input  class = "submitButton " type="submit" value="Go to Gallery">
 			</form>

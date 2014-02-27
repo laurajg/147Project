@@ -85,7 +85,7 @@ function createGallery(photos) {
 	}
 
 	if (!img_list.length) {
-		div_html += "<div>No photos added yet! <a href=\"/upload\">Add some here!</a></div>"
+		div_html += "<div>No photos added yet! <a href=\"/add_content\">Add some here!</a></div>"
 	}
 
 
