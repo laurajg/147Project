@@ -1,6 +1,6 @@
 exports.view = function(req, res){
 	if(!req.query.username && !req.query.email && !req.query.password && !req.session.user) {
-		res.redirect('landing');
+		res.redirect('login');
 	} else {
 		//var dbUtils = require('dbUtils');
 		//dbUtils.createUser(req.query.username, req.query.email, req.query.password);

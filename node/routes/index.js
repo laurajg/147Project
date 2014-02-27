@@ -26,7 +26,7 @@ exports.view = function(req, res){
 							});
 					},
 					failure = function() {
-						res.redirect('landing');
+						res.redirect('login?invalid=true');
 					}
 				);
 		}

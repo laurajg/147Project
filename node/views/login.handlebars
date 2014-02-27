@@ -27,6 +27,13 @@
 
 	<div id="createAccount">
 		<div class="titleRow"> Log In: </div>
+
+			{{#unless valid}}
+
+			<div>Login attempt invalid! Try again.</div>
+
+			{{/unless}}
+
 			<div class="inputForm">
 			<form action="/">
 				

@@ -23,7 +23,7 @@ function selectNewFilter(filter, text) {
 function nextImage() {
 	/*$('.imgoverlay-frame').animate({left: "-100%"},150, function() {
 		updateAndShowOverlay((currently_selected_img+1).mod(current_img_urls.length), false);
-		$('.imgoverlay-frame').css("left", "100%");
+		$('.imgoverlay-frame').css("left", "100%");r
 		$('.imgoverlay-frame').animate({left: "0%"},150);
 	});*/
 	updateAndShowOverlay((currently_selected_img+1).mod(current_img_urls.length), false);
@@ -87,6 +87,7 @@ function createGallery(photos) {
 	if (!img_list.length) {
 		div_html += "<div>No photos added yet! <a href=\"/upload\">Add some here!</a></div>"
 	}
+
 
 	$("#gallery-content").html(div_html);	
 	$(".closeIconImg").click(function() {
