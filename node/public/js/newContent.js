@@ -35,18 +35,19 @@ $(document).ready(function() {
       reader.onload = (function(theFile) {
         return function(e) {
           // Render thumbnail.
+          $.post('/addPhoto', {'data': e.target.result}, function(data) {
+              var div = document.createElement('div');
+              document.getElementById('list').insertBefore(div, null);
+              div.innerHTML = [' <div class="imageBlock"><a href="" action=deleteImage()> <img class="thumb" src="', e.target.result,
+                                '" title="', escape(theFile.name), '"/> </a> Uploaded!</div>'].join('');
+              incrementNew(numNew);
 
-          var div = document.createElement('div');
-          div.innerHTML = [' <div class="imageBlock"><a href="" action=deleteImage()> <img class="thumb" src="', e.target.result,
-                            '" title="', escape(theFile.name), '"/> </a> Uploaded!</div>'].join('');
-
-          document.getElementById('list').insertBefore(div, null);
-          $.post('/addPhoto', {'data': e.target.result});
-          incrementNew(numNew);
+          });
+          
 
 
         }
- x  
+   
       })(f);
 
       // Read in the image file as a data URL.
