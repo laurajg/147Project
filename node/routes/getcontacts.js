@@ -2,7 +2,8 @@ exports.view = function(req, res){
 //    if(!req.session.user) {
 //        res.redirect('landing');
 //    } else {
-        res.render('getcontacts');        
+        var alt = req.query.alt === undefined ? '0' : req.query.alt;                      
+        res.render('getcontacts',{'alt0': alt == 0, 'alt1': alt==1, 'alt2': alt==2});        
 //    }
 };
 exports.addContact = function(req, res) {

@@ -14,8 +14,6 @@
     <link href="css/bootstrap.css" rel="stylesheet" media="screen">   
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" type="text/css">
-
-
     <script>
     var contacts = []
     function auth() {
@@ -112,17 +110,30 @@ function enablebutton() {
     {{>navigation}}
     <div id="main">
         <p>Please enter the email address of a person you'd like to share with:</p>
-        <form action='/addContact' method='get'>
-        <p><input type='text' id='contactquery' name='contactemail'></input></p>
+        <form action='/addContact' method='get'>        
+        {{#if alt2}}
+        <p><input type='text' id='contactquery' name='contactemail' style='float:left;width:90%;'></input>
+        <input class = "submitButton" type="submit" value="+" style="width:10%;float:right;padding:6px; margin:0px;">
+        {{/if}}
+        {{#if alt1}}
+        <p><input type='text' id='contactquery' name='contactemail' style='float:left;width:80%'></input>
+        <input class = "submitButton" type="submit" value="Add" style="width:20%;float:right;padding:6px; margin:0px">
+        {{/if}}
+        {{#if alt0}}
+        <p><input type='text' id='contactquery' name='contactemail'></input>
+        {{/if}}
+        </p>
         <p>
-        <input class="submitButton" type="submit" value="Load Gmail Contacts to Search..." disabled id='gmailauthorize' onclick="auth(); return false;" style="margin-bottom: 15%">
+        <input class="submitButton" type="submit" value="Load Gmail Contacts to Search..." disabled id='gmailauthorize' onclick="auth(); return false;" style="margin-bottom: 15%;">        
         </p>
         <div id='gmaildiv' style='display:none'>
         <p>Matching Gmail Contacts:</p>
         <select id='contactslist' size=6 style="margin-bottom: 10%; height: 40%">
         </select>
         </div>
+        {{#if alt0}}
         <p><input class = "submitButton" type="submit" value="Share with this email address"></p>
+        {{/if}}
         <p><a href='/share'><input class = "submitButton" type="button" value="< Discard and Return to Sharing Settings"></a></p></form>
         <script src="https://apis.google.com/js/client.js"></script>
 
