@@ -123,9 +123,11 @@ function submitStatistics() {
     //submit button pushed event
     //submit time elapsed event
     //submit total time event
+    alert(now-last_time);
+    alert(now-start_time);
     ga('send','event','getcontacts', '{{statAddClicked}}'); 
-    ga('send','timing','getcontacts','{{statTypeToAddTime}}',now-last_time);
-    ga('send','timing','getcontacts','{{statTotalTime}}',now-start_time);   
+    ga('send','timing','getcontacts_timing','{{statTypeToAddTime}}',now-last_time);
+    ga('send','timing','getcontacts_timing','{{statTotalTime}}',now-start_time);   
     alert('huh');
 }
     </script>
