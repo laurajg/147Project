@@ -90,17 +90,42 @@ function render_contacts(contacts) {
              .text(cur.name + ' <' + cur.email + '>')); 
     }  
 }
-function startup() {
+var start_time = 0;
+var last_time = 0;
+
+function startup() {    
+    start_time = new Date().getTime(); 
+    last_time = new Date().getTime();
     enablebutton();
     $('#contactslist').change(function() {
+        last_time = new Date().getTime();
         var selecteditem = $(this).find(':selected');
         if (selecteditem.length > 0) {
             $('#contactquery').val(selecteditem.val());
         }
+        alert('selected');
     });
+    $('#contactquery').keyup(function() {
+        last_time = new Date().getTime();        
+    });
+    $('#addcontactform').submit(function() {
+        submitStatistics();
+    });
+    ga('send','event','getcontacts','{{statPageLoad}}');  
 }
+
 function enablebutton() {
   $('#gmailauthorize').removeAttr('disabled');
+}
+
+function submitStatistics() {
+    var now = new Date().getTime();    
+    //submit button pushed event
+    //submit time elapsed event
+    //submit total time event
+    ga('send','event','getcontacts', '{{statAddClicked}}'); 
+    ga('send','timing','getcontacts','{{statTypeToAddTime}}',now-last_time);
+    ga('send','timing','getcontacts','{{statTotalTime}}',now-start_time);   
 }
     </script>
   </head>
@@ -110,7 +135,7 @@ function enablebutton() {
     {{>navigation}}
     <div id="main">
         <p>Please enter the email address of a person you'd like to share with:</p>
-        <form action='/addContact' method='get'>        
+        <form action='/addContact' id='addcontactform' method='get'>        
         {{#if alt2}}
         <p><input type='text' id='contactquery' name='contactemail' style='float:left;width:90%;'></input>
         <input class = "submitButton" type="submit" value="+" style="width:10%;float:right;padding:6px; margin:0px;">
@@ -124,7 +149,7 @@ function enablebutton() {
         {{/if}}
         </p>
         <p>
-        <input class="submitButton" type="submit" value="Load Gmail Contacts to Search..." disabled id='gmailauthorize' onclick="auth(); return false;" style="margin-bottom: 15%;">        
+        <input class="submitButton" type="button" value="Load Gmail Contacts to Search..." disabled id='gmailauthorize' onclick="auth(); return false;" style="margin-bottom: 15%;">        
         </p>
         <div id='gmaildiv' style='display:none'>
         <p>Matching Gmail Contacts:</p>
@@ -144,5 +169,16 @@ function enablebutton() {
     <script src="js/jquery-1.11.0.js"> </script>
     <script src="js/bootstrap.js"> </script>
     <script src="js/hci-friends.js"> </script>    
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48581537-1', 'goalglance.herokuapp.com');
+  ga('send', 'pageview');
+
+</script>
 </body>
 </html>
