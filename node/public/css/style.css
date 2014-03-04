@@ -31,27 +31,11 @@ body{
 	height: auto !important;
 	height: 100%;
 	/* Negative indent footer by it's height */
-	margin: 0 auto -40px; 
+	margin: 0 auto -5px; 
 }
-
-
-
-#prelogin-main{
-	margin-top: 115px;
-	margin-bottom: -50px;
-}
-
-#galleryContents{
-	margin: auto;
-}
-
-#main{
-	padding-top: 85px;
-}
-
 
 #push, #footer {
-	height: 40px;
+	height: 5px;
 }
 
 
@@ -95,6 +79,22 @@ body{
 	width: 100%;
 	margin: 0;
 }
+
+
+#prelogin-main{
+	margin-top: 115px;
+	margin-bottom: -50px;
+}
+
+#galleryContents{
+	margin: auto;
+}
+
+#main{
+	padding-top: 85px;
+}
+
+
 
 
 table{
@@ -319,8 +319,8 @@ ul.add_content li{
 output {
 	display: inline-block;
 	text-align: center;
-	margin-top: 2em;
 	width: 100%;
+	margin-bottom: -15px;
 }
 
 
