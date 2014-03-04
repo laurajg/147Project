@@ -31,11 +31,11 @@ body{
 	height: auto !important;
 	height: 100%;
 	/* Negative indent footer by it's height */
-	margin: 0 auto -5px; 
+	margin: 0 auto -10px; 
 }
 
 #push, #footer {
-	height: 5px;
+	height: 10px;
 }
 
 
