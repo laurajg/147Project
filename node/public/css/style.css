@@ -95,7 +95,10 @@ body{
 }
 
 
-
+#files{
+	max-width: 600px;
+	margin: auto;
+}
 
 table{
 	width: 100%;
