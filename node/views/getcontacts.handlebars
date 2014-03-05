@@ -1,21 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- Google Analytics Content Experiment code -->
-<script>function utmx_section(){}function utmx(){}(function(){var
-k='82884187-1',d=document,l=d.location,c=d.cookie;
-if(l.search.indexOf('utm_expid='+k)>0)return;
-function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
-indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
-length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
-'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
-'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
-'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
-valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
-'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
-</script><script>utmx('url','A/B');</script>
-<!-- End of Google Analytics Content Experiment code -->
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery</title>
@@ -160,24 +145,22 @@ function submitStatistics() {
         {{#if alt1}}
         <p><input type='text' id='contactquery' name='contactemail' style='float:left;width:80%'></input>
         <input class = "submitButton" type="submit" value="Add" style="width:20%;float:right;padding:6px; margin:0px">
-        {{/if}}
-        {{#if alt0}}
+        {{/if}}0}}
         <p><input type='text' id='contactquery' name='contactemail'></input>
         {{/if}}
         </p>
-        
+        <p>
         <input class="submitButton" type="button" value="Load Gmail Contacts to Search..." disabled id='gmailauthorize' onclick="auth(); return false;" >        
-       
+        </p>
         <div id='gmaildiv' style='display:none'>
         <p>Matching Gmail Contacts:</p>
         <select id='contactslist' size=6 style="margin-bottom: 10%; height: 40%">
         </select>
         </div>
-
         {{#if alt0}}
-        <input class = "submitButton" type="submit" value="Share with this email address">
+        <p><input class = "submitButton" type="submit" value="Share with this email address"></p>
         {{/if}}
-        <a href='/share'><input class = "submitButton" type="button" value="Discard and Return to Sharing Settings"></a></form>
+        <p><a href='/share'><input class = "submitButton" type="button" value="< Discard and Return to Sharing Settings"></a></p></form>
         <script src="https://apis.google.com/js/client.js"></script>
 
     </div>
