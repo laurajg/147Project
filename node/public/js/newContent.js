@@ -55,6 +55,17 @@ $(document).ready(function() {
     }
   }
 
+  function sendMessage() {
+    var message = $("#message").val();
+    $.post('/sendUpdate', {'share': $("#share option:selected").attr('id'), 'message': message});
+
+    $("#message").val("");
+    $("#msg_sent").text("Message \"" + message + "\" sent!");
+    $("#msg_sent").css("display", "block");
+
+    incrementNew();
+  }
+
   function incrementNew() {
     var numNew = $("#numNew")[0].innerHTML;
     $("#numNew")[0].innerHTML = parseInt(numNew) + 1;

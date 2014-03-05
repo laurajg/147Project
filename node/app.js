@@ -87,7 +87,7 @@ app.get('/contact', contact.view);
 app.post('/addPhoto', addPhoto.add);
 app.post('/deletePhoto', deletePhoto.delete);
 app.post('/setPhotosSeen', setPhotosSeen.setSeen);
-app.get('/sendUpdate', sendUpdate.sendUpdate);
+app.post('/sendUpdate', sendUpdate.sendUpdate);
 app.get('/add_content',add_content.view);
 app.get('/getcontacts',getcontacts.view);
 app.get('/addContact',getcontacts.addContact);

@@ -116,8 +116,6 @@ function createGallery(photos) {
 				return obj != 'text://' + span.innerHTML;
 			});
 		}
-		
-
 	});
 	$.post('/setPhotosSeen', {'image_urls': current_img_urls});
 
