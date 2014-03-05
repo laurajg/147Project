@@ -27,12 +27,13 @@ exports.addContact = function(req, res) {
         dbUtils.addNewContact(req.session.user,req.query.contactemail);
         var mailUtils = require('mailUtils');
         mailUtils.initialize();         
+        var gmailsux = '<!--<span style="display:none">'+Math.random().toString(36).substring(7)+'</span>-->';
         var username = req.session.user.charAt(0).toUpperCase() + req.session.user.slice(1);
         var emailaddr = req.query.contactemail;
         var subject_text = 'GoalGlance: ' + username + ' wants to share their goal with you!';
-        var message = '<p>'+ username + ' wants you to help support them in achieving their goal!</p>';
+        var message = '<p>'+ username + ' wants you to help support them in achieving their goal!</p>'+gmailsux;
         message += '<p>Click <a href="http://goalglance.herokuapp.com/addSocialMotivation?user='+escape(req.session.user)+'&email='+escape(emailaddr)
-                    +'&id=' + Math.random().toString(36).substring(7) + '">here</a> to send ' + username + ' some encouragement!</p>';
+                    +'&id=' + Math.random().toString(36).substring(7) + '">here</a> to send ' + username + ' some encouragement!</p>'+gmailsux;
         mailUtils.sendMail(emailaddr,subject_text,message);
         //console.log(emailaddr);
             //console.log(message);
@@ -47,6 +48,6 @@ exports.removeContact = function(req, res) {
     // } else {        
         var dbUtils = require('dbUtils');
         dbUtils.deleteContact(req.session.user,req.query.email);
-        res.redirect('share');
+        res.redirect('/share');
     // }
 }
