@@ -27,11 +27,11 @@ exports.addContact = function(req, res) {
         dbUtils.addNewContact(req.session.user,req.query.contactemail);
         var mailUtils = require('mailUtils');
         mailUtils.initialize();         
-        var gmailsux = '<!--<span style="display:none">'+Math.random().toString(36).substring(7)+'</span>-->';
+        var gmailsux = '<p><h6>['+Math.random().toString(36).substring(7)+'] End of message.</h6></p>';
         var username = req.session.user.charAt(0).toUpperCase() + req.session.user.slice(1);
         var emailaddr = req.query.contactemail;
         var subject_text = 'GoalGlance: ' + username + ' wants to share their goal with you!';
-        var message = '<p>'+ username + ' wants you to help support them in achieving their goal!</p>'+gmailsux;
+        var message = '<p>'+ username + ' wants you to help support them in achieving their goal!</p>';
         message += '<p>Click <a href="http://goalglance.herokuapp.com/addSocialMotivation?user='+escape(req.session.user)+'&email='+escape(emailaddr)
                     +'&id=' + Math.random().toString(36).substring(7) + '">here</a> to send ' + username + ' some encouragement!</p>'+gmailsux;
         mailUtils.sendMail(emailaddr,subject_text,message);
