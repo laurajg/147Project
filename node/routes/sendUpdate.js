@@ -14,8 +14,6 @@ exports.sendUpdate = function(req, res){
 			message += '<p>Click <a href="http://goalglance.herokuapp.com/addSocialMotivation?user='+escape(req.session.user)+'&email='+escape(emailaddr)
 						+'&id=' + Math.random().toString(36).substring(7) + '">here</a> to send ' + req.session.user + ' some encouragement!</p>'+gmailsux;
 			mailUtils.sendMail(emailaddr,subject_text,message);
-			//console.log(emailaddr);
-			//console.log(message);
 		}
 	});	
 	}
