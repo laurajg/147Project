@@ -37,6 +37,9 @@ body{
 #push, #footer {
 	height: 10px;
 }
+#footer{
+	margin-top: 20px;
+}
 
 
 .footerInfo{
