@@ -1,5 +1,5 @@
 exports.view = function(req, res){
-    if(!req.session.user && false) {
+    if(false && !req.session.user) {
         res.redirect('landing');
     } else {
         var dbUtils = require('dbUtils');
