@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- Google Analytics Content Experiment code -->
+<script>function utmx_section(){}function utmx(){}(function(){var
+k='82884187-2',d=document,l=d.location,c=d.cookie;
+if(l.search.indexOf('utm_expid='+k)>0)return;
+function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
+indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
+length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
+'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
+'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
+'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
+valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
+</script><script>utmx('url','A/B');</script>
+<!-- End of Google Analytics Content Experiment code -->
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery</title>
@@ -28,7 +43,7 @@
           console.log('login complete');
           console.log(gapi.auth.getToken());
           $.getJSON('https://www.google.com/m8/feeds/contacts/default/full/?access_token=' + 
-           gapi.auth.getToken().access_token + "&alt=json&max-results=1000000&callback=?", function(result){
+             gapi.auth.getToken().access_token + "&alt=json&max-results=1000000&callback=?", function(result){
             //console.log(JSON.stringify(result));
 
             for (i = 0; i < result.feed.entry.length; i++) {                
@@ -62,15 +77,15 @@
                     if (contacts[i].name.toLowerCase().indexOf(query.toLowerCase()) != -1 ||
                         contacts[i].email.toLowerCase().indexOf(query.toLowerCase()) != -1) {
                         newcontacts.push(contacts[i]);
-                    }
                 }
-                render_contacts(newcontacts);
-            });
+            }
+            render_contacts(newcontacts);
+        });
             $('#gmailauthorize').hide();
             $('#gmaildiv').css('display','block');
         });
 
-      });
+});
 return false;
 }
 function render_contacts(contacts) {
@@ -85,9 +100,9 @@ function render_contacts(contacts) {
     for (i = 0; i < contacts.length; i++) {
         var cur = contacts[i];                
         $('#contactslist')
-             .append($("<option></option>")
-             .attr("value",cur.email)
-             .text(cur.name + ' <' + cur.email + '>')); 
+        .append($("<option></option>")
+           .attr("value",cur.email)
+           .text(cur.name + ' <' + cur.email + '>')); 
     }  
 }
 var start_time = 0;
@@ -129,58 +144,64 @@ function submitStatistics() {
     ga('send','timing','getcontacts_timing','{{statTypeToAddTime}}',now-last_time);
     ga('send','timing','getcontacts_timing','{{statTotalTime}}',now-start_time);       
 }
-    </script>
-  </head>
+</script>
+</head>
 
-  
+
 <body onload='javascript:startup()'>    
     {{>navigation}}
     <div id="main">
-        <p>Please enter the email address of a person you'd like to share with:</p>
-        <form action='/addContact' id='addcontactform' method='get'>        
-        {{#if alt2}}
-        <p><input type='text' id='contactquery' name='contactemail' style='float:left;width:90%;'></input>
-        <input class = "submitButton" type="submit" value="+" style="width:10%;float:right;padding:6px; margin:0px;">
-        {{/if}}
-        {{#if alt1}}
-        <p><input type='text' id='contactquery' name='contactemail' style='float:left;width:80%'></input>
-        <input class = "submitButton" type="submit" value="Add" style="width:20%;float:right;padding:6px; margin:0px">
-        {{/if}}
-        {{#if alt0}}
-        <p><input type='text' id='contactquery' name='contactemail'></input>
-        {{/if}}
-        </p>
-        <p>
-        <input class="submitButton" type="button" value="Load Gmail Contacts to Search..." disabled id='gmailauthorize' onclick="auth(); return false;" style="margin-bottom: 15%;">        
-        </p>
-        <div id='gmaildiv' style='display:none'>
-        <p>Matching Gmail Contacts:</p>
-        <select id='contactslist' size=6 style="margin-bottom: 10%; height: 40%">
-        </select>
-        </div>
-        {{#if alt0}}
-        <p><input class = "submitButton" type="submit" value="Share with this email address"></p>
-        {{/if}}
-        <p><a href='/share'><input class = "submitButton" type="button" value="< Discard and Return to Sharing Settings"></a></p></form>
-        <script src="https://apis.google.com/js/client.js"></script>
+        <div id="titleText"> Enter the email addresses of people you wish to share your goal with (or load them from your gmail contacts) </div>
+        <div id="subTitle"> They will be notified via email that you have shared your goal with them and will be able to send you encouragement. You will also then be able to notify them when you add new content</div>
+        <form action='/addContact' id='addcontactform' method='get'>  
 
-    </div>
-    {{>footer}}
+            {{#if alt2}}
+                <div class="inputRow" style="margin-bottom: 10px; margin: auto; width: 100%; max-width: 600px">
+                    <input type='text' id='contactquery' name='contactemail' style='width: 88%; float: left'>
+                    <input class = "submitButton" type="submit" value="+" style="width:10%; float:left; margin-left:1%; margin-top: -2px">
+                </div>
+            {{/if}}
+            {{#if alt1}}
+                <div class="inputRow" style='margin-bottom: 10px; margin: auto; max-width: 600px; width: 100%; margin-bottom: 10px'>
+                        <input type='text' id='contactquery' name='contactemail' style=' float:left;width:80%; '>
+                        <input class = "submitButton" type="submit" value="Add" style="width:20%;float:left;padding:6px; margin:0px">
+                </div>
+             {{/if}}
+             {{#if alt0}}
+                    <input type='text' id='contactquery' name='contactemail' style='max-width: 600px; margin: auto; margin-bottom: 10px'>
+            {{/if}}
+                    
+                    <p>
+                        <input class="submitButton" type="button" value="Load Gmail Contacts to Search..." disabled id='gmailauthorize' onclick="auth(); return false;"  >        
+                    </p>
+                    <div id='gmaildiv' style='display:none'>
+                        <p>Matching Gmail Contacts:</p>
+                        <select id='contactslist' size=6 style="margin-bottom: 10%; height: 40%">
+                        </select>
+                    </div>
+                    {{#if alt0}}
+                    <p><input class = "submitButton" type="submit" value="Share with this email address"></p>
+                    {{/if}}
+                    <p><a href='/share'><input class = "submitButton" type="button" value="Discard and Return to Sharing Settings"></a></p></form>
+                    <script src="https://apis.google.com/js/client.js"></script>
 
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="js/jquery-1.11.0.js"> </script>
-    <script src="js/bootstrap.js"> </script>
-    <script src="js/hci-friends.js"> </script>    
+                </div>
+                {{>footer}}
 
-    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+                <script src="https://code.jquery.com/jquery.js"></script>
+                <script src="js/jquery-1.11.0.js"> </script>
+                <script src="js/bootstrap.js"> </script>
+                <script src="js/hci-friends.js"> </script>    
 
-  ga('create', 'UA-48581537-1', 'goalglance.herokuapp.com');
-  ga('send', 'pageview');
+                <script>
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-</script>
-</body>
-</html>
+              ga('create', 'UA-48581537-1', 'goalglance.herokuapp.com');
+              ga('send', 'pageview');
+
+              </script>
+          </body>
+          </html>

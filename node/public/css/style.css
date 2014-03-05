@@ -37,6 +37,9 @@ body{
 #push, #footer {
 	height: 10px;
 }
+#footer{
+	margin-top: 20px;
+}
 
 
 .footerInfo{
@@ -79,8 +82,16 @@ body{
 	width: 100%;
 	margin: 0;
 }
+ h4{
+ 	max-width: 600px;
+ 	margin: auto;
+ }
 
-
+#sharingmessage{
+	max-width: 600px;
+	margin: auto;
+	padding-top: 5px;
+}
 #prelogin-main{
 	margin-top: 100px;
 	margin-bottom: -50px;
@@ -89,13 +100,29 @@ body{
 #galleryContents{
 	margin: auto;
 }
+#titleText{
+	font-size: 14px;
+	margin: auto;
+	max-width: 600px;
+}
 
+#subTitle{
+	font-size: 11px;
+	font-style: italic;
+	max-width: 600px;
+	margin: auto;
+	padding-top: 10px;
+	margin-bottom: 3px;
+}
 #main{
 	padding-top: 85px;
 }
 
 
-
+#files{
+	max-width: 600px;
+	margin: auto;
+}
 
 table{
 	width: 100%;
@@ -232,6 +259,10 @@ table{
 		font-size: 12px;
 		padding: 0;
 		margin: 0;
+	}
+
+	.navbar-nav li:hover{
+		background: black;
 	}
 
 	.navbar-brand{
