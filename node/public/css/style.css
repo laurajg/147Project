@@ -257,6 +257,10 @@ table{
 		margin: 0;
 	}
 
+	.navbar-nav li:hover{
+		background: black;
+	}
+
 	.navbar-brand{
 		font-size: 14px;
 		margin-left: 10px;
