@@ -150,18 +150,19 @@ function submitStatistics() {
         <p><input type='text' id='contactquery' name='contactemail'></input>
         {{/if}}
         </p>
-        <p>
-        <input class="submitButton" type="button" value="Load Gmail Contacts to Search..." disabled id='gmailauthorize' onclick="auth(); return false;" style="margin-bottom: 15%;">        
-        </p>
+        
+        <input class="submitButton" type="button" value="Load Gmail Contacts to Search..." disabled id='gmailauthorize' onclick="auth(); return false;" >        
+       
         <div id='gmaildiv' style='display:none'>
         <p>Matching Gmail Contacts:</p>
         <select id='contactslist' size=6 style="margin-bottom: 10%; height: 40%">
         </select>
         </div>
+
         {{#if alt0}}
-        <p><input class = "submitButton" type="submit" value="Share with this email address"></p>
+        <input class = "submitButton" type="submit" value="Share with this email address">
         {{/if}}
-        <p><a href='/share'><input class = "submitButton" type="button" value="< Discard and Return to Sharing Settings"></a></p></form>
+        <a href='/share'><input class = "submitButton" type="button" value="Discard and Return to Sharing Settings"></a></form>
         <script src="https://apis.google.com/js/client.js"></script>
 
     </div>

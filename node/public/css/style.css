@@ -79,8 +79,16 @@ body{
 	width: 100%;
 	margin: 0;
 }
+ h4{
+ 	max-width: 600px;
+ 	margin: auto;
+ }
 
-
+#sharingmessage{
+	max-width: 600px;
+	margin: auto;
+	padding-top: 5px;
+}
 #prelogin-main{
 	margin-top: 100px;
 	margin-bottom: -50px;
