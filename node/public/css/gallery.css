@@ -31,6 +31,7 @@
 	background-color: black;
 	text-align: center;             
 	overflow: hidden;
+	display: inline-block;
 }
 
 .new-photo, .new-photo .img-gallery{
