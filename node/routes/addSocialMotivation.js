@@ -1,7 +1,8 @@
 exports.view = function(req,res) {
     var dbUtils = require('dbUtils');
     dbUtils.getGoal(req.query.user, function(goal) {
-        res.render('addSocialMotivation',{'user': req.query.user, 'sender': req.query.email, 'goal': goal});    
+        var username = req.query.user.charAt(0).toUpperCase() + req.query.user.slice(1);
+        res.render('addSocialMotivation',{'user': username, 'sender': req.query.email, 'goal': goal, 'userid': req.query.user});    
     });    
 }
 
