@@ -136,21 +136,24 @@ function submitStatistics() {
 <body onload='javascript:startup()'>    
     {{>navigation}}
     <div id="main">
-        <p>Please enter the email address of a person you'd like to share with:</p>
-        <form action='/addContact' id='addcontactform' method='get'>        
+        <div id="titleText"> Enter the email addresses of people you wish to share your goal with (or load them from your gmail contacts) </div>
+        <div id="subTitle"> They will be notified via email that you have shared your goal with them and will be able to send you encouragement. You will also then be able to notify them when you add new content</div>
+        <form action='/addContact' id='addcontactform' method='get'>  
+      
         {{#if alt2}}
-        <p><input type='text' id='contactquery' name='contactemail' style='float:left;width:90%;'></input>
-        <input class = "submitButton" type="submit" value="+" style="width:10%;float:right;padding:6px; margin:0px;">
+        <p><input type='text' id='contactquery' name='contactemail' style='float:left; margin: auto; max-width: 550px; width: 90%; margin-bottom: 10px'></input>
+        <input class = "submitButton" type="submit" value="+" style="width:10%;float:left;padding:6px; margin:0px;">
+        {{/if}}
+        {{#if alt0}}
+        <p><input type='text' id='contactquery' name='contactemail' style='margin: auto; max-width: 400px; float:left;width:80%; margin-bottom: 10px'></input>
+        <input class = "submitButton" type="submit" value="Add" style="width:20%;float:left;padding:6px; margin:0px">
         {{/if}}
         {{#if alt1}}
-        <p><input type='text' id='contactquery' name='contactemail' style='float:left;width:80%'></input>
-        <input class = "submitButton" type="submit" value="Add" style="width:20%;float:right;padding:6px; margin:0px">
-        {{/if}}0}}
-        <p><input type='text' id='contactquery' name='contactemail'></input>
+        <p><input type='text' id='contactquery' name='contactemail' style='float:left; max-width: 600px; margin: auto; margin-bottom: 10px'></input>
         {{/if}}
         </p>
         <p>
-        <input class="submitButton" type="button" value="Load Gmail Contacts to Search..." disabled id='gmailauthorize' onclick="auth(); return false;" >        
+        <input class="submitButton" type="button" value="Load Gmail Contacts to Search..." disabled id='gmailauthorize' onclick="auth(); return false;"  >        
         </p>
         <div id='gmaildiv' style='display:none'>
         <p>Matching Gmail Contacts:</p>

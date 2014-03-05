@@ -97,7 +97,19 @@ body{
 #galleryContents{
 	margin: auto;
 }
+#titleText{
+	font-size: 14px;
+	margin: auto;
+	max-width: 600px;
+}
 
+#subTitle{
+	font-size: 11px;
+	font-style: italic;
+	max-width: 600px;
+	margin: auto;
+	padding-top: 5px;
+}
 #main{
 	padding-top: 85px;
 }
