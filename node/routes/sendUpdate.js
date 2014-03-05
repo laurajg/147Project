@@ -9,7 +9,7 @@ exports.sendUpdate = function(req, res){
         for (i = 0; i < contacts.length; i++) {
 	        var emailaddr = contacts[i];
 			var subject_text = 'GoalGlance: New update from ' + req.session.user + '!';
-			var message = '<p>'+ req.session.user + ' has a new update about their goal!</p><p><b>'+req.query.message+'</b></p>'
+			var message = '<p>'+ req.session.user + ' has a new update about their goal!</p><p><b>'+req.query.message+'</b></p>';
 			message += '<p>Click <a href="http://goalglance.herokuapp.com/addSocialMotivation?user='+escape(req.session.user)+'&email='+escape(emailaddr)
 						+'&id=' + Math.random().toString(36).substring(7) + '">here</a> to send ' + req.session.user + ' some encouragement!</p>';
 			mailUtils.sendMail(emailaddr,subject_text,message);
