@@ -1,5 +1,4 @@
 exports.view = function(req, res){
-
 	if(!req.session.user) {
 		if(!req.query.username || !req.query.password) {
 			res.redirect('landing');
@@ -21,7 +20,7 @@ exports.view = function(req, res){
 									}
 
 									req.session.numNew = numNew;
-									res.render('index', {'user': req.session.user, 'goal': goal, 'photos': photos, 'numNew': req.session.numNew});
+									res.render('index', {'user': req.session.user, 'goal': goal, 'photos': photos, 'numNew': (req.session.numNew? req.session.numNew: 0)});
 								});
 							});
 					},
@@ -32,9 +31,15 @@ exports.view = function(req, res){
 		}
 	} else {
 		var dbUtils = require('dbUtils');
+		var showPhoto = null;
+		if(req.session.photoAdded) {
+			showPhoto = req.session.photoAdded;
+			req.session.photoAdded = null;
+			req.session.save();
+		}
 		dbUtils.getGoal(req.session.user, function(goal) {
 			dbUtils.getPhotos(req.session.user, function(photos) {
-				res.render('index', {'user': req.session.user, 'goal': goal, 'photos': photos, 'numNew': req.session.numNew});
+				res.render('index', {'user': req.session.user, 'goal': goal, 'photos': photos, 'numNew': req.session.numNew, 'showPhoto': showPhoto});
 			});
 		});
 	}

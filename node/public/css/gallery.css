@@ -27,8 +27,8 @@
 
 
 .text-gallery, .text-gallery-zoom {	    	
-	color: white;
-	background-color: black;
+	color: black;
+	background-color: white;
 	text-align: center;             
 	overflow: hidden;
 	display: inline-block;
@@ -48,20 +48,17 @@
 	font-size: 20px;
 	font-weight: bold;
 	line-height: 18px;
-	color: #000000;
-	/*color: white; */
+	color: gray; 
 	text-shadow: 0 1px 0 #ffffff;
-	opacity: 0.3;
-	filter: alpha(opacity=20);
 	text-decoration: none;
 	position: relative;
-	margin-left: -20px;
+	vertical-align: top;
+	right:18px;
+	opacity: 0.4;
 }
 .closeIconImg:hover {
-	color: #000000;
 	text-decoration: none;
-	opacity: 0.4;
-	filter: alpha(opacity=40);
+	color: white;
 	cursor: pointer;
 }
 
@@ -96,7 +93,13 @@
 
 }
 
-
+.img-gallery-zoom{
+	position: relative;
+	text-align: center;             
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+}
 
 .gallery {
 	margin-top: 15px;

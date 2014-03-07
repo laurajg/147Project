@@ -14,12 +14,13 @@ exports.sendUpdate = function(req, res){
 			message += '<p>Click <a href="http://goalglance.herokuapp.com/addSocialMotivation?user='+escape(req.session.user)+'&email='+escape(emailaddr)
 						+'&id=' + Math.random().toString(36).substring(7) + '">here</a> to send ' + req.session.user + ' some encouragement!</p>'+gmailsux;
 			mailUtils.sendMail(emailaddr,subject_text,message);
-			//console.log(emailaddr);
-			//console.log(message);
 		}
 	});	
 	}
 	dbUtils.addPhoto(req.session.user, 'text://' + req['body']['message']);
+	if(!req.session.photoAdded) {
+		req.session.photoAdded = 'text://' + req['body']['message'];
+	}
 	req.session.numNew++;
 	req.session.save();
 	res.send();

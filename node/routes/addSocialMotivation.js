@@ -6,7 +6,7 @@ exports.view = function(req,res) {
             return;            
         }
         var username = req.query.user.charAt(0).toUpperCase() + req.query.user.slice(1);
-        res.render('addSocialMotivation',{'user': username, 'sender': req.query.email, 'goal': goal, 'userid': req.query.user});    
+        res.render('addSocialMotivation',{'user': username, 'sender': req.query.email, 'goal': goal, 'userid': req.query.user, 'numNew': (req.session.numNew? req.session.numNew: 0)});    
     });    
 }
 
