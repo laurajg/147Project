@@ -1,9 +1,14 @@
 var img_list = []
 
-function setRandomPhoto(photos) {
+function setRandomPhoto(photos, showPhoto) {
 	img_list = photos;
-	var photo = photos[Math.floor(Math.random()*photos.length)];
+	if (!showPhoto) {
+		var photo = photos[Math.floor(Math.random()*photos.length)];
+	} else {
+		var photo = {'url': showPhoto};
+	}
 	var html = "";
+
 	if (photo['url'].indexOf('text://') == 0) {
 		var text = photo['url'].substring(7);
 		html = '<div class="text-randomInspiration" style="text-align:center"><span>'+text+'</span></div>';

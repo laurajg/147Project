@@ -18,6 +18,9 @@ exports.sendUpdate = function(req, res){
 	});	
 	}
 	dbUtils.addPhoto(req.session.user, 'text://' + req['body']['message']);
+	if(!req.session.photoAdded) {
+		req.session.photoAdded = 'text://' + req['body']['message'];
+	}
 	req.session.numNew++;
 	req.session.save();
 	res.send();
