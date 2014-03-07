@@ -17,14 +17,14 @@ window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFile
         if(document.register.password.value != document.register.conpassword.value) {
             alert("Your password and confirmation password do not match");
             return false;
-        } else  return true;
+        } else return true;
     }
 
     function verifyRegister(){
         if(verifyEmail() && verifyPasswordMatch())    {
             return true;
         } else {
-            window.location="/register";
+            // window.location="/register";
             return false;
         }
     }
