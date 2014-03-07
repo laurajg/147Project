@@ -48,7 +48,6 @@ function updateAndShowOverlay(index,show) {
 	if (current_img_urls[index].indexOf('text://') == 0) {
 		var textmsg = current_img_urls[index].substring(7);
 		var background_photo = $("#gal_img_" + index).css('background-image').replace('url(','').replace(')','');;
-		console.log(background_photo);
 		html += "<div class='img-gallery-zoom'><div class='text-gallery-zoom' style=\"background-image:url(" + background_photo + ")\" onclick=\"javascript:event.stopPropagation()\"><span id='txtdisp'>"+textmsg+"</span></div>";
 		html += "<a class=\"closeIconText\">x</a>";
 		if (from != null) {

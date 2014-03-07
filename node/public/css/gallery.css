@@ -45,17 +45,18 @@
 }
 
 .closeIconImg {
-	font-size: 20px;
+	font-size: 40px;
 	font-weight: bold;
-	line-height: 18px;
+	line-height: 40px;
 	color: gray; 
 	text-shadow: 0 1px 0 #ffffff;
 	text-decoration: none;
 	position: relative;
 	vertical-align: top;
-	right:18px;
+	right:35px;
 	opacity: 0.4;
 }
+
 .closeIconImg:hover {
 	text-decoration: none;
 	color: white;
@@ -63,7 +64,7 @@
 }
 
 .closeIconText{
-	font-size: 20px;
+	font-size: 40px;
 	font-weight: bold;
 	line-height: 18px;
 	color: gray; 
@@ -71,8 +72,16 @@
 	text-decoration: none;
 	position: relative;
 	vertical-align: top;
-	right:18px;
+	right:35px;
+	top:10px;
 	opacity: 0.4;
+}
+
+
+.closeIconText:hover {
+	text-decoration: none;
+	color: white;
+	cursor: pointer;
 }
 
 
@@ -99,7 +108,7 @@
 	height: 120px;
 	max-width: 80%;
 	font-size: 5.0hw;   
-	padding: 5% 5%;  
+	padding: 5% 15% 5% 15%;  
 
 }
 
@@ -109,6 +118,7 @@
 	overflow: hidden;
 	display: inline-block;
 	vertical-align: middle;
+	width: 80%;
 }
 
 .gallery {
