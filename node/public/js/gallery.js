@@ -39,9 +39,9 @@ function updateAndShowOverlay(index,show) {
 		var textmsg = current_img_urls[index].substring(7);
 		var background_photo = $("#gal_img_" + index).css('background-image').replace('url(','').replace(')','');;
 		console.log(background_photo);
-		html += "<div class='text-gallery-zoom' style=\"background-image:url(" + background_photo + ")\" onclick=\"javascript:event.stopPropagation()\"><span>"+textmsg+"</span></div>"
+		html += "<div class='img-gallery-zoom'><div class='text-gallery-zoom' style=\"background-image:url(" + background_photo + ")\" onclick=\"javascript:event.stopPropagation()\"><span>"+textmsg+"</span></div><a class=\"closeIconImg\">x</a></div>"
 	} else {
-		html += "<img id='overlay-image' src=\"" + current_img_urls[index] + "\" onclick=\"javascript:event.stopPropagation()\"/>";					
+		html += "<div class='img-gallery-zoom'><img id='overlay-image' src=\"" + current_img_urls[index] + "\" onclick=\"javascript:event.stopPropagation()\"/><a class='closeIconImg'>x</a></div>";					
 	}
 	$('.imgoverlay-frame').html(html);
 	currently_selected_img = index;
@@ -76,6 +76,7 @@ function createGallery(photos) {
 							 "http://tdwhs.nwasco.k12.or.us/staff/lewing/resources/design/iMovie_ppt/Apple_Ensemble/SpaceMist.jpg",
 							 "http://4.bp.blogspot.com/_OJsWo9ijhWY/S6whctnHYFI/AAAAAAAAABQ/f_U4hUi0dPE/s1600/diving_ocean+free+wallpaper.jpg",
 							 "http://www.zingerbug.com/Backgrounds/background_images/blue_sky_with_clouds.jpg"
+
 							 ];
 
 
@@ -90,14 +91,14 @@ function createGallery(photos) {
 				div_html += " new-photo";
 			}
 			div_html += "' id='gal_img_"+i+"' style=\"background-image:url(" + background_photo + ")\" onclick=\"javascript:updateAndShowOverlay("
-				+cur_idx+",true)\"><a class=\"closeIconText\">x</a><span>"+textmsg+"</span></div>"
+				+cur_idx+",true)\"><span>"+textmsg+"</span></div>"
 		} else {
 			div_html += "<div style='float:left;' class=\"oneGalleryImg"
 			if (img_list[i]['new']) {
 				div_html += " new-photo "
 			}
 			div_html += "\"><div  id='gal_img_"+i+"'><img class='img-gallery' src=\"" + img_list[i]['url'] + "\" onclick=\"javascript:updateAndShowOverlay("
-				+cur_idx+",true)\"/><a class='closeIconImg'>x</a></div></div>";					
+				+cur_idx+",true)\"/></div></div>";					
 		}
 	current_img_urls.push(img_list[i]['url']);
 	cur_idx++;				
