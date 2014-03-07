@@ -46,6 +46,34 @@ function updateAndShowOverlay(index,show) {
 	$('.imgoverlay-frame').html(html);
 	currently_selected_img = index;
 	if (show) showOverlay();
+
+	$(".closeIconImg").click(function() {
+		var del = confirm("Are you sure you want to delete this?");
+		var image = $(this).siblings()[0];
+		if (del) {
+			$.post('/deletePhoto', {'photoURL': image.src});
+			$(this).parent().remove();
+
+			current_img_urls = current_img_urls.filter(function(obj) {
+				return obj != image.src;
+			});
+			currently_selected_img=0;
+		}
+
+	});
+	$(".closeIconText").click(function(e) {
+		e.stopPropagation();
+		var del = confirm("Are you sure you want to delete this?");
+		var span = $(this).siblings()[0];
+		if (del) {
+			$.post('/deletePhoto', {'photoURL': 'text://' + span.innerHTML});
+			$(this).parent().remove();
+			current_img_urls = current_img_urls.filter(function(obj) {
+				return obj != 'text://' + span.innerHTML;
+			});
+		}
+	});
+
 }
 
 function showOverlay() {
@@ -110,34 +138,6 @@ function createGallery(photos) {
 
 
 	$("#gallery-content").html(div_html);	
-	$(".closeIconImg").click(function() {
-		var del = confirm("Are you sure you want to delete this?");
-		var image = $(this).siblings()[0];
-		if (del) {
-			$.post('/deletePhoto', {'photoURL': image.src});
-			$(this).parent().remove();
-
-			current_img_urls = current_img_urls.filter(function(obj) {
-				return obj != image.src;
-			});
-			currently_selected_img=0;
-
-		}
-
-	});
-	$(".closeIconText").click(function(e) {
-		e.stopPropagation();
-		var del = confirm("Are you sure you want to delete this?");
-		var span = $(this).siblings()[0];
-		if (del) {
-			$.post('/deletePhoto', {'photoURL': 'text://' + span.innerHTML});
-			$(this).parent().remove();
-			current_img_urls = current_img_urls.filter(function(obj) {
-				return obj != 'text://' + span.innerHTML;
-			});
-		}
-	});
-
 	$.post('/setPhotosSeen', {'image_urls': current_img_urls});
 
 }
