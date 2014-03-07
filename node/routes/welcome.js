@@ -7,6 +7,6 @@ exports.view = function(req, res){
 		if (!req.session.user) {
 			req.session.user = req.query.username;
 		}
-		res.render('welcome', {'user': req.session.user});
+		res.render('welcome', {'user': req.session.user, 'numNew': (req.session.numNew? req.session.numNew: 0)});
 	}
 };

@@ -20,7 +20,7 @@ exports.view = function(req, res){
 									}
 
 									req.session.numNew = numNew;
-									res.render('index', {'user': req.session.user, 'goal': goal, 'photos': photos, 'numNew': req.session.numNew});
+									res.render('index', {'user': req.session.user, 'goal': goal, 'photos': photos, 'numNew': (req.session.numNew? req.session.numNew: 0)});
 								});
 							});
 					},
