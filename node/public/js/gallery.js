@@ -69,14 +69,16 @@ function updateAndShowOverlay(index,show) {
 		var del = confirm("Are you sure you want to delete this?");
 		var image = $(this).siblings()[0];
 		if (del) {
-			$.post('/deletePhoto', {'photoURL': image.src});
-			$(this).parent().remove();
+			$.post('/deletePhoto', {'photoURL': image.src}, function() {
+				$(this).parent().remove();
 
-			current_img_urls = current_img_urls.filter(function(obj) {
-				return obj != image.src;
+				current_img_urls = current_img_urls.filter(function(obj) {
+					return obj != image.src;
+				});
+				currently_selected_img=0;
+				location.reload();
 			});
-			currently_selected_img=0;
-			location.reload();
+			
 		}
 
 	});
@@ -84,13 +86,14 @@ function updateAndShowOverlay(index,show) {
 		var del = confirm("Are you sure you want to delete this?");
 		var spantext = $('#txtdisp').html();
 		if (del) {
-			$.post('/deletePhoto', {'photoURL': 'text://' + spantext});
-			$(this).parent().remove();
-			current_img_urls = current_img_urls.filter(function(obj) {
-				return obj != 'text://' + spantext;
+			$.post('/deletePhoto', {'photoURL': 'text://' + spantext}, function() {
+				$(this).parent().remove();
+				current_img_urls = current_img_urls.filter(function(obj) {
+					return obj != 'text://' + spantext;
+				});
+				currently_selected_img=0;
+				location.reload();
 			});
-			currently_selected_img=0;
-			location.reload();
 		}
 	});
 
