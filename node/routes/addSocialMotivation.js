@@ -19,11 +19,13 @@ exports.doAdd = function(req,res) {
             res.render('addSocialMessageError');
             return;
         }
+        var gmailsux = '<p><h6>['+Math.random().toString(36).substring(7)+'] End of message.</h6></p>';
+        var message_escaped = req.query.message.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') ;
         var subject_text = 'GoalGlance: New message from ' + req.query.sendername + '!';
         var message = '<p>' + req.query.sendername + ' ('+ req.query.senderemail +') has a new motivational message for you!</p>';
-        message += '<p>Click <a href="http://goalglance.herokuapp.com/gallery?id=' + Math.random().toString(36).substring(7) + '">here</a> to go to your gallery and see it!</p>';    
-        var gallery_message = "<p>From: " + req.query.sendername + "</p><p>" + req.query.message + '</p>';
-        dbUtils.addPhoto(req.query.username, 'text://' + gallery_message);
+        message += '<p>Click <a href="http://goalglance.herokuapp.com/gallery?id=' + Math.random().toString(36).substring(7) + '">here</a> to go to your gallery and see it!</p>'+gmailsux;    
+        var gallery_message = "<p>" + message_escaped + '</p>';
+        dbUtils.addPhotoFrom(req.query.username, 'text://' + gallery_message, req.query.sendername);
         mailUtils.sendMail(email,subject_text,message);
         res.render('addSocialMessageConfirm');
     });

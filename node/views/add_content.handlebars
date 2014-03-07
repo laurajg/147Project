@@ -31,22 +31,26 @@
         <h4> Your new goal is "{{goal}}!" Now upload some photos that will remind you why it's important to you.</h4>
         <br/>
         {{/if}}
-
+        <div id="sharingOptions">
+            <h5>Who to share with:</h5>
+                <select required name='share' id='share'>
+                  <option id='me_only' value='me'>Don't share, just post</option>
+                  <option id='friends' value='all'>Share with my contacts</option>     
+              </select>
+        </div>
+        <div id="sharingTextHeader">
+        <h5>Type of content to share:</h5></div>
         <ul class="add_content">  
             <li class="active"><a href="#" class="addPhotoButton"><span class="glyphicon glyphicon-camera">&nbsp;</span>Add Photo</a></li>  
             <li><a href="#" class="addMessageButton"><span class="glyphicon glyphicon-font">&nbsp;</span>Add Message</a></li>
 
         </ul>  
 
-        <div id="addMessage">
+        <div id="addMessage" style="display:none;">
              <div id="push_small"></div>
 
-            <h5>Who to share with:</h5>
             <form>
-                <select required name='share' id='share'>
-                  <option id='me_only' value='me'>Just post</option>
-                  <option id='friends' value='all'>Update my contacts</option>     
-              </select>
+
               <h5>Enter your message:</h5>
               <textarea id="message" name="message"></textarea>  
               <div id="msg_sent" style="display:none">Message sent!</div>  
@@ -55,7 +59,7 @@
       </div>
 
 
-      <div id="addPhoto">
+      <div id="addPhoto" style="display:none;">
         <div id="push_small"></div>
 
           {{#if welcome}}

@@ -35,13 +35,32 @@ function previousImage() {
 
 function updateAndShowOverlay(index,show) {
 	var html = '<span class="imgoverlay-helper"></span>';
+	// this is such a hack...
+	var from = null;
+	for (i = 0; i < img_list.length; i++) {
+		if (img_list[i].url === current_img_urls[index] ) {
+			if (img_list[i].from !== 'undefined') {
+				from = img_list[i].from;
+			}
+			break;
+		}
+	}
 	if (current_img_urls[index].indexOf('text://') == 0) {
 		var textmsg = current_img_urls[index].substring(7);
 		var background_photo = $("#gal_img_" + index).css('background-image').replace('url(','').replace(')','');;
 		console.log(background_photo);
-		html += "<div class='img-gallery-zoom'><div class='text-gallery-zoom' style=\"background-image:url(" + background_photo + ")\" onclick=\"javascript:event.stopPropagation()\"><span>"+textmsg+"</span></div><a class=\"closeIconImg\">x</a></div>"
+		html += "<div class='img-gallery-zoom'><div class='text-gallery-zoom' style=\"background-image:url(" + background_photo + ")\" onclick=\"javascript:event.stopPropagation()\"><span id='txtdisp'>"+textmsg+"</span></div>";
+		html += "<a class=\"closeIconText\">x</a>";
+		if (from != null) {
+			html += "<div class='fromText'>From: "+from+"</div>";	
+		}		
+		html += "</div>";
 	} else {
-		html += "<div class='img-gallery-zoom'><img id='overlay-image' src=\"" + current_img_urls[index] + "\" onclick=\"javascript:event.stopPropagation()\"/><a class='closeIconImg'>x</a></div>";					
+		html += "<div class='img-gallery-zoom'><img id='overlay-image' src=\"" + current_img_urls[index] + "\" onclick=\"javascript:event.stopPropagation()\"/><a class='closeIconImg'>x</a>"
+		if (from != null) {
+			html += "<div class='fromText'>From: "+from+"</div>";	
+		}	
+		html += "</div>";					
 	}
 	$('.imgoverlay-frame').html(html);
 	currently_selected_img = index;
@@ -58,19 +77,21 @@ function updateAndShowOverlay(index,show) {
 				return obj != image.src;
 			});
 			currently_selected_img=0;
+			location.reload();
 		}
 
 	});
 	$(".closeIconText").click(function(e) {
-		e.stopPropagation();
 		var del = confirm("Are you sure you want to delete this?");
-		var span = $(this).siblings()[0];
+		var spantext = $('#txtdisp').html();
 		if (del) {
-			$.post('/deletePhoto', {'photoURL': 'text://' + span.innerHTML});
+			$.post('/deletePhoto', {'photoURL': 'text://' + spantext});
 			$(this).parent().remove();
 			current_img_urls = current_img_urls.filter(function(obj) {
-				return obj != 'text://' + span.innerHTML;
+				return obj != 'text://' + spantext;
 			});
+			currently_selected_img=0;
+			location.reload();
 		}
 	});
 
