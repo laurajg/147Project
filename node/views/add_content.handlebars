@@ -31,6 +31,8 @@
         <h4> Your new goal is "{{goal}}!" Now upload some photos that will remind you why it's important to you.</h4>
         <br/>
         {{/if}}
+
+        {{#unless welcome}}
         <div id="sharingOptions">
             <h5>Who to share with:</h5>
                 <select required name='share' id='share'>
@@ -38,6 +40,8 @@
                   <option id='friends' value='all'>Share with my contacts</option>     
               </select>
         </div>
+        {{/unless}}
+        
         <div id="sharingTextHeader">
         <h5>Type of content to share:</h5></div>
         <ul class="add_content">  

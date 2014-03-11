@@ -62,7 +62,7 @@ $(document).ready(function() {
     $.post('/sendUpdate', {'share': $("#share option:selected").attr('id'), 'message': message});
 
     $("#message").val("");
-    $("#msg_sent").text("Message \"" + message + "\" sent!");
+    $("#msg_sent").text("Message \"" + message + "\" added!");
     $("#msg_sent").css("display", "block");
 
     incrementNew();
