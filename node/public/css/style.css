@@ -23,7 +23,9 @@ body{
 	width: 90%;
 }
 
-
+#main{
+	padding-top: 85px;
+}
 
 #main, #landingMain, #prelogin-main, #wrap{
 
@@ -36,6 +38,16 @@ body{
 
 #push, #footer {
 	height: 10px;
+}
+
+#testMain{
+		padding-top: 85px;
+
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	/* Negative indent footer by it's height */
+	margin: 0 auto -10px; 
 }
 #footer{
 	margin-top: 20px;
@@ -114,9 +126,7 @@ body{
 	padding-top: 10px;
 	margin-bottom: 3px;
 }
-#main{
-	padding-top: 85px;
-}
+
 
 
 #files{
@@ -540,22 +550,37 @@ textarea:focus, input:focus {
 }
 
 
-#randomImg{
+/* UPLOAD PHOTOS SPECIFIC STYLING*/
+
+/* this is the box the image sits in */
+#Randomimage {
+	overflow: hidden;
+	margin: auto;
+	float: center;
+	width: 80%;
+	padding: 0;
+	margin: 0;
+	height: 420px;
+	width: 100%;
+	background-size: cover;
+}
+
+/* This is the image itself*/
+#randomImg{  
+	/*
 	position: relative;
 	width: 100%;
 	max-width: 600px;
 	max-height: 50%;
 	margin: auto;
 	min-height: 200px;
-}
-/* UPLOAD PHOTOS SPECIFIC STYLING*/
-
-#Randomimage {
-	overflow: hidden;
+*/
+	padding: 0;
 	margin: auto;
-	float: center;
-	width: 80%;
+	height: 420px;
+	background-size: cover;
 }
+  
 
 #photoViewer{
 	margin-bottom: 8%;
