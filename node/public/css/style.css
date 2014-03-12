@@ -127,6 +127,21 @@ body{
 	margin-bottom: 3px;
 }
 
+#sharingOptions{
+	max-width: 600px;
+	margin: auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 3px;
+}
+#sharingTextHeader{
+	max-width: 600px;
+	margin: auto;
+	padding-top: 10px;
+	
+	margin-bottom: 3px;
+}
+
 
 
 #files{

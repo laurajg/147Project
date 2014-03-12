@@ -40,8 +40,9 @@ function confirmChange() {
 
 
 		<span class="warning">Entering a new goal will delete all data associated with your current goal!</span> 
-		<form method="get" role="form" action="/welcome_upload" name="register">
+		<form method="get" role="form" action="/welcome_upload?changed" name="register">
 			<input class="goal" name="goal" type="text"></input>
+			<input class="changed" style="display:none" name="changed" type="text" value="true"></input>
 			<input class = "submitButton" type="submit" onclick="return confirmChange();" value="Pick a motivational photo >">
 		</form>
 		

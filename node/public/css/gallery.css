@@ -27,8 +27,8 @@
 
 
 .text-gallery, .text-gallery-zoom {	    	
-	color: white;
-	background-color: black;
+	color: black;
+	background-color: white;
 	text-align: center;             
 	overflow: hidden;
 	display: inline-block;
@@ -45,39 +45,55 @@
 }
 
 .closeIconImg {
-	font-size: 20px;
+	font-size: 40px;
 	font-weight: bold;
-	line-height: 18px;
-	color: #000000;
-	/*color: white; */
+	line-height: 40px;
+	color: gray; 
 	text-shadow: 0 1px 0 #ffffff;
-	opacity: 0.3;
-	filter: alpha(opacity=20);
 	text-decoration: none;
 	position: relative;
-	margin-left: -20px;
-}
-.closeIconImg:hover {
-	color: #000000;
-	text-decoration: none;
+	vertical-align: top;
+	right:35px;
 	opacity: 0.4;
-	filter: alpha(opacity=40);
+}
+
+.closeIconImg:hover {
+	text-decoration: none;
+	color: white;
 	cursor: pointer;
 }
 
 .closeIconText{
+	font-size: 40px;
+	font-weight: bold;
+	line-height: 18px;
+	color: gray; 
+	text-shadow: 0 1px 0 #ffffff;
+	text-decoration: none;
+	position: relative;
+	vertical-align: top;
+	right:35px;
+	top:10px;
+	opacity: 0.4;
+}
+
+
+.closeIconText:hover {
+	text-decoration: none;
+	color: white;
+	cursor: pointer;
+}
+
+
+.fromText{
 	font-size: 20px; 
 	font-weight: bold;
 	line-height: 18px;
 	color: white; 
-	text-shadow: 0 1px 0 #ffffff;
-	filter: alpha(opacity=20); 
-	opacity: 0.2;
+	text-shadow: 0 1px 0 #ffffff;	
 	text-decoration: none;
-	position: relative;
-	margin-right: -5px;
-	margin-top: -8px;
-	float: right;
+	position: relative;	
+	margin-top: 10px;
 }
 
 .oneGalleryImg{
@@ -92,11 +108,18 @@
 	height: 120px;
 	max-width: 80%;
 	font-size: 5.0hw;   
-	padding: 5% 5%;  
+	padding: 5% 15% 5% 15%;  
 
 }
 
-
+.img-gallery-zoom{
+	position: relative;
+	text-align: center;             
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+	width: 80%;
+}
 
 .gallery {
 	margin-top: 15px;

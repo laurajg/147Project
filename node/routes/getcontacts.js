@@ -6,7 +6,8 @@ exports.view = function(req, res){
         var alt = req.query.alt === undefined ? '0' : req.query.alt;                      
 
         dbUtils.getGoal(req.session.user, function(goal) {
-            res.render('getcontacts', {'user': req.session.user, 'goal': goal, 'alt0': alt == 0, 'alt1': alt==1, 'alt2': alt==2, 'statTotalTime': 'statTotalTime'+alt,
+            alt = 1;
+            res.render('getcontacts', {'user': req.session.user, 'goal': goal, 'numNew': (req.session.numNew? req.session.numNew: 0), 'alt0': alt == 0, 'alt1': alt==1, 'alt2': alt==2, 'statTotalTime': 'statTotalTime'+alt,
                                     'statPageLoad':'statPageLoad'+alt, 'statAddClicked':'statAddClicked'+alt, 'statTypeToAddTime': 'statTypeToAddTime'+alt});
         });
     }

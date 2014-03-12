@@ -8,11 +8,13 @@ $(document).ready(function() {
         e.preventDefault();
         $("#addMessage").hide();
         $("#addPhoto").show();
+        $("#files").click();
     });
      $(".addMessageButton").click(function(e) {
         e.preventDefault();
         $("#addPhoto").hide();
         $("#addMessage").show();
+        $("#message").focus();
     });
 })
 
@@ -35,7 +37,7 @@ $(document).ready(function() {
       reader.onload = (function(theFile) {
         return function(e) {
           // Render thumbnail.
-          $.post('/addPhoto', {'data': e.target.result}, function(data) {
+          $.post('/addPhoto', {'share': $("#share option:selected").attr('id'), 'data': e.target.result}, function(data) {
               var div = document.createElement('div');
               document.getElementById('list').insertBefore(div, null);
               div.innerHTML = [' <div class="imageBlock"><a href="" action=deleteImage()> <img class="thumb" src="', e.target.result,
@@ -53,6 +55,17 @@ $(document).ready(function() {
       // Read in the image file as a data URL.
       reader.readAsDataURL(f);
     }
+  }
+
+  function sendMessage() {
+    var message = $("#message").val();
+    $.post('/sendUpdate', {'share': $("#share option:selected").attr('id'), 'message': message});
+
+    $("#message").val("");
+    $("#msg_sent").text("Message \"" + message + "\" added!");
+    $("#msg_sent").css("display", "block");
+
+    incrementNew();
   }
 
   function incrementNew() {

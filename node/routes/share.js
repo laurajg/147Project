@@ -16,7 +16,7 @@ exports.view = function(req, res){
                 }
                 contacts_str += "]";
                 //res.render('share', {'user': req.session.user, 'goal': goal, 'numNew': req.session.numNew, 'contacts': contacts_str});    
-                res.render('share', {'user': req.session.user, 'goal': goal, 'numNew': req.session.numNew, 'contacts': contacts});    
+                res.render('share', {'user': req.session.user, 'goal': goal, 'numNew': (req.session.numNew? req.session.numNew: 0), 'contacts': contacts});    
             })			
 		});
 	}
