@@ -30,6 +30,13 @@
         {{#if welcome}}
         <h4> Your new goal is "{{goal}}!" Now upload some photos that will remind you why it's important to you.</h4>
         <br/>
+        <div id="sharingOptions" style="display:none">
+            <h5>Who to share with:</h5>
+                <select required name='share' id='share'>
+                  <option id='me_only' value='me' selected='selected'>Don't share, just post</option>
+                  <option id='friends' value='all'>Share with my contacts</option>     
+              </select>
+        </div>
         {{/if}}
 
         {{#unless welcome}}
