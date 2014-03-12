@@ -26,7 +26,6 @@
 
 #galleryContents{
 	margin: auto;
-	margin-left: 10px;
 }
 
 .text-gallery, .oneGalleryImg{
@@ -73,13 +72,13 @@
 }
 
 .new-photo, .new-photo .img-gallery{
-	border: 2px solid rgb(158, 36, 16);
+	border: 1px solid rgb(158, 36, 16);
 
 /*
 	-moz-box-shadow:    2px 3px 2px 2px red;
   	-webkit-box-shadow: 3px 3px 2px 2px red; 
 	*/
-	margin-bottom: -3px;
+	margin-bottom: -2px;
 
 }
 
