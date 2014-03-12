@@ -3,44 +3,23 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="icon"  type="image/png"  href="images/eye.png">
-
-<title> Goal Glance</title>
+<title> Login</title>
  <link href="css/bootstrap.css" rel="stylesheet">
-  <link href="css/bootstrap-responsive.css" rel="stylesheet">
-
 <link href="css/style.css" rel="stylesheet" type="text/css">
- 
 
 </head>
 <body>
+{{> header}}
 
-<div id="wrap">
-
-<div class="header-prelogin">
-    <h3>Goal Glance</h3>
-    <hr/>
-</div>
-
-
-
-<div id="prelogin-main">
+<div id="main">
 
 	<div id="createAccount">
 		<div class="titleRow"> Log In: </div>
-
-			{{#unless valid}}
-
-			<div class="loginAlert">Login attempt invalid! Try again.</div>
-
-			{{/unless}}
-
 			<div class="inputForm">
 			<form action="/">
 				
 				<table>
-				<tr> <td> <input type="text" required name="username"  placeholder="Username" autofocus/> </td></tr>
+				<tr> <td> <input type="text" required name="username"  placeholder="Username"/> </td></tr>
 				<tr> <td> <input type="password" required name="password" placeholder="Password"/> </td></tr>
 				<tr> <td> <div class="submitButton forgot_password"> <a href="/password"> Forgot Password? </a> </div></td></tr>
 				</table>
@@ -49,26 +28,21 @@
 			
 
 			<form action="/landing">
-  		 		 <input  class = "submitButton " type="submit" value="Back">
+  		 		 <input  class = "submitButton newSubmit" type="submit" value="Back">
 			</form>
 			
 			</div> <!-- end input form div -->
 	</div> <!-- end create account div --> 
-      <div id="push"></div>
+		{{> footer}}
 
 </div> <!-- end main div -->
-</div> <!-- end wrap div -->
 
-
-
-
-		{{> footer}}
 
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="js/jquery-1.11.0.js"> </script>
 	<script src="js/bootstrap.js"> </script>
-	<script src="js/147-project.js"> </script>
+	<script src="js/hci-friends.js"> </script>
 </body>
 </html>
 

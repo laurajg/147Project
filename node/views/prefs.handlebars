@@ -2,100 +2,25 @@
 
 <html>
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width">
-	<link rel="icon"  type="image/png"  href="images/eye.png">
+<meta charset="UTF-8" />
+<title> Goal Glance </title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 
-	<title> Goal Glance </title>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
-	<script src="js/prefs.js"></script>
-
-	<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-	<link href="css/bootstrap-responsive.css" rel="stylesheet">
-
-	
-	<link rel="stylesheet" type="text/css" media="screen"
-	href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
-	<link href="css/style.css" rel="stylesheet" type="text/css">
-
+</script>
 </head>
-
 <body>
-	{{>navigation}}
 
-	<!--{{>header}} -->
-	<div id="main">
-		<div class="titleRow " > Set Reminder Preferences </div>
+{{> header}}
+<div id="main">
+	<div class="text">
+	Set reminder preferences
+	</div>
+	<div class="footer">
+		<a href="terms.html"> Terms and Conditions </a>
 		
-		<p class="text">When do you want to be reminded that you want to {{goal}}?</p>
-		
-		<form name="reminders" action="/preferences" method="POST">
-			<div align="center">Current reminders:</div>
-
-			<!-- <input type="radio" name="days" value="Milk">I want to be reminded on these days of the week:<br>
-			<hr>
-			<input type="radio" name="group2" value="Water"> Water<br> -->
-			<ul class="list-group">
-				{{#each reminders}}
-				<li class="list-group-item">{{hour}}:{{minute}} {{ampm}} on {{days}}</li>
-				{{/each}}
-			</ul>
-
-			<div id="addReminder" style="display:none">
-
-				<script type="text/javascript"
-				src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js">
-				</script> 
-
-				<script type="text/javascript"
-				src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
-				</script>
-				<script type="text/javascript"
-				src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
-				</script>
-
-
-				<div class="well">
-					At what time?
-					<div id="datetimepicker3" class="input-append">
-						<input data-format="hh:mm" type="text"/>
-						<span class="add-on">
-							<i data-time-icon="icon-time" data-date-icon="icon-calendar">
-							</i>
-						</span>
-					</div>
-				</div>
-				<script type="text/javascript">
-				$(function() {
-					$('#datetimepicker3').datetimepicker({
-						pickDate: false
-					});
-				});
-				</script>
-				On what days of the week?<br/>
-				<ul class="pagination">
-
-					<li><a>Sunday</a></li>
-					<li><a>Monday</a></li>
-					<li><a>Tuesday</a></li>
-					<li><a>Wednesday</a></li>
-					<li><a>Thursday</a></li>
-					<li><a>Friday</a></li>
-					<li><a>Saturday</a></li>
-				</ul>
-			</div> <!-- end add reminder div -->
-
-			<ul class="list-group">
-				<a id="doneButton" class="list-group-item active" style="text-align:center" onclick="addReminder();" >Add another</a>
-			</ul>
-		</form>
-<div id="push"></div>
-
+	</div>
 </div> <!-- end main div -->
-{{> footer}}
-<script src="https://code.jquery.com/jquery.js"></script>
-<script src="js/jquery-1.11.0.js"> </script>
-<script src="js/bootstrap.js"> </script>
-<script src="js/147-project.js"> </script>
 </body>
 </html>

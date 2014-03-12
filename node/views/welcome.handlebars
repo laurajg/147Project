@@ -3,47 +3,28 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width">
-	<link rel="icon"  type="image/png"  href="images/eye.png">
-
 <title> Goal Glance </title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-  <link href="css/bootstrap-responsive.css" rel="stylesheet">
-
-<link href="css/style.css" rel="stylesheet" type="text/css">
 
 </script>
 </head>
 <body>
-	{{>navigation}}
 
-<!--{{>header}} -->
+{{> header}}
 <div id="main">
-		<div class="addProgress">
-			<ol class="progtrckr" data-progtrckr-steps="3">
-				<li class="progtrckr-done">Goal</li>
-				<li class="progtrckr-todo">Content</li>
-				<li class="progtrckr-todo">Share</li>
-			</ol> 
-		</div>
-	<h3> Welcome to Goal Glance, {{user}}!  </h3>
-	<br/>
-		<div class="titleRow"> Enter Your Goal: </div>
-
-	<h6>Examples: lose weight, quit smoking, meditate daily</h6>
-	<br/>
-	<form method="get" role="form" action="/welcome_upload" name="register">
-		<input class="goal" name="goal" type="text"></input>
-		<input class = "submitButton" type="submit" value="Pick a motivational photo >">
-	</form>
-	      <div id="push"></div>
-
+	<div class="text">
+	Welcome to Goal Glance! 
+	What's your goal?
+	<h3>Examples: lose weight, quit smoking, meditate daily</h3>
+	<input class="goal" type="text"></input>
+	<a href="welcome_upload"><input class = "submitButton" type="submit" value="Pick a motivational photo >"></a>
+	</div>
+	<div class="footer">
+		<a href="terms.html"> Terms and Conditions </a>
+		
+	</div>
 </div> <!-- end main div -->
-{{> footer}}
-	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="js/jquery-1.11.0.js"> </script>
-	<script src="js/bootstrap.js"> </script>
-	<script src="js/147-project.js"> </script>
 </body>
 </html>

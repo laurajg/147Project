@@ -3,46 +3,40 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width">
-	<link rel="icon"  type="image/png"  href="images/eye.png">
-
-<title> Goal Glance </title>
+<title> Welcome </title>
  <link href="css/bootstrap.css" rel="stylesheet">
-   <link href="css/bootstrap-responsive.css" rel="stylesheet">
-
 <link href="css/style.css" rel="stylesheet" type="text/css">
+</script>
 </head>
 <body>
-<div id="wrap">
-<div class="container-fluid">
-<div class="jumbotron">
-    <h1>Stay Inspired and Achieve Your Goals</h1>
-    <p>Motivation at a Glance</p>
-    <hr/>
-</div>
-</div>
 
 
 
-<div id="landingMain">
+{{> header}}
 
-	<div id="landingNav">
+
+<div id="main">
+	<div class="homeText">
+		Stay inspired and achieve your goals! (Actual tbd!)
+	</div>
+	<div id="createAccount" class="homeButtons">
 		
 		<form action="/login">
-  		  	<input class = "submitButton" type="submit" value="Log In">
+  		  <input class = "submitButton" type="submit" value="Log In">
 		</form>
+
+		<br/>
 		
 		<form action="/register">
   		  <input  class = "submitButton" type="submit" value="Create Account">
 		</form>
 			
 	</div> <!-- end create account div --> 
-	
-      <div id="push"></div>
-
+	<div class="footer">
+		<a href="/terms"> Terms and Conditions </a>
+		
+	</div>
 </div> <!-- end main div -->
-</div> <!-- end wrap div -->
-{{> footer}}
 
 <script src="https://code.jquery.com/jquery.js"></script>
 	<script src="js/jquery-1.11.0.js"> </script>
