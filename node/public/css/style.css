@@ -592,7 +592,9 @@ textarea:focus, input:focus {
 */
 	padding: 0;
 	margin: auto;
-	height: 420px;
+	height: 100%;
+	max-height: 400px;
+	width: auto;
 	background-size: cover;
 }
   
