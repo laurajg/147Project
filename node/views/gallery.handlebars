@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="icon"  type="image/png"  href="images/eye.png">
 
-	<title>Gallery</title>
+	<title>Goal Glance</title>
 	<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
 	<!-- Bootstrap -->
 	<link href="css/bootstrap.css" rel="stylesheet" media="screen">   
@@ -19,13 +19,14 @@
 <body onload='createGallery({{json photos}});'>   
 	{{>navigation}}
 
-		<div id="main">
+		<div id="galleryMain">
 			<div id="galleryContents">
 		<div class="dropdown" >
+			<!--
 			<div class="titleRow " style="float: left; clear: both; margin-right: 10px;"> My Goal Gallery 
-			</div>
+			</div> -->
 			{{#if numNew}}
-			<div class="numberNew" style="float: left; clear: both;"> You have {{numNew}} new item(s) </div>
+			<div class="numberNew" style="float: left; clear: both;"> You have <span id="newText"> {{numNew}} </span> new item(s) </div>
 			{{/if}}
 			
 <!-- 			<button class="btn dropdown-toggle" style="float: left;" type="button" id="filter-button" data-toggle="dropdown">
