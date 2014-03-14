@@ -59,13 +59,18 @@ $(document).ready(function() {
 
   function sendMessage() {
     var message = $("#message").val();
-    $.post('/sendUpdate', {'share': $("#share option:selected").attr('id'), 'message': message});
+    $("#msg_sent").css("display", "block");  
+    if (message != "") {
 
-    $("#message").val("");
-    $("#msg_sent").text("Message \"" + message + "\" added!");
-    $("#msg_sent").css("display", "block");
+      $.post('/sendUpdate', {'share': $("#share option:selected").attr('id'), 'message': message});
+      $("#message").val("");
+      $("#msg_sent").text("Message \"" + message + "\" added!");
 
-    incrementNew();
+      incrementNew();
+    } else {
+        $("#msg_sent").text("Cannot add empty message!");    
+
+    }
   }
 
   function incrementNew() {
